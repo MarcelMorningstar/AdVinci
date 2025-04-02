@@ -49,8 +49,8 @@ export default function Contact() {
     };
 
     return (
-        <section className='flex justify-center'>
-            <div className='flex flex-col xl:flex-row max-w-[920px] xl:max-w-[1400px] gap-16 py-16 px-16'>
+        <section className='flex justify-center items-center h-screen'>
+            <div className='flex flex-col xl:flex-row max-w-[920px] xl:max-w-[1400px] gap-16 px-16'>
                 <div className='flex flex-col flex-1'>
                     <div className='flex flex-col px-4 sm:px-24 mb-8 gap-1'>
                         <h2 className='text-center text-2xl sm:text-4xl font-bold'>Let's Talk about New <i>Opportunities</i></h2>

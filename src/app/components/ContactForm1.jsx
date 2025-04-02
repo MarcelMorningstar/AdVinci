@@ -6,13 +6,8 @@ import React from 'react'
 export default function ContactForm1() {
   return (
     <FormLayout title="Design with us">
-      <div className="flex flex-row gap-2">
-        <Input type="text" label="First Name" styles="w-full" />
-        <Input type="text" label="Last Name" styles="w-full" />
-      </div>
-
+      <Input type="text" label="Company Name" />
       <Input type="email" label="Email" />
-
       <Input type="phone" label="Phone" />
 
       <textarea name="" id="" className="font-medium outline outline-gray-300 rounded-lg px-3 py-4 focus:outline-gray-500" placeholder="Message"></textarea>
