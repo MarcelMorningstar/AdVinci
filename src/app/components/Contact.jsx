@@ -49,7 +49,7 @@ export default function Contact() {
     };
 
     return (
-        <section className='flex w-screen justify-center'>
+        <section className='flex justify-center'>
             <div className='flex flex-col xl:flex-row max-w-[920px] xl:max-w-[1400px] gap-16 py-16 px-16'>
                 <div className='flex flex-col flex-1'>
                     <div className='flex flex-col px-4 sm:px-24 mb-8 gap-1'>
