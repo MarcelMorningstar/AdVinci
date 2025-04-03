@@ -6,7 +6,10 @@ import React from 'react'
 export default function ContactForm2() {
   return (
     <FormLayout title="Set up your Advetising around World">
-      <Input type="text" label="Company Name" />
+      <div className="flex flex-row gap-2">
+        <Input type="text" label="Company Name" styles="w-full" />
+        <Input type="text" label="VAT" styles="w-full" />
+      </div>
       <Input type="email" label="Email" />
       <Input type="phone" label="Phone" />
       <Input type="text" label="Place" />
