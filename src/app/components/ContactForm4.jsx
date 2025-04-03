@@ -11,10 +11,8 @@ export default function ContactForm4() {
         <Input type="text" label="VAT" styles="w-full" />
       </div>
 
-      <div className="flex flex-row gap-2">
-        <Input type="email" label="Email" styles="w-full" />
-        <Input type="phone" label="Phone" styles="w-full"/>
-      </div>
+      <Input type="email" label="Email" />
+      <Input type="phone" label="Phone" />
 
       <textarea name="" id="" className="font-medium outline outline-gray-300 rounded-lg px-3 py-4 focus:outline-gray-500" placeholder="Message"></textarea>
 
