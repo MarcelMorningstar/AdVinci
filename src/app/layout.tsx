@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import Head from "next/head";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from './components/Navbar'
@@ -13,14 +13,6 @@ import Navbar from './components/Navbar'
 //   subsets: ["latin"],
 // });
 
-export const metadata: Metadata = {
-  title: "AdVinci",
-  description: "",
-  icons: {
-    icon: '/logo.png'
-  }
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,6 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <title>AdVinci</title>
+        <meta name="description" content="" />
+        <link rel="icon" href="/assets/logo.svg" sizes="any" />
+      </Head>
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

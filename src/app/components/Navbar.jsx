@@ -8,13 +8,13 @@ export default function Navbar() {
   return (
     <nav className='fixed z-50 flex flex-row justify-between w-full h-20 px-[12%] bg-[var(--foreground)]'>
       <div className='flex flex-row gap-1 items-end pb-2.5'>
-        <Link href="#Home" className='relative h-8/12 aspect-[1.47]'>
+        <Link href="/#Home" className='relative h-8/12 aspect-[1.47]'>
           <Image src={Logo} fill objectFit='contain' priority alt='AdVinci' />
         </Link>
         <div className='flex felx-row gap-3 items-end h-10/12'>
-          <Link href="#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>Services</Link>
-          <Link href="#AboutUs" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>About Us</Link>
-          <Link href="#HowItWorks" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>How it Works</Link>
+          <Link href="/#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>Services</Link>
+          <Link href="/#AboutUs" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>About Us</Link>
+          <Link href="/#HowItWorks" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>How it Works</Link>
         </div>
       </div>
 
