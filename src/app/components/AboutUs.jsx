@@ -53,7 +53,7 @@ const Block = ({ className, children, ...rest }) => {
             damping: 50,
         }}
         className={twMerge(
-            "col-span-4 rounded-lg bg-white shadow-lg px-8 sm:px-12 py-6 sm:py-8",
+            "col-span-4 rounded-lg bg-white shadow-lg",
             className
         )}
         {...rest}
@@ -64,7 +64,7 @@ const Block = ({ className, children, ...rest }) => {
 };
 
 const HeaderBlock = () => (
-    <Block className="col-span-12 row-span-2 md:col-span-6">
+    <Block className="col-span-12 row-span-2 md:col-span-6 px-8 sm:px-12 py-6 sm:py-8">
         <div className="flex flex-col gap-2">
             <BsMegaphoneFill className="w-10 h-10 text-[var(--primary2)]" />
             <h2 className="text-4xl font-medium">
@@ -85,11 +85,11 @@ const SocialsBlock = () => (
                 rotate: "2.5deg",
                 scale: 1.1,
             }}
-            className="col-span-6 bg-[#bd081c] md:col-span-3 aspect-square"
+            className="col-span-6 md:col-span-3 aspect-square bg-[#bd081c]"
         >
             <Link
                 href="#"
-                className="grid h-full place-content-center text-3xl text-white"
+                className="grid w-full h-full place-content-center text-3xl text-white"
             >
                 <SiPinterest />
             </Link>
@@ -99,11 +99,11 @@ const SocialsBlock = () => (
                 rotate: "-2.5deg",
                 scale: 1.1,
             }}
-            className="col-span-6 bg-[#e4405f] md:col-span-3 aspect-square"
+            className="col-span-6 md:col-span-3 aspect-square bg-[#e4405f]"
         >
             <Link
                 href="#"
-                className="grid h-full place-content-center text-3xl text-white"
+                className="grid w-full h-full place-content-center text-3xl text-white"
             >
                 <SiInstagram />
             </Link>
@@ -113,11 +113,11 @@ const SocialsBlock = () => (
                 rotate: "-2.5deg",
                 scale: 1.1,
             }}
-            className="col-span-6 bg-blue-600 md:col-span-3 aspect-square"
+            className="col-span-6 md:col-span-3 aspect-square bg-blue-600 "
         >
             <Link
                 href="#"
-                className="grid h-full place-content-center text-3xl text-white"
+                className="grid w-full h-full place-content-center text-3xl text-white"
             >
                 <SiFacebook />
             </Link>
@@ -127,11 +127,11 @@ const SocialsBlock = () => (
                 rotate: "-2.5deg",
                 scale: 1.1,
             }}
-            className="col-span-6 md:col-span-3 aspect-square"
+            className="col-span-6 md:col-span-3 aspect-square bg-[linear-gradient(to_bottom_left,_var(--primary1),_var(--primary2)_60%)]"
         >
             <Link
                 href="#Contact"
-                className="grid h-full place-content-center text-3xl text-[var(--foreground)]"
+                className="grid w-full h-full place-content-center text-3xl text-white"
             >
                 <MdEmail />
             </Link>
@@ -140,8 +140,8 @@ const SocialsBlock = () => (
 );
 
 const AboutBlock = () => (
-    <Block className="col-span-12">
-        <p className="text-xl sm:text-2xl md:text-3xl text-gray-800  leading-snug">
+    <Block className="col-span-12 px-8 sm:px-12 py-6 sm:py-8">
+        <p className="text-xl sm:text-2xl md:text-3xl text-gray-800 leading-snug">
             We are a creative digital advertising agency driven by strategy, design, and innovation. 
             With a passion for helping brands stand out in today’s fast-paced digital world, 
             we craft impactful visual campaigns that connect, engage, and convert. 
@@ -153,14 +153,14 @@ const AboutBlock = () => (
 
 const ServicesBlock = () => (
     <>  
-        <Block className="col-span-12 md:col-span-6">
+        <Block className="col-span-12 md:col-span-6 px-8 sm:px-12 py-6 sm:py-8">
             <h2 className="text-2xl font-bold mb-2">What We Offer</h2>
             <p className="text-base text-gray-600">
                 We specialize in powerful digital advertising solutions tailored to elevate your brand visibility. 
                 Explore our three core services designed to help you reach your audience effectively and efficiently.
             </p>
         </Block>
-        <Block className="col-span-12 md:col-span-6">
+        <Block className="col-span-12 md:col-span-6 px-8 sm:px-12 py-6 sm:py-8">
             <h3 className="text-xl font-bold mb-1">Digital Advertising Design</h3>
             <p className="text-base text-gray-600">
                 Eye-catching, modern, and on-brand — we craft digital ads that not only look great, 
@@ -168,7 +168,7 @@ const ServicesBlock = () => (
                 designed to stop the scroll and deliver results.
             </p>
         </Block>
-        <Block className="col-span-12 md:col-span-6">
+        <Block className="col-span-12 md:col-span-6 px-8 sm:px-12 py-6 sm:py-8">
             <h3 className="text-xl font-bold mb-1">Advertising in Strategic Locations</h3>
             <p className="text-base text-gray-600">
                 Reach your audience in high-traffic areas with our network of digital totems. 
@@ -176,7 +176,7 @@ const ServicesBlock = () => (
                 and business districts — your message is always seen.
             </p>
         </Block>
-        <Block className="col-span-12 md:col-span-6">
+        <Block className="col-span-12 md:col-span-6 px-8 sm:px-12 py-6 sm:py-8">
             <h3 className="text-xl font-bold mb-1">Digital Advertising Consultation & Project Planning</h3>
             <p className="text-base text-gray-600">
                 From concept to execution, we provide expert guidance for your digital ad campaigns. 
