@@ -25,10 +25,9 @@ export default function Logo({ cursor, sectionRef, mouseOnCard }: Props) {
 
     return (
         <svg 
-            id="Layer_2" 
-            data-name="Layer 2" 
+            id="Logo" 
             xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 759.44 228"
+            viewBox="-4 -4 766 232"
             className='w-2/3 duration-200 transition-all fill-[var(--foreground)]'
         >
             <defs>
@@ -42,15 +41,15 @@ export default function Logo({ cursor, sectionRef, mouseOnCard }: Props) {
                     <stop offset={1} stopColor='#9A51B8' />
                 </radialGradient>
             </defs>
-            <g id="Layer_1-2" data-name="Layer 1">
-                <g id="Layer_1-3" data-name="Layer 1">
+            <g id="Layer_2">
+                <g id="Layer_3">
                     <g>
                         <path stroke='url(#gradient)' strokeWidth={4} strokeLinecap='round' strokeLinejoin='round' d="M.01,215.49L130.47,0l97.94,172.32,82.07-137s18.9-27.3,48.57-27.87l-130.29,217.82L129.39,52.32,49.23,185.92s-12.35,25.7-49.23,29.57h.01Z"/>
                         <path stroke='url(#gradient)' strokeWidth={4} strokeLinecap='round' strokeLinejoin='round' d="M134.09,94.99l-15.3,27.3,35.47,62.67s16.92,30.6,48.22,30.14l-68.39-120.11h0Z"/>
                         <path stroke='url(#gradient)' strokeWidth={4} strokeLinecap='round' strokeLinejoin='round' d="M213.3,7.56l51.55,77.72,16.91-28.12-21.55-29.47s-14.38-18.73-46.92-20.12h0Z"/>
                     </g>
                 </g>
-                <g id="Layer_2-2" data-name="Layer 2">
+                <g id="Layer_2-2">
                 <g>
                     <path stroke='url(#gradient)' strokeWidth={4} strokeLinecap='round' strokeLinejoin='round' d="M272.92,224.1l26.41-70.64h13.59l26.21,70.64h-13.2l-5.91-16.9h-28.23l-5.76,16.9h-13.12ZM294.89,197.4h21.87l-9.65-27.89c-.22-.73-.44-1.45-.62-2.19s-.36-1.65-.51-2.73h-.29c-.16.95-.34,1.82-.51,2.58-.18.78-.38,1.52-.62,2.24l-9.65,27.98h-.01Z"/>
                     <path stroke='url(#gradient)' strokeWidth={4} strokeLinecap='round' strokeLinejoin='round' d="M363.84,224.1v-70.64h22.22c12.51,0,21.89,2.86,28.12,8.6,6.24,5.74,9.36,14.34,9.36,25.84s-3.45,19.71-10.35,26.3-16.07,9.9-27.54,9.9h-21.82.01ZM375.81,163.61v50.39h9.26c8.11,0,14.45-2.28,19.01-6.84,4.56-4.56,6.84-10.92,6.84-19.06s-2.18-13.98-6.53-18.18c-4.35-4.21-10.73-6.3-19.14-6.3h-9.45.01Z"/>

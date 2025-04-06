@@ -1,0 +1,40 @@
+.topline {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+
+    svg {
+        position: relative;
+        display: block;
+        width: calc(110% + 1.3px);
+        height: 41px;
+    }
+
+    path {
+        fill: var(--foreground);
+    }
+}
+  
+.bottomline {
+    position: absolute;
+    bottom: -59px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+
+    svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 59px;
+    }
+
+    path {
+        fill: var(--foreground);
+    }
+}
