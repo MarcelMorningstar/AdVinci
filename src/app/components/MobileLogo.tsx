@@ -27,7 +27,7 @@ export default function Logo({ cursor, sectionRef, mouseOnCard }: Props) {
         <svg 
             id="MobileLogo" 
             xmlns="http://www.w3.org/2000/svg" 
-            viewBox="-4 -4 738 468"
+            viewBox="-50 -50 820 550"
             className='w-11/12 duration-200 transition-all fill-[var(--foreground)]'
         >
             <defs>
@@ -40,8 +40,15 @@ export default function Logo({ cursor, sectionRef, mouseOnCard }: Props) {
                     {mouseOnCard && <stop stopColor='#03C4FB' />} 
                     <stop offset={1} stopColor='#9A51B8' />
                 </radialGradient>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="8" result="blur"/>
+                    <feMerge>
+                        <feMergeNode in="blur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
             </defs>
-            <g id="Layer_5">
+            <g id="Layer_5" filter="url(#glow)">
                 <g id="Layer_6">
                     <g>
                         <path stroke='url(#gradient)' strokeWidth={6} strokeLinecap='round' strokeLinejoin='round' d="M0,438.27L265.33,0l199.21,350.48,166.91-278.65s38.43-55.52,98.78-56.68l-264.98,443.02L263.16,106.42,100.14,378.13S75.03,430.41,0,438.28h0Z"/>

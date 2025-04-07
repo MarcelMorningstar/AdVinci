@@ -27,8 +27,8 @@ export default function Logo({ cursor, sectionRef, mouseOnCard }: Props) {
         <svg 
             id="Logo" 
             xmlns="http://www.w3.org/2000/svg" 
-            viewBox="-4 -4 766 232"
-            className='w-2/3 duration-200 transition-all fill-[var(--foreground)]'
+            viewBox="-50 -50 850 320"
+            className='w-3/4 duration-200 transition-all fill-[var(--foreground)]'
         >
             <defs>
                 <radialGradient 
@@ -40,8 +40,15 @@ export default function Logo({ cursor, sectionRef, mouseOnCard }: Props) {
                     {mouseOnCard && <stop stopColor='#03C4FB' />} 
                     <stop offset={1} stopColor='#9A51B8' />
                 </radialGradient>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="8" result="blur"/>
+                    <feMerge>
+                        <feMergeNode in="blur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
             </defs>
-            <g id="Layer_2">
+            <g id="Layer_2" filter="url(#glow)">
                 <g id="Layer_3">
                     <g>
                         <path stroke='url(#gradient)' strokeWidth={4} strokeLinecap='round' strokeLinejoin='round' d="M.01,215.49L130.47,0l97.94,172.32,82.07-137s18.9-27.3,48.57-27.87l-130.29,217.82L129.39,52.32,49.23,185.92s-12.35,25.7-49.23,29.57h.01Z"/>

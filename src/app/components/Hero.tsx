@@ -34,7 +34,7 @@ export default function Hero() {
         >
             {
                 dimensions.width != 0 && (
-                    <div className='w-full h-full flex flex-col justify-center items-center gap-16'>
+                    <div className='w-full h-full flex flex-col justify-center items-center gap-8 sm:gap-12 md:gap-16'>
                         {
                             dimensions.width > 900 ? (
                                 <Logo cursor={cursor} sectionRef={sectionRef} mouseOnCard={mouseOnCard} />
@@ -44,7 +44,7 @@ export default function Hero() {
                             )
                         }
                         <div className='flex flex-col max-w-11/12'>
-                            <h1 className='text-4xl text-center text-gray-400'>Welcome to the <i>Advertising</i> Angency</h1>
+                            <h1 className='text-3xl sm:text-4xl text-center text-gray-400'>Welcome to the <i>Advertising</i> Angency</h1>
                         </div>
                     </div>
                 )
