@@ -68,7 +68,7 @@ const HeaderBlock = () => (
         <div className="flex flex-col gap-2">
             <BsMegaphoneFill className="w-10 h-10 text-[var(--primary2)]" />
             <h2 className="text-4xl font-medium">
-                Hello, We are all about Advertising!
+                Hello, We are all about <i>Advertising!</i>
             </h2>
             <p className="text-base text-gray-600">
                 From bold visuals to smart placement, we bring your brand to life through 

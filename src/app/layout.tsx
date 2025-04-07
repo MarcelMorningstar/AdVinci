@@ -1,18 +1,21 @@
 import Head from "next/head";
-// import { Geist, Geist_Mono } from "next/font/google";
+import { Nunito_Sans, Vibur } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-nunito",
+});
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+const vibur = Vibur({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--vibur",
+});
 
 export default function RootLayout({
   children,
@@ -26,9 +29,7 @@ export default function RootLayout({
         <meta name="description" content="" />
         <link rel="icon" href="/assets/logo.svg" sizes="any" />
       </Head>
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${nunitoSans.variable} ${vibur.variable}`}>
         <Navbar />
         {children}
         <Footer />
