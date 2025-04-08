@@ -28,5 +28,6 @@ body {
 }
 
 i {
-  font-family: var(--vibur);
+  font-family: var(--reenie_beanie);
+  text-shadow: 1px 1px 2px var(--primary1), -1px -1px 2px var(--primary2);
 }

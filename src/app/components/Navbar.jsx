@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className='flex felx-row gap-3 items-end h-10/12'>
           <Link href="/#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>Services</Link>
           <Link href="/#AboutUs" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>About Us</Link>
-          <Link href="/#HowItWorks" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>How it Works</Link>
+          <Link href="/#HowWeBuildYourBrand" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>How it Works</Link>
         </div>
       </div>
 

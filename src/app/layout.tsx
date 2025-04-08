@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Nunito_Sans, Vibur } from "next/font/google";
+import { Nunito_Sans, Reenie_Beanie } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -10,11 +10,11 @@ const nunitoSans = Nunito_Sans({
   variable: "--font-nunito",
 });
 
-const vibur = Vibur({
+const reenie_beanie = Reenie_Beanie({
   weight: "400",
   subsets: ["latin"],
   display: "swap",
-  variable: "--vibur",
+  variable: "--reenie_beanie",
 });
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
         <meta name="description" content="" />
         <link rel="icon" href="/assets/logo.svg" sizes="any" />
       </Head>
-      <body className={`${nunitoSans.variable} ${vibur.variable}`}>
+      <body className={`${nunitoSans.variable} ${reenie_beanie.variable}`}>
         <Navbar />
         {children}
         <Footer />

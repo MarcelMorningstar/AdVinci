@@ -50,10 +50,10 @@ export default function HowItWorks() {
     };
 
     return (
-        <section id="HowItWorks" className="">
-            <div className='flex flex-col gap-6 h-[70vh] justify-center'>
-                <div className='flex flex-col gap-2 px-4'>
-                    <h2 className='text-center text-4xl sm:text-7xl font-bold'>Let's Talk How it <i>Works</i></h2>
+        <section id="HowWeBuildYourBrand" className="">
+            <div className='flex flex-col gap-6 h-[70vh] items-center justify-center'>
+                <div className='flex flex-col gap-2 px-4 w-11/12'>
+                    <h2 className='text-center text-4xl sm:text-7xl font-bold'>Let's Talk How we <i>Build</i> your Brand</h2>
                     <p className='text-center text-base sm:text-lg text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
 
