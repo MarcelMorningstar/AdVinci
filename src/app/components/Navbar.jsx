@@ -1,25 +1,66 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
+import LinkToHash from "./LinkToHash";
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../assets/logo.svg'
+import { Menu, MenuHandler, MenuList, MenuItem } from "@material-tailwind/react";
+import { useWindowDimensions } from "../utilities/window";
+import { HiMenuAlt3 } from "react-icons/hi";
 import styles from '../styles/Navbar.module.scss';
 
 export default function Navbar() {
+  const [openMenu, setOpenMenu] = useState(false)
+  const dimensions = useWindowDimensions()
+
   return (
     <nav className='fixed z-50 flex flex-row justify-between w-full h-20 px-[12%] bg-[var(--foreground)]'>
       <div className='flex flex-row gap-1 items-end pb-2.5'>
-        <Link href="/#Home" className='relative h-8/12 aspect-[1.47]'>
+        <LinkToHash to="/#Home" className='relative h-8/12 aspect-[1.47]'>
           <Image src={Logo} fill objectFit='contain' priority alt='AdVinci' />
-        </Link>
-        <div className='flex felx-row gap-3 items-end h-10/12'>
-          <Link href="/#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>Services</Link>
-          <Link href="/#AboutUs" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>About Us</Link>
-          <Link href="/#HowWeBuildYourBrand" className='text-xl text-gray-300 whitespace-nowrap hover:text-white'>How it Works</Link>
-        </div>
+        </LinkToHash>
+        {
+          dimensions.width > 900 && (
+            <div className='flex felx-row gap-3 items-end h-10/12'>
+              <LinkToHash to="/#AboutUs" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>About Us</LinkToHash>
+              <LinkToHash to="/#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Services</LinkToHash>
+              <LinkToHash to="/#HowWeBuildYourBrand" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Building Your Brand</LinkToHash>
+            </div>
+          )
+        }
       </div>
 
-      <div className='flex flex-row items-end h-full'>
-        <Link href="#Contact" className={styles.outlineborder}>Contact</Link>
+      <div className='flex flex-row gap-3 items-end h-full'>
+        <LinkToHash to="/#Contact" className={styles.outlineborder}>Contact</LinkToHash>
+        {
+          dimensions.width <= 900 && (
+            <Menu open={openMenu} handler={setOpenMenu} placement="bottom-end">
+                <MenuHandler className="mb-1">
+                  <span><HiMenuAlt3 className="w-9 h-9 text-gray-300 hover:text-white cursor-pointer" /></span>
+                </MenuHandler>
+                <MenuList className="realtive z-50 w-auto py-1 bg-[var(--background)]">
+                  <ul className="flex flex-col gap-1 w-full focus:outline-none rounded-md">
+                    <LinkToHash to='/#AboutUs' className="block">
+                      <MenuItem className='text-right'>
+                        <span className="text-base sm:text-lg text-zinc-700 hover:text-black">About Us</span>
+                      </MenuItem>
+                    </LinkToHash>
+                    <LinkToHash to='/#Services' className="block">
+                      <MenuItem className='text-right'>
+                        <span className="text-base sm:text-lg text-zinc-700 hover:text-black">Services</span>
+                      </MenuItem>
+                    </LinkToHash>
+                    <LinkToHash to='/#HowWeBuildYourBrand' className="block">
+                      <MenuItem className='text-right'>
+                        <span className="text-base sm:text-lg text-zinc-700 hover:text-black">Building Your Brand</span>
+                      </MenuItem>
+                    </LinkToHash>
+                  </ul>
+                </MenuList>
+            </Menu>
+          )
+        }
       </div>
 
       <div className={styles.bottomline}>

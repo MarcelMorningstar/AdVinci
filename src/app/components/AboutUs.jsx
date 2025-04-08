@@ -10,7 +10,7 @@ import { SiPinterest, SiInstagram, SiFacebook, } from "react-icons/si";
 
 export default function AboutUs() {
     return (
-        <section className="min-h-screen flex justify-center items-center pt-32">
+        <section id="AboutUs" className="min-h-screen flex justify-center items-center pt-32">
             <div className="max-w-10/12 flex justify-center items-center">
                 <motion.div 
                     initial="initial"
@@ -31,9 +31,10 @@ export default function AboutUs() {
     )
 }
 
-const Block = ({ className, children, ...rest }) => {
+const Block = ({ id, className, children, ...rest }) => {
     return (
       <motion.div
+        id={id}
         variants={{
             initial: {
                 scale: 0.5,
@@ -153,7 +154,7 @@ const AboutBlock = () => (
 
 const ServicesBlock = () => (
     <>  
-        <Block className="col-span-12 md:col-span-6 px-8 sm:px-12 py-6 sm:py-8">
+        <Block id="Services" className="col-span-12 md:col-span-6 px-8 sm:px-12 py-6 sm:py-8">
             <h2 className="text-2xl font-bold mb-2">What We Offer</h2>
             <p className="text-base text-gray-600">
                 We specialize in powerful digital advertising solutions tailored to elevate your brand visibility. 
