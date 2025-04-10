@@ -8,7 +8,7 @@ export default function FormLayout(props) {
         <p className='text-center text-gray-500 text-sm sm:text-base'>We reply to every message personally.</p>
       </div>
 
-      <form action="" className="flex flex-col gap-2 mt-8">
+      <form onSubmit={props.onSubmit} className="flex flex-col gap-4 mt-8">
         {props.children}
       </form>
     </div>

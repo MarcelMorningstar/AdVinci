@@ -69,7 +69,7 @@ export default function Contact() {
                                     <p className='text-sm xl:text-base text-gray-800'>{ obj.description }</p>
                                 </div>
                                 <div className='flex flex-col justify-center'>
-                                    <input id={obj.id} type="radio" name="contact-radio" className="w-6 h-6 accent-[var(--primary2)] cursor-pointer" checked={ obj.id === state } onChange={ () => setState(obj.id) } />
+                                    <input id={obj.id} type="radio" name="contact-radio" className="w-6 h-6 text-[var(--primary2)] bg-gray-100 border-gray-400 focus:ring-[var(--primary2)]" checked={ obj.id === state } onChange={ () => setState(obj.id) } />
                                 </div>
                             </div>
                         ))}
