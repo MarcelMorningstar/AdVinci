@@ -4,6 +4,7 @@ import Input from "./Input"
 import PhoneInput from 'react-phone-input-2'
 import ContactFormCheckBox from './ContactFormCheckBox'
 import SubmitBtn from "./SubmitBtn"
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 import 'react-phone-input-2/lib/style.css'
 
@@ -36,8 +37,6 @@ export default function ContactForm4() {
     e.preventDefault();
     if (validate()) {
       console.log('Form submitted:', formData);
-    } else {
-      console.log("fuck")
     }
   };
 
@@ -58,8 +57,10 @@ export default function ContactForm4() {
       valid = false;
     }
 
-    if (!formData.phone) {
-      newErrors.phone = 'Message is required';
+    const phoneNumber = parsePhoneNumberFromString(`+${formData.phone}`);
+
+    if (!phoneNumber || !phoneNumber.isValid()) {
+      newErrors.phone = 'Please enter a valid phone number';
       valid = false;
     }
 
