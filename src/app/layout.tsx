@@ -1,8 +1,16 @@
-import Head from "next/head";
+import type { Metadata } from 'next'
 import { Nunito_Sans, Reenie_Beanie } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+
+export const metadata: Metadata = {
+  title: 'AdVinci',
+  description: '',
+  icons: {
+    icon: '/assets/logo.svg',
+  },
+}
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
@@ -24,11 +32,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <title>AdVinci</title>
-        <meta name="description" content="" />
-        <link rel="icon" href="/assets/logo.svg" sizes="any" />
-      </Head>
       <body className={`${nunitoSans.variable} ${reenie_beanie.variable}`}>
         <Navbar />
         {children}
