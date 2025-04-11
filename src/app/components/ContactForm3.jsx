@@ -68,7 +68,7 @@ export default function ContactForm3() {
       }
 
       if (!formData.topic) {
-        newErrors.message = 'Topic is required';
+        newErrors.topic = 'Topic is required';
         valid = false;
       }
   
