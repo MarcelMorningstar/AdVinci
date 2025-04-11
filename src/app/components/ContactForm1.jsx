@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import FormLayout from './FormLayout'
 import Input from "./Input"
+import PhoneInput from 'react-phone-input-2'
 import ContactFormCheckBox from './ContactFormCheckBox'
 import SubmitBtn from "./SubmitBtn"
+
+import 'react-phone-input-2/lib/style.css'
+
 
 export default function ContactForm1() {
   const [agreed, setAgreed] = useState(false);
@@ -87,12 +91,42 @@ export default function ContactForm1() {
         {errors.email && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.email}</span>}
       </div>
       <div className='relative w-full'>
-        <Input type="phone" label="Phone" name="phone" styles="w-full" onChange={handleChange} />
+        <PhoneInput
+          containerClass='react-phone-input'
+          inputStyle={{
+            fontSize: '1.125rem',
+            fontWeight: '500',
+            backgroundColor: 'transparent',
+            border: 'none',
+            outline: '1px solid #d1d5db',
+            borderRadius: '0.75rem',
+            boxShadow: 'none',
+            width: '100%',
+            height: '60px'
+          }}
+          buttonStyle={{
+            backgroundColor: 'transparent',
+            border: 'none',
+            borderRight: '1px solid #d1d5db',
+            borderRadius: '0.75rem 0 0 0.75rem',
+          }}
+          containerStyle={{
+            width: '100%',
+          }}
+          country={'it'}
+          value={formData.phone}
+          placeholder="Phone"
+          enableSearch
+          disableSearchIcon
+          searchPlaceholder='Search'
+          searchNotFound='No entries to show'
+          onChange={(value) => { setFormData({...formData, 'phone': value}) }}
+        />
         {errors.phone && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.phone}</span>}
       </div>
 
       <div className='relative w-full'>
-        <textarea name="message" id="" className="w-full max-h-48 font-medium bg-transparent border-0 outline outline-gray-300 rounded-lg px-3 py-4 focus:outline-gray-500 focus:ring-0" placeholder="Message" onChange={handleChange}></textarea>
+        <textarea name="message" id="" className="w-full max-h-48 font-medium bg-transparent border-0 outline outline-gray-300 rounded-lg px-3 py-4 focus:outline-2 focus:outline-gray-500 focus:ring-0" placeholder="Message" onChange={handleChange}></textarea>
         {errors.message && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.message}</span>}
       </div>
 
