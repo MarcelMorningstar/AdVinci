@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${nunitoSans.variable} ${reenie_beanie.variable}`}>
         <Navbar />
-        {children}
+          {children}
         <Footer />
       </body>
     </html>

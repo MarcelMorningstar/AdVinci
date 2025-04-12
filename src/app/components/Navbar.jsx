@@ -24,8 +24,9 @@ export default function Navbar() {
           dimensions.width > 900 && (
             <div className='flex felx-row gap-3 items-end h-10/12'>
               <LinkToHash to="/#AboutUs" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>About Us</LinkToHash>
-              <LinkToHash to="/#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Services</LinkToHash>
               <LinkToHash to="/#HowWeBuildYourBrand" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Building Your Brand</LinkToHash>
+              <Link href="/pricing" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Pricing</Link>
+              <Link href="/FAQ" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>FAQ</Link>
             </div>
           )
         }
@@ -39,21 +40,29 @@ export default function Navbar() {
                 <MenuHandler className="mb-1">
                   <span><HiMenuAlt3 className="w-9 h-9 text-gray-300 hover:text-white cursor-pointer" /></span>
                 </MenuHandler>
-                <MenuList className="realtive z-50 w-auto py-1 bg-[var(--background)]">
-                  <ul className="flex flex-col gap-1 w-full focus:outline-none rounded-md">
+                <MenuList className="relative z-50 w-auto text-right py-3 px-4">
+                  <ul className="w-full focus:outline-none">
+                    <span className="text-foreground text-base font-semibold capitalize">Company Overview</span>
                     <LinkToHash to='/#AboutUs' className="block">
                       <MenuItem className='text-right'>
-                        <span className="text-base sm:text-lg text-zinc-700 hover:text-black">About Us</span>
-                      </MenuItem>
-                    </LinkToHash>
-                    <LinkToHash to='/#Services' className="block">
-                      <MenuItem className='text-right'>
-                        <span className="text-base sm:text-lg text-zinc-700 hover:text-black">Services</span>
+                        <span className="text-zinc-700 capitalize hover:text-black">About Us</span>
                       </MenuItem>
                     </LinkToHash>
                     <LinkToHash to='/#HowWeBuildYourBrand' className="block">
                       <MenuItem className='text-right'>
-                        <span className="text-base sm:text-lg text-zinc-700 hover:text-black">Building Your Brand</span>
+                        <span className="text-zinc-700 capitalize hover:text-black">Building Your Brand</span>
+                      </MenuItem>
+                    </LinkToHash>
+                    <LinkToHash to='/pricing' className="block">
+                      <MenuItem className='text-right'>
+                        <span className="text-zinc-700 capitalize hover:text-black">Pricing</span>
+                      </MenuItem>
+                    </LinkToHash>
+                    <hr className="text-zinc-500 my-3" />
+                    <span className="text-foreground text-base font-semibold capitalize">Support</span>
+                    <LinkToHash to='/FAQ' className="block">
+                      <MenuItem className='text-right'>
+                        <span className="text-zinc-700 capitalize hover:text-black">FAQ</span>
                       </MenuItem>
                     </LinkToHash>
                   </ul>
