@@ -133,7 +133,7 @@ export default function ContactForm1() {
 
       <div className="flex flex-col gap-1">
         <label className="flex flex-row items-end gap-1 text-sm font-medium" htmlFor="file_input">Upload your idea (optional)<p className="text-xs font-normal" id="file_input_help">PNG, JPG, PDF (Max file size 10MB).</p></label>
-        <input type="file" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" id="file_input" />
+        <input type="file" accept="image/*.pdf" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" id="file_input" />
       </div>
       
       <ContactFormCheckBox agreed={agreed} setAgreed={setAgreed} />
