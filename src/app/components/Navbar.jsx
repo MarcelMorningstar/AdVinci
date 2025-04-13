@@ -36,7 +36,7 @@ export default function Navbar() {
         <LinkToHash to="/#Contact" className={styles.outlineborder}>Contact</LinkToHash>
         {
           dimensions.width <= 900 && (
-            <Menu open={openMenu} handler={setOpenMenu} placement="bottom-end">
+            <Menu open={openMenu} handler={setOpenMenu} placement="bottom-end" className="border-0 rounded-md">
                 <MenuHandler className="mb-1">
                   <span><HiMenuAlt3 className="w-9 h-9 text-gray-300 hover:text-white cursor-pointer" /></span>
                 </MenuHandler>
