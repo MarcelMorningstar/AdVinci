@@ -98,7 +98,7 @@ export default function HowItWorks() {
                                         <Image src={img} fill objectFit="contain" className="h-full" alt="" />
                                     </div>
                                 </div>
-                                <div className="w-6 h-6 bg-[var(--primary1)] rounded-3xl mt-auto"> </div>
+                                <div className="w-6 h-6 bg-[var(--primary1)] rounded-3xl mt-auto" />
                                 <div className="flex flex-1">
                                     <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
                                         <h3 className="text-lg font-semibold text-[var(--primary2)]">01</h3>
@@ -106,7 +106,10 @@ export default function HowItWorks() {
                                         <p className="text-sm sm:text-base text-gray-500">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                                     </div>
                                 </div>
-                                <div className="absolute w-full h-3 left-1/2 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div>
+                                <motion.div 
+                                    className="absolute w-[200vw] h-3 left-1/2 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)] origin-left duration-400 ease-linear"
+                                    style={{ scaleX: scrollYProgress }}
+                                ></motion.div>
                             </div>
                         </div>
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
@@ -116,7 +119,9 @@ export default function HowItWorks() {
                                         <Image src={img} fill objectFit="contain" className="h-full" alt="" />
                                     </div>
                                 </div>
-                                <div className="w-6 h-6 bg-[var(--primary1)] rounded-3xl mt-auto"> </div>
+                                <div 
+                                    className={`w-6 h-6 bg-[var(--primary1)] origin-center rounded-3xl mt-auto duration-200 ease-linear`}
+                                />
                                 <div className="flex flex-1">
                                     <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
                                         <h3 className="text-lg font-semibold text-[var(--primary2)]">02</h3>
@@ -124,7 +129,7 @@ export default function HowItWorks() {
                                         <p className="text-sm sm:text-base text-gray-500">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                                     </div>
                                 </div>
-                                <div className="absolute w-screen h-3 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div>
+                                {/* <div className="absolute w-screen h-3 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div> */}
                             </div>
                         </div>
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
@@ -134,7 +139,9 @@ export default function HowItWorks() {
                                         <Image src={img} fill objectFit="contain" className="h-full" alt="" />
                                     </div>
                                 </div>
-                                <div className="w-6 h-6 bg-[var(--primary1)] rounded-3xl mt-auto"> </div>
+                                <div 
+                                    className={`w-6 h-6 bg-[var(--primary1)] origin-center rounded-3xl mt-auto duration-200 ease-linear`}
+                                />
                                 <div className="flex flex-1">
                                     <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
                                         <h3 className="text-lg font-semibold text-[var(--primary2)]">03</h3>
@@ -142,7 +149,7 @@ export default function HowItWorks() {
                                         <p className="text-sm sm:text-base text-gray-500">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                                     </div>
                                 </div>
-                                <div className="absolute w-full h-3 -left-1/2 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div>
+                                {/* <div className="absolute w-full h-3 -left-1/2 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div> */}
                             </div>
                         </div>
                     </motion.div>
