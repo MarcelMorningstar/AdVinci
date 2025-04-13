@@ -61,7 +61,7 @@ export default function HowItWorks() {
                     <div className="relative w-11/12 sm:w-2/3 lg:w-1/2 h-2 bg-[linear-gradient(to_right,_var(--primary1)_8%,_var(--primary2)_60%)] rounded-full">
                         <div>
                             <motion.div
-                                className="absolute right-0 top-0 h-2 bg-[var(--background)] rounded-full"
+                                className="absolute z-20 right-0 top-0 h-2 bg-gray-100 rounded-full"
                                 initial={{ width: "100%" }}
                                 animate={{ width: `${100 - progress}%` }}
                                 transition={{ duration: 1, ease: "easeInOut" }}
