@@ -1,97 +1,105 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useActionState } from 'react'
 import FormLayout from './FormLayout'
 import Input from "./Input"
 import PhoneInput from 'react-phone-input-2'
 import ContactFormCheckBox from './ContactFormCheckBox'
 import SubmitBtn from "./SubmitBtn"
+import { Toaster, toast } from "sonner";
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import { sendMail } from '../utilities/mail'
 
 import 'react-phone-input-2/lib/style.css'
 
 export default function ContactForm4() {
   const [agreed, setAgreed] = useState(false);
-  const [formData, setFormData] = useState({
-    company: '',
-    vat: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
   const [errors, setErrors] = useState({
     company: '',
-    vat: '',
     email: '',
     phone: '',
     message: ''
   });
+  const initialState = { type: null, message: null };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const handleFormSubmit = async (prevState, formDataFromDom) => {
+    const formDataObj = {
+      company: formDataFromDom.get('company')?.trim() || '',
+      email: formDataFromDom.get('email')?.trim() || '',
+      phone: formDataFromDom.get('phone')?.trim() || '',
+      message: formDataFromDom.get('message')?.trim() || ''
+    };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      console.log('Form submitted:', formData);
-    }
-  };
-
-  const validate = () => {
-    let valid = true;
     const newErrors = {};
+    let valid = true;
 
-    if (!formData.company) {
+    if (!formDataObj.company) {
       newErrors.company = 'Company name is required';
       valid = false;
     }
 
-    if (!formData.email) {
+    if (!formDataObj.email) {
       newErrors.email = 'Email is required';
       valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!/\S+@\S+\.\S+/.test(formDataObj.email)) {
       newErrors.email = 'Email is invalid';
       valid = false;
     }
 
-    const phoneNumber = parsePhoneNumberFromString(`+${formData.phone}`);
+    const phoneNumber = parsePhoneNumberFromString(formDataObj.phone);
 
     if (!phoneNumber || !phoneNumber.isValid()) {
       newErrors.phone = 'Please enter a valid phone number';
       valid = false;
     }
 
-    if (!formData.message) {
+    if (!formDataObj.message) {
       newErrors.message = 'Message is required';
       valid = false;
     }
 
-    setErrors(newErrors);
-    return valid;
+    if (!valid) {
+      setErrors(newErrors);
+      return { type: 'error', message: 'Please fix the errors above.' };
+    }
+
+    setErrors({
+      company: '',
+      email: '',
+      phone: '',
+      message: ''
+    });
+
+    const result = await sendMail(formDataObj, "General enquiries");
+
+    return result;
   };
 
+  const [state, formAction, isPending] = useActionState(handleFormSubmit, initialState);
+
+  useEffect(() => {
+    if (state.message && state.type === 'success') {
+      toast.success(state.message);
+    }
+    if (state.message && state.type === 'error') {
+      toast.error(state.message);
+    }
+  }, [state]);
+
   return (
-    <FormLayout title="General enquiries" onSubmit={handleSubmit}>
-      <div className="flex flex-col sm:flex-row gap-4">
-        <div className='relative w-full'>
-          <Input type="text" label="Company Name" name="company" styles="w-full" onChange={handleChange} />
-          {errors.company && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.company}</span>}
-        </div>
-        <div className='relative w-full'>
-          <Input type="text" label="VAT" name="vat" styles="w-full" onChange={handleChange} />
-          {errors.vat && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.vat}</span>}
-        </div>
+    <FormLayout action={formAction} title="General enquiries">
+      <div className='relative w-full'>
+        <Input type="text" label="Company Name" name="company" styles="w-full" />
+        {errors.company && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.company}</span>}
       </div>
 
       <div className='relative w-full'>
-        <Input type="text" label="Email" name="email" styles="w-full" onChange={handleChange} />
+        <Input type="text" label="Email" name="email" styles="w-full" />
         {errors.email && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.email}</span>}
       </div>
       <div className='relative w-full'>
         <PhoneInput
+          inputProps={{
+            name: 'phone',
+          }}
           containerClass='react-phone-input'
           inputStyle={{
             fontSize: '1.125rem',
@@ -114,25 +122,25 @@ export default function ContactForm4() {
             width: '100%',
           }}
           country={'it'}
-          value={formData.phone}
           placeholder="Phone"
           enableSearch
           disableSearchIcon
           searchPlaceholder='Search'
           searchNotFound='No entries to show'
-          onChange={(value) => { setFormData({...formData, 'phone': value}) }}
         />
         {errors.phone && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.phone}</span>}
       </div>
       
       <div className='relative w-full'>
-        <textarea name="message" id="" className="w-full max-h-48 font-medium bg-transparent border-0 outline outline-gray-300 rounded-lg px-3 py-4 focus:outline-2 focus:outline-gray-500 focus:ring-0" placeholder="Message" onChange={handleChange}></textarea>
+        <textarea name="message" id="" className="w-full max-h-48 font-medium bg-transparent border-0 outline outline-gray-300 rounded-lg px-3 py-4 focus:outline-2 focus:outline-gray-500 focus:ring-0" placeholder="Message"></textarea>
         {errors.message && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.message}</span>}
       </div>
 
       <ContactFormCheckBox agreed={agreed} setAgreed={setAgreed} />
 
-      <SubmitBtn agreed={agreed} />
+      <SubmitBtn agreed={agreed} pending={isPending} />
+
+      <Toaster richColors />
     </FormLayout>
   )
 }

@@ -1,98 +1,128 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useActionState } from 'react'
 import FormLayout from './FormLayout'
 import Input from "./Input"
 import PhoneInput from 'react-phone-input-2'
 import ContactFormCheckBox from './ContactFormCheckBox'
 import SubmitBtn from "./SubmitBtn"
+import { Toaster, toast } from "sonner";
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import { sendMail } from '../utilities/mail'
 
 import 'react-phone-input-2/lib/style.css'
 
-
 export default function ContactForm1() {
   const [agreed, setAgreed] = useState(false);
-  const [formData, setFormData] = useState({
-    company: '',
-    vat: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
   const [errors, setErrors] = useState({
     company: '',
-    vat: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    file: ''
   });
+  const initialState = { type: null, message: null };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const handleFormSubmit = async (prevState, formDataFromDom) => {
+    const formDataObj = {
+      company: formDataFromDom.get('company')?.trim() || '',
+      email: formDataFromDom.get('email')?.trim() || '',
+      phone: formDataFromDom.get('phone')?.trim() || '',
+      message: formDataFromDom.get('message')?.trim() || '',
+      file: formDataFromDom.get('file')
+    };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      console.log('Form submitted:', formData);
-    }
-  };
-
-  const validate = () => {
-    let valid = true;
     const newErrors = {};
+    let valid = true;
 
-    if (!formData.company) {
+    if (!formDataObj.company) {
       newErrors.company = 'Company name is required';
       valid = false;
     }
 
-    if (!formData.email) {
+    if (!formDataObj.email) {
       newErrors.email = 'Email is required';
       valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!/\S+@\S+\.\S+/.test(formDataObj.email)) {
       newErrors.email = 'Email is invalid';
       valid = false;
     }
 
-    const phoneNumber = parsePhoneNumberFromString(`+${formData.phone}`);
+    const phoneNumber = parsePhoneNumberFromString(formDataObj.phone);
 
     if (!phoneNumber || !phoneNumber.isValid()) {
       newErrors.phone = 'Please enter a valid phone number';
       valid = false;
     }
 
-    if (!formData.message) {
+    if (!formDataObj.message) {
       newErrors.message = 'Message is required';
       valid = false;
     }
 
-    setErrors(newErrors);
-    return valid;
+    if (!valid) {
+      setErrors(newErrors);
+      return { type: 'error', message: 'Please fix the errors above.' };
+    }
+    
+    setErrors({
+      company: '',
+      email: '',
+      phone: '',
+      message: '',
+      file: ''
+    });
+
+    const result = await sendMail(formDataObj, "Design with us");
+
+    return result;
+  };
+
+  const [state, formAction, isPending] = useActionState(handleFormSubmit, initialState);
+
+  useEffect(() => {
+    if (state.message && state.type === 'success') {
+      toast.success(state.message);
+    }
+    if (state.message && state.type === 'error') {
+      toast.error(state.message);
+    }
+  }, [state]);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file && file.size > 20 * 1024 * 1024) {
+      setErrors({...errors, file: "File size must be under 20MB"});
+      e.target.value = null;
+      return;
+    }
+
+    if (file) {
+      setErrors({
+        company: '',
+        email: '',
+        phone: '',
+        message: '',
+        file: ''
+      });
+    }
   };
 
   return (
-    <FormLayout title="Design with us" onSubmit={handleSubmit}>
-      <div className="flex flex-col sm:flex-row gap-4">
-        <div className='relative w-full'>
-          <Input type="text" label="Company Name" name="company" styles="w-full" onChange={handleChange} />
-          {errors.company && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.company}</span>}
-        </div>
-        <div className='relative w-full'>
-          <Input type="text" label="VAT" name="vat" styles="w-full" onChange={handleChange} />
-          {errors.vat && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.vat}</span>}
-        </div>
+    <FormLayout action={formAction} title="Design with us">
+      <div className='relative w-full'>
+        <Input type="text" label="Company Name" name="company" styles="w-full" />
+        {errors.company && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.company}</span>}
       </div>
 
       <div className='relative w-full'>
-        <Input type="email" label="Email" name="email" styles="w-full" onChange={handleChange} />
+        <Input type="email" label="Email" name="email" styles="w-full" />
         {errors.email && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.email}</span>}
       </div>
       <div className='relative w-full'>
         <PhoneInput
+          inputProps={{
+            name: 'phone',
+          }}
           containerClass='react-phone-input'
           inputStyle={{
             fontSize: '1.125rem',
@@ -115,30 +145,30 @@ export default function ContactForm1() {
             width: '100%',
           }}
           country={'it'}
-          value={formData.phone}
           placeholder="Phone"
           enableSearch
           disableSearchIcon
           searchPlaceholder='Search'
           searchNotFound='No entries to show'
-          onChange={(value) => { setFormData({...formData, 'phone': value}) }}
         />
         {errors.phone && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.phone}</span>}
       </div>
 
       <div className='relative w-full'>
-        <textarea name="message" id="" className="w-full max-h-48 font-medium bg-transparent border-0 outline outline-gray-300 rounded-lg px-3 py-4 focus:outline-2 focus:outline-gray-500 focus:ring-0" placeholder="Message" onChange={handleChange}></textarea>
+        <textarea name="message" id="" className="w-full max-h-48 font-medium bg-transparent border-0 outline outline-gray-300 rounded-lg px-3 py-4 focus:outline-2 focus:outline-gray-500 focus:ring-0" placeholder="Message"></textarea>
         {errors.message && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.message}</span>}
       </div>
 
       <div className="flex flex-col gap-1">
-        <label className="flex flex-row items-end gap-1 text-sm font-medium" htmlFor="file_input">Upload your idea (optional)<p className="text-xs font-normal" id="file_input_help">PNG, JPG, PDF (Max file size 10MB).</p></label>
-        <input type="file" accept="image/*.pdf" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" id="file_input" />
+        <label className="flex flex-row items-end gap-1 text-sm font-medium" htmlFor="file_input">Upload your idea (optional)<p className="text-xs font-normal" id="file_input_help">Image, PDF (Max file size 20MB).</p></label>
+        <input type="file" name="file" accept="image/*,.pdf" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" id="file_input" onChange={handleFileChange} />
       </div>
       
       <ContactFormCheckBox agreed={agreed} setAgreed={setAgreed} />
         
-      <SubmitBtn agreed={agreed} />
+      <SubmitBtn agreed={agreed} pending={isPending} />
+
+      <Toaster richColors />
     </FormLayout>
   )
 }
