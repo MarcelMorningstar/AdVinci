@@ -85,9 +85,11 @@ export default function ContactForm3() {
 
   useEffect(() => {
     if (state.message && state.type === 'success') {
+      setAgreed(false);
       toast.success(state.message);
     }
     if (state.message && state.type === 'error') {
+      setAgreed(false);
       toast.error(state.message);
     }
   }, [state]);

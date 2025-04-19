@@ -28,15 +28,17 @@ export const sendMail = async (formData, formName) => {
 
         let attachments = [];
 
-        if (formData.file.size > 0) {
-            const arrayBuffer = await formData.file.arrayBuffer();
-            const buffer = Buffer.from(arrayBuffer);
-        
-            attachments.push({
-              filename: formData.file.name,
-              content: buffer,
-              contentType: formData.file.type,
-            });
+        if (formData.file) {
+            if (formData.file.size > 0) {
+                const arrayBuffer = await formData.file.arrayBuffer();
+                const buffer = Buffer.from(arrayBuffer);
+            
+                attachments.push({
+                filename: formData.file.name,
+                content: buffer,
+                contentType: formData.file.type,
+                });
+            }
         }
 
         const mailOptions = {
