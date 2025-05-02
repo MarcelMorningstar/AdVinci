@@ -66,8 +66,8 @@ export default function Page() {
     const details = document.getElementsByTagName("details");
 
     for (let i = 0; i < details.length; i++) {
-      let element = details[i];
-      let Elementid = Number(element.getAttribute("data-id"));
+      const element = details[i];
+      const Elementid = Number(element.getAttribute("data-id"));
 
       if (Elementid !== id && element.hasAttribute("open")) {
         element.removeAttribute("open");
