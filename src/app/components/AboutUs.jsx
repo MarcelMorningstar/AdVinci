@@ -1,13 +1,16 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useWindowDimensions } from "../utilities/window";
-// import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import { FaStar, FaLightbulb, FaRocket } from "react-icons/fa";
+import { FaStar, FaLightbulb } from "react-icons/fa";
 import { FaEarthAfrica } from "react-icons/fa6";
-// import { SiPinterest, SiInstagram, SiFacebook, } from "react-icons/si";
+import img from '../assets/arita.jpg'
+import Image from "next/image";
+import img1 from '../assets/service1.jpg'
+import img2 from '../assets/service2.jpg'
+import img3 from '../assets/service3.jpg'
 
 const items = [
     {
@@ -34,9 +37,29 @@ const items = [
 ];
 
 export default function AboutUs() {
+    const ref = useRef(null)
+    const [mobile, setMobile] = useState(false)
+    const dimensions = useWindowDimensions();
+    const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] })
+
+    useEffect(() => {
+      if (dimensions.width <= 1280) {
+        setMobile(true)
+      } else {
+        setMobile(false)
+      }
+    }, [dimensions])
+
+    const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? ["-150px", "120px"] : ["-120px", "220px"]);
+    const raw2Y = useTransform(scrollYProgress, [0, 0.75], mobile ? ["50px", "220px"] : ["50px", "350px"]);
+    const raw3Y = useTransform(scrollYProgress, [0, 0.8], mobile ? ["-170px", "180px"] : ["-200px", "280px"]);
+    const parallax1Y = useSpring(raw1Y, { stiffness: 70, damping: 7 });
+    const parallax2Y = useSpring(raw2Y, { stiffness: 70, damping: 7 });
+    const parallax3Y = useSpring(raw3Y, { stiffness: 70, damping: 7 });
+
     return (
-        <section id="AboutUs" className="flex justify-center items-center pt-32">
-            <div className="w-10/12 flex flex-col justify-center items-center">
+        <section id="AboutUs" className="flex flex-col gap-44 py-16 justify-center items-center">
+            <div className="w-10/12 flex flex-col xl:flex-row gap-8 items-stretch">
                 <div 
                     // initial="initial"
                     // whileInView={"animate"}
@@ -50,6 +73,45 @@ export default function AboutUs() {
                     {/* <HeaderBlock /> */}
                     {/* <SocialsBlock /> */}
                     {/* <ServicesBlock /> */}
+                </div>
+                <div ref={ref} className="relative left-1/2 -translate-x-1/2 xl:left-0 xl:translate-x-0 w-full h-96 md:w-11/12 lg:w-3/4 xl:w-full order-first xl:order-2">
+                    <motion.div
+                        className="absolute left-4 w-52 h-36 bg-gray-400 rounded-[48px] z-30 shadow-lg"
+                        style={{ y: parallax1Y }}
+                    >
+                        <Image src={img1} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />         
+                    </motion.div>
+                    <motion.div
+                        className="absolute left-1/3 w-44 h-44 bg-gray-400 rounded-[48px] z-10 shadow-lg"
+                        style={{ y: parallax2Y }}
+                    >
+                        <Image src={img3} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />
+                    </motion.div>
+                    {
+                        dimensions.width > 690 && (
+                            <motion.div
+                                className="absolute right-2 w-46 h-32 bg-gray-400 rounded-[48px] z-20 shadow-lg"
+                                style={{ y: parallax3Y }}
+                            >
+                                <Image src={img2} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />
+                            </motion.div>
+                        )
+                    }
+                    
+                </div>
+            </div>
+
+            <div className="w-full flex flex-col gap-52 justify-center items-center">
+                <div className="w-10/12 md:w-9/12 flex flex-col lg:flex-row gap-12 items-center lg:items-start">
+                    <div className="relative w-[300px] sm:w-[400px] h-[400px] shrink-0">
+                        <Image src={img} fill className="object-cover rounded-2xl" loading='lazy' alt="" />
+                    </div>
+                    <div className="flex flex-col gap-2.5 justify-center text-xl text-center lg:text-left">
+                        <p>I'm Arita, founder of AdVinci. With a strong background in art, design, and digital media, creativity has been at the core of my journey. Originally from the Baltics, I spent a decade in England gaining international experience before relocating to Italy, where I established AdVinci.</p>
+                        <p>I also spent several years working in Estonia, one of the world’s most digitally advanced and tech-driven countries, further strengthening my expertise in digital innovation. Over the years, I have designed property interiors, created art collections, and evolved into active digital creation.</p>
+                        <p>Today, my hands-on experience in digital marketing, design, and content strategy drives AdVinci’s approach, helping businesses grow their online presence with creativity and precision.</p>
+                        <span id="signature" className="text-8xl">Arita Bluka</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -89,7 +151,7 @@ const Block = ({ id, className, children, ...rest }) => {
     );
 };
 
-const Panel = ({ open, setOpen, id, Icon, title, imgSrc, description }) => {
+const Panel = ({ open, setOpen, id, Icon, title, description }) => {
     const dimensions = useWindowDimensions();
     const isOpen = open === id;
     const formattedDescription = description.replace(/\n/g, '<br />');
@@ -121,7 +183,7 @@ const Panel = ({ open, setOpen, id, Icon, title, imgSrc, description }) => {
             opacity: 1,
             y: "0%",
             transition: {
-            delay: 0.125,
+                delay: 0.125,
             },
         },
         closed: { opacity: 0, y: "100%" },

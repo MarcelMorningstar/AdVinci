@@ -51,7 +51,7 @@ export default function HowItWorks() {
 
     return (
         <section id="HowWeBuildYourBrand" className="">
-            <div className='flex flex-col gap-6 h-[70vh] items-center justify-center'>
+            <div className='flex flex-col gap-6 h-[60vh] items-center justify-center'>
                 <div className='flex flex-col gap-2 px-4 w-11/12'>
                     <h2 className='text-center text-4xl sm:text-7xl font-bold'>Let's Talk How we <i>Build</i> your Brand</h2>
                     <p className='text-center text-base sm:text-lg text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -102,8 +102,8 @@ export default function HowItWorks() {
                                 <div className="flex flex-1">
                                     <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
                                         <h3 className="text-lg font-semibold text-[var(--primary2)]">01</h3>
-                                        <h3 className="text-2xl sm:text-3xl font-bold">Thing to Do</h3>
-                                        <p className="text-sm sm:text-base text-gray-500">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                        <h3 className="text-2xl sm:text-3xl font-bold">Strategy & Design</h3>
+                                        <p className="text-sm sm:text-base text-gray-500">We work closely with you to define the project, craft the advertisement, and shape a strategic campaign.</p>
                                     </div>
                                 </div>
                                 <motion.div 
@@ -128,8 +128,8 @@ export default function HowItWorks() {
                                 <div className="flex flex-1">
                                     <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
                                         <h3 className="text-lg font-semibold text-[var(--primary2)]">02</h3>
-                                        <h3 className="text-2xl sm:text-3xl font-bold">Thing to Do</h3>
-                                        <p className="text-sm sm:text-base text-gray-500">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                        <h3 className="text-2xl sm:text-3xl font-bold">Launch & Activate</h3>
+                                        <p className="text-sm sm:text-base text-gray-500">We launch your campaign, making it visible to your target audience and ensuring maximum reach.</p>
                                     </div>
                                 </div>
                                 {/* <div className="absolute w-screen h-3 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div> */}
@@ -148,8 +148,8 @@ export default function HowItWorks() {
                                 <div className="flex flex-1">
                                     <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
                                         <h3 className="text-lg font-semibold text-[var(--primary2)]">03</h3>
-                                        <h3 className="text-2xl sm:text-3xl font-bold">Thing to Do</h3>
-                                        <p className="text-sm sm:text-base text-gray-500">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                        <h3 className="text-2xl sm:text-3xl font-bold">Measure & Optimize</h3>
+                                        <p className="text-sm sm:text-base text-gray-500">We track performance, analyze results, and refine the campaign for continuous improvement.</p>
                                     </div>
                                 </div>
                                 {/* <div className="absolute w-full h-3 -left-1/2 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div> */}

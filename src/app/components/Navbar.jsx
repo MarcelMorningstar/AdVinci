@@ -21,10 +21,11 @@ export default function Navbar() {
           <Image src={Logo} fill objectFit='contain' priority alt='AdVinci' />
         </LinkToHash>
         {
-          dimensions.width > 900 && (
+          dimensions.width > 950 && (
             <div className='flex felx-row gap-3 items-end h-10/12'>
               <LinkToHash to="/#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Services</LinkToHash>
               <LinkToHash to="/#HowWeBuildYourBrand" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Building Your Brand</LinkToHash>
+              <LinkToHash to="/#AboutUs" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>About Us</LinkToHash>
               <Link href="/pricing" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Pricing</Link>
               <Link href="/FAQ" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>FAQ</Link>
             </div>
@@ -35,7 +36,7 @@ export default function Navbar() {
       <div className='flex flex-row gap-3 items-end h-full'>
         <LinkToHash to="/#Contact" className={styles.outlineborder}>Contact</LinkToHash>
         {
-          dimensions.width <= 900 && (
+          dimensions.width <= 950 && (
             <Menu open={openMenu} handler={setOpenMenu} placement="bottom-end" className="border-0 rounded-md">
                 <MenuHandler className="mb-1">
                   <span><HiMenuAlt3 className="w-9 h-9 text-gray-300 hover:text-white cursor-pointer" /></span>
@@ -51,6 +52,11 @@ export default function Navbar() {
                     <LinkToHash to='/#HowWeBuildYourBrand' className="block">
                       <MenuItem className='text-right'>
                         <span className="text-zinc-700 capitalize hover:text-black">Building Your Brand</span>
+                      </MenuItem>
+                    </LinkToHash>
+                    <LinkToHash to='/#Services' className="block">
+                      <MenuItem className='text-right'>
+                        <span className="text-zinc-700 capitalize hover:text-black">About Us</span>
                       </MenuItem>
                     </LinkToHash>
                     <LinkToHash to='/pricing' className="block">

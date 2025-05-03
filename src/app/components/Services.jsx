@@ -36,7 +36,7 @@ const serviceData = {
 
 export default function Services() {
     return (
-        <section id="Services" className="min-h-screen flex justify-center items-center pt-32">
+        <section id="Services" className="min-h-[80vh] flex justify-center items-center pt-32">
             <div className="w-10/12 flex flex-col justify-center items-center">
                 <div className='flex flex-col justify-center items-center gap-2 mb-8'>
                     <h2 className='text-center text-3xl sm:text-5xl font-bold'>What We Offer</h2>
