@@ -1,0 +1,43 @@
+.block {
+    position: relative;
+    grid-column: span 6 / span 6;
+    aspect-ratio: 1 / 1;
+
+    @media (min-width: 1024px) {
+        grid-column: span 3 / span 3;
+    }
+
+    .glass {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        transition: all 300ms ease;
+        z-index: 10;
+        border-radius: 0.5rem;
+    }
+
+    &:hover .glass {
+        background-color: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(0.5px);
+    }
+
+    .iconContainer {
+        position: relative;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        .icon {
+            color: var(--background);
+            font-size: 2.25rem;
+            line-height: 2.5rem; 
+        }
+    }
+}
