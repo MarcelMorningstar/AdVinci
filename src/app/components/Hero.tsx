@@ -44,7 +44,7 @@ export default function Hero() {
                             )
                         }
                         <div className='flex flex-col max-w-11/12'>
-                            <h1 className='text-3xl sm:text-4xl text-center text-gray-400'>Welcome to the <i>Advertising</i> Angency</h1>
+                            <h1 className='text-3xl sm:text-4xl text-center text-gray-400'>Smart <i className='text-4xl sm:text-5xl'>Advertising</i> that Works</h1>
                         </div>
                     </div>
                 )

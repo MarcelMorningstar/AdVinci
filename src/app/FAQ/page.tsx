@@ -78,8 +78,7 @@ export default function Page() {
   return (
     <section className='flex flex-col items-center px-8 sm:px-16 py-36'>
       <div className='flex flex-col justify-center items-center gap-2 mb-4'>
-        <h1 className='text-center text-3xl sm:text-5xl font-bold'>Frequently Asked questions</h1>
-        <p className='text-center w-2/3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis nobis temporibus, officiis quam quas eos natus autem quia.</p>
+        <h1 className='text-center text-3xl sm:text-5xl font-bold'>Frequently Asked Questions</h1>
       </div>
 
       <div className='w-full lg:w-3/4 xl:w-1/2'>

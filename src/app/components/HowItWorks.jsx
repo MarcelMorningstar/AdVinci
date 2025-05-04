@@ -51,10 +51,9 @@ export default function HowItWorks() {
 
     return (
         <section id="HowWeBuildYourBrand" className="">
-            <div className='flex flex-col gap-6 h-[60vh] items-center justify-center'>
+            <div className='flex flex-col gap-6 min-h-[50vh] items-center justify-center'>
                 <div className='flex flex-col gap-2 px-4 w-11/12'>
-                    <h2 className='text-center text-4xl sm:text-7xl font-bold'>Let's Talk How we <i>Build</i> your Brand</h2>
-                    <p className='text-center text-base sm:text-lg text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h2 className='text-center text-4xl sm:text-7xl font-bold'>How We <i className="text-5xl sm:text-8xl">Grow</i> Your Business</h2>
                 </div>
 
                 <div className="flex flex-col w-full p-4 items-center">

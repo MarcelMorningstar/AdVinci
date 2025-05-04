@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import LinkToHash from "./LinkToHash";
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../assets/logo.svg'
@@ -17,15 +16,14 @@ export default function Navbar() {
   return (
     <nav className='fixed z-50 flex flex-row justify-between w-full h-20 px-[12%] bg-[var(--foreground)]'>
       <div className='flex flex-row gap-1 items-end pb-2.5'>
-        <LinkToHash to="/#Home" className='relative h-8/12 aspect-[1.47]'>
+        <Link href="/#Home" className='relative h-8/12 aspect-[1.47]'>
           <Image src={Logo} fill objectFit='contain' priority alt='AdVinci' />
-        </LinkToHash>
+        </Link>
         {
-          dimensions.width > 950 && (
+          dimensions.width > 920 && (
             <div className='flex felx-row gap-3 items-end h-10/12'>
-              <LinkToHash to="/#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Services</LinkToHash>
-              <LinkToHash to="/#HowWeBuildYourBrand" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Building Your Brand</LinkToHash>
-              <LinkToHash to="/#AboutUs" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>About Us</LinkToHash>
+              <Link href="/#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Services</Link>
+              <Link href="/aboutus" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>About Us</Link>
               <Link href="/pricing" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Pricing</Link>
               <Link href="/FAQ" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>FAQ</Link>
             </div>
@@ -34,7 +32,7 @@ export default function Navbar() {
       </div>
 
       <div className='flex flex-row gap-3 items-end h-full'>
-        <LinkToHash to="/#Contact" className={styles.outlineborder}>Contact</LinkToHash>
+        <Link href="/#Contact" className={styles.outlineborder}>Contact</Link>
         {
           dimensions.width <= 950 && (
             <Menu open={openMenu} handler={setOpenMenu} placement="bottom-end" className="border-0 rounded-md">
@@ -44,33 +42,28 @@ export default function Navbar() {
                 <MenuList className="relative z-50 w-auto text-right py-3 px-4">
                   <ul className="w-full focus:outline-none">
                     <span className="text-foreground text-base font-semibold capitalize">Company Overview</span>
-                    <LinkToHash to='/#Services' className="block">
+                    <Link href='/#Services' className="block">
                       <MenuItem className='text-right'>
                         <span className="text-zinc-700 capitalize hover:text-black">Services</span>
                       </MenuItem>
-                    </LinkToHash>
-                    <LinkToHash to='/#HowWeBuildYourBrand' className="block">
-                      <MenuItem className='text-right'>
-                        <span className="text-zinc-700 capitalize hover:text-black">Building Your Brand</span>
-                      </MenuItem>
-                    </LinkToHash>
-                    <LinkToHash to='/#Services' className="block">
+                    </Link>
+                    <Link href='/aboutus' className="block">
                       <MenuItem className='text-right'>
                         <span className="text-zinc-700 capitalize hover:text-black">About Us</span>
                       </MenuItem>
-                    </LinkToHash>
-                    <LinkToHash to='/pricing' className="block">
+                    </Link>
+                    <Link href='/pricing' className="block">
                       <MenuItem className='text-right'>
                         <span className="text-zinc-700 capitalize hover:text-black">Pricing</span>
                       </MenuItem>
-                    </LinkToHash>
+                    </Link>
                     <hr className="text-zinc-500 my-3" />
                     <span className="text-foreground text-base font-semibold capitalize">Support</span>
-                    <LinkToHash to='/FAQ' className="block">
+                    <Link href='/FAQ' className="block">
                       <MenuItem className='text-right'>
                         <span className="text-zinc-700 capitalize hover:text-black">FAQ</span>
                       </MenuItem>
-                    </LinkToHash>
+                    </Link>
                   </ul>
                 </MenuList>
             </Menu>

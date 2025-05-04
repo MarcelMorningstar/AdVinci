@@ -11,6 +11,7 @@ import Image from "next/image";
 import img1 from '../assets/service1.jpg'
 import img2 from '../assets/service2.jpg'
 import img3 from '../assets/service3.jpg'
+import styles from '../styles/About.module.scss';
 
 const items = [
     {
@@ -39,6 +40,7 @@ const items = [
 export default function AboutUs() {
     const ref = useRef(null)
     const [mobile, setMobile] = useState(false)
+    const [open, setOpen] = useState(items[0].id);
     const dimensions = useWindowDimensions();
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] })
 
@@ -50,69 +52,96 @@ export default function AboutUs() {
       }
     }, [dimensions])
 
-    const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? ["-150px", "120px"] : ["-120px", "220px"]);
-    const raw2Y = useTransform(scrollYProgress, [0, 0.75], mobile ? ["50px", "220px"] : ["50px", "350px"]);
-    const raw3Y = useTransform(scrollYProgress, [0, 0.8], mobile ? ["-170px", "180px"] : ["-200px", "280px"]);
+    const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? ["-200px", "100px"] : ["-300px", "220px"]);
+    const raw2Y = useTransform(scrollYProgress, [0, 0.75], mobile ? ["-50px", "200px"] : ["-50px", "350px"]);
+    const raw3Y = useTransform(scrollYProgress, [0, 0.8], mobile ? ["-400px", "180px"] : ["-400px", "280px"]);
     const parallax1Y = useSpring(raw1Y, { stiffness: 70, damping: 7 });
     const parallax2Y = useSpring(raw2Y, { stiffness: 70, damping: 7 });
     const parallax3Y = useSpring(raw3Y, { stiffness: 70, damping: 7 });
 
     return (
-        <section id="AboutUs" className="flex flex-col gap-44 py-16 justify-center items-center">
-            <div className="w-10/12 flex flex-col xl:flex-row gap-8 items-stretch">
-                <div 
-                    // initial="initial"
-                    // whileInView={"animate"}
-                    // viewport={{ amount: 0.1, once: true }}
-                    // transition={{
-                    //     staggerChildren: 0.25,
-                    // }}
-                    className="w-full mx-auto grid max-w-4xl grid-flow-dense grid-cols-12 gap-5"
-                >
-                    <AboutBlock />
-                    {/* <HeaderBlock /> */}
-                    {/* <SocialsBlock /> */}
-                    {/* <ServicesBlock /> */}
-                </div>
-                <div ref={ref} className="relative left-1/2 -translate-x-1/2 xl:left-0 xl:translate-x-0 w-full h-96 md:w-11/12 lg:w-3/4 xl:w-full order-first xl:order-2">
-                    <motion.div
+        <section id="AboutUs" className="flex flex-col gap-20 sm:gap-16 pt-44 pb-16">
+            <h1 className="text-center text-4xl sm:text-5xl font-bold">About Us</h1>
+            <div className="flex flex-col gap-20 justify-center items-center">
+              <div className="w-10/12 flex flex-col xl:flex-row gap-8 items-stretch">
+                  <div className="w-full">
+                    <div className="flex flex-col h-[550px] lg:h-[420px] w-full max-w-6xl mx-auto shadow overflow-hidden rounded-lg">
+                      {items.map((item) => {
+                        return (
+                          <Panel
+                            key={item.id}
+                            open={open}
+                            setOpen={setOpen}
+                            id={item.id}
+                            Icon={item.Icon}
+                            title={item.title}
+                            imgSrc={item.imgSrc}
+                            description={item.description}
+                          />
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div ref={ref} className="relative left-1/2 -translate-x-1/2 xl:left-0 xl:translate-x-0 w-full h-96 md:w-11/12 lg:w-3/4 xl:w-full order-first xl:order-2">
+                      <motion.div
                         className="absolute left-4 w-52 h-36 bg-gray-400 rounded-[48px] z-30 shadow-lg"
                         style={{ y: parallax1Y }}
-                    >
+                      >
                         <Image src={img1} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />         
-                    </motion.div>
-                    <motion.div
+                      </motion.div>
+                      <motion.div
                         className="absolute left-1/3 w-44 h-44 bg-gray-400 rounded-[48px] z-10 shadow-lg"
                         style={{ y: parallax2Y }}
-                    >
+                      >
                         <Image src={img3} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />
-                    </motion.div>
-                    {
+                      </motion.div>
+                      {
                         dimensions.width > 690 && (
                             <motion.div
-                                className="absolute right-2 w-46 h-32 bg-gray-400 rounded-[48px] z-20 shadow-lg"
-                                style={{ y: parallax3Y }}
+                              className="absolute right-2 w-46 h-32 bg-gray-400 rounded-[48px] z-20 shadow-lg"
+                              style={{ y: parallax3Y }}
                             >
-                                <Image src={img2} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />
+                              <Image src={img2} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />
                             </motion.div>
                         )
-                    }
-                    
-                </div>
-            </div>
+                      }
+                      
+                  </div>
+              </div>
 
-            <div className="w-full flex flex-col gap-52 justify-center items-center">
-                <div className="w-10/12 md:w-9/12 flex flex-col lg:flex-row gap-12 items-center lg:items-start">
-                    <div className="relative w-[300px] sm:w-[400px] h-[400px] shrink-0">
-                        <Image src={img} fill className="object-cover rounded-2xl" loading='lazy' alt="" />
-                    </div>
-                    <div className="flex flex-col gap-2.5 justify-center text-xl text-center lg:text-left">
-                        <p>I'm Arita, founder of AdVinci. With a strong background in art, design, and digital media, creativity has been at the core of my journey. Originally from the Baltics, I spent a decade in England gaining international experience before relocating to Italy, where I established AdVinci.</p>
-                        <p>I also spent several years working in Estonia, one of the world’s most digitally advanced and tech-driven countries, further strengthening my expertise in digital innovation. Over the years, I have designed property interiors, created art collections, and evolved into active digital creation.</p>
-                        <p>Today, my hands-on experience in digital marketing, design, and content strategy drives AdVinci’s approach, helping businesses grow their online presence with creativity and precision.</p>
-                        <span id="signature" className="text-8xl">Arita Bluka</span>
-                    </div>
+              <div className="relative w-full h-28 bg-[var(--pastal)]">
+                <div className={styles.topline}>
+                  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+                      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
+                      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+                  </svg>
+                </div> 
+                <div className={styles.bottomline}>
+                  <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+                      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
+                      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+                  </svg>
                 </div>
+              </div>
+              
+              <div className="flex gap-52">
+                  <div className="w-full flex flex-col gap-20 sm:gap-16 justify-center items-center">
+                    <h1 className="text-center text-4xl sm:text-5xl font-bold">Our Journey</h1>
+                    <div className="w-10/12 md:w-9/12 flex flex-col lg:flex-row gap-12 items-center lg:items-start">
+                        <div className="relative w-[300px] sm:w-[400px] h-[400px] shrink-0">
+                          <Image src={img} fill className="object-cover rounded-2xl" loading='lazy' alt="" />
+                        </div>
+                        <div className="flex flex-col gap-2.5 justify-center text-xl text-center lg:text-left">
+                          <p>I'm Arita, founder of AdVinci. With a strong background in art, design, and digital media, creativity has been at the core of my journey. Originally from the Baltics, I spent a decade in England gaining international experience before relocating to Italy, where I established AdVinci.</p>
+                          <p>I also spent several years working in Estonia, one of the world’s most digitally advanced and tech-driven countries, further strengthening my expertise in digital innovation. Over the years, I have designed property interiors, created art collections, and evolved into active digital creation.</p>
+                          <p>Today, my hands-on experience in digital marketing, design, and content strategy drives AdVinci’s approach, helping businesses grow their online presence with creativity and precision.</p>
+                          <span id="signature" className="text-8xl">Arita Bluka</span>
+                        </div>
+                    </div>
+                  </div>
+              </div>
             </div>
         </section>
     )
@@ -192,22 +221,22 @@ const Panel = ({ open, setOpen, id, Icon, title, description }) => {
     return (
       <>
         <button
-          className="bg-white hover:bg-slate-50 transition-colors p-3 border-l-[1px] border-r-[1px] border-b-[1px] border-slate-200 flex flex-row-reverse lg:flex-col justify-end items-center gap-4 relative group"
+          className="bg-white hover:bg-slate-50 transition-colors p-3 border-l-[1px] border-r-[1px] border-b-[1px] border-slate-200 flex flex-row-reverse justify-end items-center gap-4 relative group"
           onClick={() => setOpen(id)}
         >
           <span
             style={{
               writingMode: "vertical-lr",
             }}
-            className="hidden lg:block text-xl font-light rotate-180"
+            className="hidden text-xl font-light rotate-180"
           >
             {title}
           </span>
-          <span className="block lg:hidden text-xl font-light">{title}</span>
-          <div className="w-6 lg:w-full aspect-square text-[var(--primary2)] grid place-items-center">
+          <span className="block text-xl font-light">{title}</span>
+          <div className="w-6 aspect-square text-[var(--primary2)] grid place-items-center">
             <Icon />
           </div>
-          <span className="w-4 h-4 bg-white group-hover:bg-slate-50 transition-colors border-r-[1px] border-b-[1px] lg:border-b-0 lg:border-t-[1px] border-slate-200 rotate-45 absolute bottom-0 lg:bottom-[50%] right-[50%] lg:right-0 translate-y-[50%] translate-x-[50%] z-20" />
+          <span className="w-4 h-4 bg-white group-hover:bg-slate-50 transition-colors border-r-[1px] border-b-[1px] border-slate-200 rotate-45 absolute bottom-0 right-[50%] translate-y-[50%] translate-x-[50%] z-20" />
         </button>
   
         <AnimatePresence>
@@ -235,31 +264,6 @@ const Panel = ({ open, setOpen, id, Icon, title, description }) => {
         </AnimatePresence>
       </>
     );
-};
-
-const AboutBlock = () => {
-    const [open, setOpen] = useState(items[0].id);
-
-    return (
-        <Block className="col-span-12">
-            <div className="flex flex-col lg:flex-row h-[550px] lg:h-[400px] w-full max-w-6xl mx-auto shadow overflow-hidden rounded-lg">
-                {items.map((item) => {
-                    return (
-                        <Panel
-                            key={item.id}
-                            open={open}
-                            setOpen={setOpen}
-                            id={item.id}
-                            Icon={item.Icon}
-                            title={item.title}
-                            imgSrc={item.imgSrc}
-                            description={item.description}
-                        />
-                    );
-                })}
-            </div>
-        </Block>
-    )
 };
 
 // const HeaderBlock = () => (

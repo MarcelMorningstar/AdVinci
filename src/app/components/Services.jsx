@@ -1,8 +1,9 @@
 'use client'
 
 import React, { useState } from "react";
-import LinkToHash from "./LinkToHash";
+import Link from 'next/link';
 import Image from "next/image";
+import BrandLine from './BrandLine'
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { MdEmail } from "react-icons/md";
@@ -36,7 +37,7 @@ const serviceData = {
 
 export default function Services() {
     return (
-        <section id="Services" className="min-h-[80vh] flex justify-center items-center pt-32">
+        <section id="Services" className="min-h-[80vh] flex flex-col gap-32 justify-center items-center pt-32">
             <div className="w-10/12 flex flex-col justify-center items-center">
                 <div className='flex flex-col justify-center items-center gap-2 mb-8'>
                     <h2 className='text-center text-3xl sm:text-5xl font-bold'>What We Offer</h2>
@@ -55,6 +56,8 @@ export default function Services() {
                     <ServiceBlock />
                 </motion.div>
             </div>
+
+            <BrandLine />
         </section>
     )
 }
@@ -186,12 +189,12 @@ const ServiceBlock = () => {
                 }}
                 className="col-span-6 lg:col-span-3 aspect-square bg-[linear-gradient(to_bottom_left,_var(--primary1),_var(--primary2)_60%)]"
             >
-                <LinkToHash
-                    to="/#Contact"
+                <Link
+                    href="/#Contact"
                     className="grid w-full h-full place-content-center text-3xl text-white"
                 >
                     <MdEmail />
-                </LinkToHash>
+                </Link>
             </Block>
         </>
     )

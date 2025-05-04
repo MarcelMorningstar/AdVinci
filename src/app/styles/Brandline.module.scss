@@ -1,0 +1,58 @@
+.bottomline {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+
+    svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 32px;
+    }
+
+    path {
+        fill: var(--pastal);
+    }
+}
+
+.topline {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+
+    svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 32px;
+    }
+
+    path {
+        fill: var(--pastal);
+    }
+}
+
+@media (min-width: 768px) {
+    .topline {
+        top: -49px;
+
+        svg {
+            height: 50px;
+        }
+    }
+
+    .bottomline {
+        bottom: -49px;
+
+        svg {
+            height: 50px;
+        }
+    }
+}

@@ -49,11 +49,11 @@ export default function Contact() {
     };
 
     return (
-        <section id='Contact' className='flex justify-center items-center min-h-screen py-8'>
+        <section id='Contact' className='flex justify-center items-center py-16'>
             <div className='flex flex-col xl:flex-row max-w-[920px] xl:max-w-[1400px] gap-16 px-4 sm:px-16'>
                 <div className='flex flex-col flex-1'>
                     <div className='flex flex-col px-4 sm:px-24 mb-8 gap-1'>
-                        <h2 className='text-center text-2xl sm:text-4xl font-bold'>Let's Talk about New <i>Opportunities</i></h2>
+                        <h2 className='text-center text-2xl sm:text-4xl font-bold'>Let's Talk about New <i className='text-3xl sm:text-5xl'>Opportunities</i></h2>
                         <p className='text-center text-gray-500 text-sm sm:text-base'>Let's find the right department.</p>
                     </div>
 
