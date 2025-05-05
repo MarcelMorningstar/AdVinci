@@ -8,9 +8,9 @@ import { FaStar, FaLightbulb } from "react-icons/fa";
 import { FaEarthAfrica } from "react-icons/fa6";
 import img from '../assets/arita.jpg'
 import Image from "next/image";
-import img1 from '../assets/service1.jpg'
-import img2 from '../assets/service2.jpg'
-import img3 from '../assets/service3.jpg'
+import img1 from '../assets/aboutus1.jpg'
+import img2 from '../assets/aboutus2.jpg'
+import img3 from '../assets/aboutus3.jpg'
 import styles from '../styles/About.module.scss';
 
 const items = [
@@ -53,8 +53,8 @@ export default function AboutUs() {
     }, [dimensions])
 
     const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? ["-200px", "100px"] : ["-300px", "220px"]);
-    const raw2Y = useTransform(scrollYProgress, [0, 0.75], mobile ? ["-50px", "200px"] : ["-50px", "350px"]);
-    const raw3Y = useTransform(scrollYProgress, [0, 0.8], mobile ? ["-400px", "180px"] : ["-400px", "280px"]);
+    const raw2Y = useTransform(scrollYProgress, [0, 0.75], mobile ? ["-50px", "200px"] : ["-200px", "350px"]);
+    const raw3Y = useTransform(scrollYProgress, [0, 0.8], mobile ? ["-400px", "180px"] : ["-700px", "280px"]);
     const parallax1Y = useSpring(raw1Y, { stiffness: 70, damping: 7 });
     const parallax2Y = useSpring(raw2Y, { stiffness: 70, damping: 7 });
     const parallax3Y = useSpring(raw3Y, { stiffness: 70, damping: 7 });
@@ -84,13 +84,13 @@ export default function AboutUs() {
                   </div>
                   <div ref={ref} className="relative left-1/2 -translate-x-1/2 xl:left-0 xl:translate-x-0 w-full h-96 md:w-11/12 lg:w-3/4 xl:w-full order-first xl:order-2">
                       <motion.div
-                        className="absolute left-4 w-52 h-36 bg-gray-400 rounded-[48px] z-30 shadow-lg"
+                        className="absolute left-4 w-52 h-36 rounded-[100px] z-30 shadow-lg"
                         style={{ y: parallax1Y }}
                       >
-                        <Image src={img1} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />         
+                        <Image src={img1} fill className="object-cover rounded-[100px]" loading='lazy' alt="" />         
                       </motion.div>
                       <motion.div
-                        className="absolute left-1/3 w-44 h-44 bg-gray-400 rounded-[48px] z-10 shadow-lg"
+                        className="absolute left-1/3 w-44 h-44 rounded-[48px] z-10 shadow-lg"
                         style={{ y: parallax2Y }}
                       >
                         <Image src={img3} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />
@@ -98,10 +98,10 @@ export default function AboutUs() {
                       {
                         dimensions.width > 690 && (
                             <motion.div
-                              className="absolute right-2 w-46 h-32 bg-gray-400 rounded-[48px] z-20 shadow-lg"
+                              className="absolute right-2 w-46 h-32 rounded-[60px] z-20 shadow-lg"
                               style={{ y: parallax3Y }}
                             >
-                              <Image src={img2} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />
+                              <Image src={img2} fill className="object-cover rounded-[60px]" loading='lazy' alt="" />
                             </motion.div>
                         )
                       }
