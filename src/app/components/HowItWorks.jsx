@@ -3,7 +3,9 @@
 import React, { useEffect, useState, useRef  } from "react";
 import Image from "next/image";
 import { motion, useTransform, useScroll } from "framer-motion";
-import img from '../assets/6023c1341e01a6243f198dac_Sign up.svg'
+import img1 from '../assets/step1.png'
+import img2 from '../assets/step2.png'
+import img3 from '../assets/step3.png'
 
 export default function HowItWorks() {
     const containerRef = useRef(null);
@@ -92,9 +94,9 @@ export default function HowItWorks() {
                     <motion.div style={{ x }} className="flex snap-y snap-mandatory">
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
                             <div className="relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center">
-                                <div className="w-full h-full flex flex-1 justify-center lg:justify-end">
-                                    <div className="relative w-5/6 sm:w-4/6 md:w-full h-full md:h-5/6">
-                                        <Image src={img} fill objectFit="contain" className="h-full" alt="" />
+                                <div className="w-full h-full flex flex-1 justify-center items-end lg:items-center">
+                                    <div className="relative w-7/12 sm:w-9/12 lg:10/12 h-7/12 sm:h-9/12 lg:h-10/12">
+                                        <Image src={img1} fill sizes="(max-width: 600px) 300px, 600px" className="h-full object-contain" loading='lazy' alt="" />
                                     </div>
                                 </div>
                                 <div className="relative z-30 w-6 h-6 bg-[var(--primary1)] rounded-3xl mt-auto" />
@@ -116,9 +118,9 @@ export default function HowItWorks() {
                         </div>
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
                             <div className="relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center">
-                                <div className="w-full h-full flex flex-1 justify-center lg:justify-end">
-                                    <div className="relative w-5/6 sm:w-4/6 md:w-full h-full md:h-5/6">
-                                        <Image src={img} fill objectFit="contain" className="h-full" alt="" />
+                                <div className="w-full h-full flex flex-1 justify-center items-end lg:items-center">
+                                    <div className="relative w-7/12 sm:w-9/12 lg:10/12 h-7/12 sm:h-9/12 lg:h-10/12">
+                                        <Image src={img2} fill sizes="(max-width: 600px) 300px, 600px" className="h-full object-contain" loading='lazy' alt="" />
                                     </div>
                                 </div>
                                 <div 
@@ -136,9 +138,9 @@ export default function HowItWorks() {
                         </div>
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
                             <div className="relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center">
-                                <div className="w-full h-full flex flex-1 justify-center lg:justify-end">
-                                    <div className="relative w-5/6 sm:w-4/6 md:w-full h-full md:h-5/6">
-                                        <Image src={img} fill objectFit="contain" className="h-full" alt="" />
+                                <div className="w-full h-full flex flex-1 justify-center items-end lg:items-center">
+                                    <div className="relative w-7/12 sm:w-9/12 lg:10/12 h-7/12 sm:h-9/12 lg:h-10/12">
+                                        <Image src={img3} fill sizes="(max-width: 600px) 300px, 600px" className="h-full object-contain" loading='lazy' alt="" />
                                     </div>
                                 </div>
                                 <div 

@@ -153,7 +153,7 @@ const ServiceBlock = () => {
                 }}
                 className={styles.block}
             >
-                <Image src={img1} fill className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[1].title} />
+                <Image src={img1} fill sizes="250px" className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[1].title} />
 
                 <div className={styles.glass} />
 
@@ -170,7 +170,7 @@ const ServiceBlock = () => {
                 }}
                 className={styles.block}
             >
-                <Image src={img2} fill className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[2].title} />
+                <Image src={img2} fill sizes="250px" className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[2].title} />
 
                 <div className={styles.glass} />
 
@@ -187,7 +187,7 @@ const ServiceBlock = () => {
                 }}
                 className={styles.block}
             >
-                <Image src={img3} fill className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[2].title} />
+                <Image src={img3} fill sizes="250px" className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[2].title} />
 
                 <div className={styles.glass} />
 

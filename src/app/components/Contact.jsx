@@ -49,7 +49,7 @@ export default function Contact() {
     };
 
     return (
-        <section id='Contact' className='flex justify-center items-center py-16'>
+        <section id='Contact' className='flex justify-center items-center py-24'>
             <div className='flex flex-col xl:flex-row max-w-[920px] xl:max-w-[1400px] gap-16 px-4 sm:px-16'>
                 <div className='flex flex-col flex-1'>
                     <div className='flex flex-col px-4 sm:px-24 mb-8 gap-1'>

@@ -11,7 +11,7 @@ export default function Footer() {
       <div className='flex flex-col sm:flex-row gap-8 justify-between items-center px-8 md:px-28 lg:px-44'>
         <div className='flex flex-col gap-2 items-center sm:items-start'>
           <div className='relative flex flex-row gap-1 mb-1'>
-            <Image src={Logo} className='w-12 h-8' objectFit='contain' alt='AdVinci' />
+            <Image src={Logo} className='w-12 h-8 object-contain' alt='AdVinci' />
             <h3 className='text-2xl font-medium'>AdVinci</h3>
           </div>
           <div className='flex flex-row gap-1.5'>

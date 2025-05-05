@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav className='fixed z-50 flex flex-row justify-between w-full h-20 px-[12%] bg-[var(--foreground)]'>
       <div className='flex flex-row gap-1 items-end pb-2.5'>
         <Link href="/#Home" className='relative h-8/12 aspect-[1.47]'>
-          <Image src={Logo} fill objectFit='contain' priority alt='AdVinci' />
+          <Image src={Logo} fill className='object-contain' priority alt='AdVinci' />
         </Link>
         {
           dimensions.width > 920 && (
