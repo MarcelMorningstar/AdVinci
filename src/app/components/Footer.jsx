@@ -14,13 +14,13 @@ export default function Footer() {
             <Image src={Logo} className='w-12 h-8 object-contain' alt='AdVinci' />
             <h3 className='text-2xl font-medium'>AdVinci</h3>
           </div>
-          <div className='flex flex-row gap-1.5'>
-            <MdEmail className='w-6 h-6 text-white' />
-            <span><a href="mailto:arita@advinci.it">arita@advinci.it</a></span>
+          <div className='flex flex-row gap-1.5 text-white hover:text-[var(--primary1)]'>
+            <MdEmail className='w-6 h-6 text-inherit transition ease-in duration-100' />
+            <span className='transition ease-in duration-100'><a href="mailto:arita@advinci.it">arita@advinci.it</a></span>
           </div>
-          <div className='flex flex-row gap-1.5'>
-            <MdPhone className='w-6 h-6 text-white' />
-            <span><a href="tel:+3508008361">+3508008361</a></span>
+          <div className='flex flex-row gap-1.5 text-white hover:text-[var(--primary1)]'>
+            <MdPhone className='w-6 h-6 text-inherit transition ease-in duration-100' />
+            <span className='transition ease-in duration-100'><a href="tel:+3508008361">+3508008361</a></span>
           </div>
           <div className='flex flex-row gap-1.5'>
             <PiTrademark className='w-6 h-6 text-white' />
@@ -30,16 +30,16 @@ export default function Footer() {
         <div className='flex flex-col sm:flex-row gap-6 sm:gap-16 text-center sm:text-right'>
           <div className='flex flex-col gap-1.5'>
             <span className='mb-0.5'>Company</span>
-            <Link className='text-neutral-200' href='/#Services' >Services</Link>
-            <Link className='text-neutral-200' href='/aboutus' >About Us</Link>
-            <Link className='text-neutral-200' href='/pricing' >Pricing</Link>
+            <Link className='text-neutral-200 hover:text-white' href='/#Services' >Services</Link>
+            <Link className='text-neutral-200 hover:text-white' href='/aboutus' >About Us</Link>
+            <Link className='text-neutral-200 hover:text-white' href='/pricing' >Pricing</Link>
           </div>
           <div className='flex flex-col gap-1.5'>
             <span className='mb-0.5'>Support</span>
-            <Link className='text-neutral-200' href='/#Contact' >Contact</Link>
-            <Link className='text-neutral-200' href='/FAQ' >FAQ</Link>
-            <Link className='text-neutral-200' href='/privacy' >Privacy Policy</Link>
-            <Link className='text-neutral-200' href='/terms' >Terms of Service</Link>
+            <Link className='text-neutral-200 hover:text-white' href='/#Contact' >Contact</Link>
+            <Link className='text-neutral-200 hover:text-white' href='/FAQ' >FAQ</Link>
+            <Link className='text-neutral-200 hover:text-white' href='/privacy' >Privacy Policy</Link>
+            <Link className='text-neutral-200 hover:text-white' href='/terms' >Terms of Service</Link>
           </div>
         </div>
       </div>
