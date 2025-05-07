@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { useWindowDimensions } from "../utilities/window";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import { twMerge } from "tailwind-merge";
@@ -39,66 +39,74 @@ const items = [
 
 export default function AboutUs() {
     const ref = useRef(null)
+    const [refHeight, setRefHeight] = useState(0);
     const [mobile, setMobile] = useState(false)
     const [open, setOpen] = useState(items[0].id);
     const dimensions = useWindowDimensions();
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] })
 
     useEffect(() => {
-      if (dimensions.width <= 1280) {
+      if (dimensions.width < 768) {
         setMobile(true)
       } else {
         setMobile(false)
       }
+
+      console.log(ref.current.offsetHeight)
     }, [dimensions])
 
-    const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? ["-200px", "100px"] : ["-300px", "220px"]);
-    const raw2Y = useTransform(scrollYProgress, [0, 0.75], mobile ? ["-50px", "200px"] : ["-200px", "350px"]);
-    const raw3Y = useTransform(scrollYProgress, [0, 0.8], mobile ? ["-400px", "180px"] : ["-700px", "280px"]);
+    useLayoutEffect(() => {
+      if (ref.current) {
+        setRefHeight(ref.current.offsetHeight);
+      }
+    }, [dimensions]);
+
+    const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.6 * refHeight, 0.6 * refHeight] : [-0.5 * refHeight, 0.6 * refHeight]);
+    const raw2Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.2 * refHeight, 1 * refHeight] : [0.2 * refHeight, 1.05 * refHeight]);
+    const raw3Y = useTransform(scrollYProgress, [0, 1], [-1.3 * refHeight, 1 * refHeight]);
     const parallax1Y = useSpring(raw1Y, { stiffness: 70, damping: 7 });
     const parallax2Y = useSpring(raw2Y, { stiffness: 70, damping: 7 });
     const parallax3Y = useSpring(raw3Y, { stiffness: 70, damping: 7 });
 
     return (
         <section id="AboutUs" className="flex flex-col gap-20 sm:gap-16 pt-44 pb-16">
-            <h1 className="text-center text-4xl sm:text-5xl font-bold">About Us</h1>
+            {/* <div className="h-[30vh]"></div> */}
             <div className="flex flex-col gap-20 justify-center items-center">
+              <h1 className="w-10/12 text-center xl:text-left text-4xl sm:text-5xl font-bold z-30 px-2">About Us</h1>
               <div className="w-10/12 flex flex-col xl:flex-row gap-8 items-stretch">
-                  <div className="w-full">
-                    <div className="flex flex-col h-[550px] lg:h-[420px] w-full max-w-6xl mx-auto shadow overflow-hidden rounded-lg">
-                      {items.map((item) => {
-                        return (
-                          <Panel
-                            key={item.id}
-                            open={open}
-                            setOpen={setOpen}
-                            id={item.id}
-                            Icon={item.Icon}
-                            title={item.title}
-                            imgSrc={item.imgSrc}
-                            description={item.description}
-                          />
-                        );
-                      })}
-                    </div>
+                  <div className="relative z-40 flex flex-col h-[600px] lg:h-[420px] w-full max-w-6xl mx-auto shadow overflow-hidden rounded-lg">
+                    {items.map((item) => {
+                      return (
+                        <Panel
+                          key={item.id}
+                          open={open}
+                          setOpen={setOpen}
+                          id={item.id}
+                          Icon={item.Icon}
+                          title={item.title}
+                          imgSrc={item.imgSrc}
+                          description={item.description}
+                        />
+                      );
+                    })}
                   </div>
                   <div ref={ref} className="relative left-1/2 -translate-x-1/2 xl:left-0 xl:translate-x-0 w-full h-96 md:w-11/12 lg:w-3/4 xl:w-full order-first xl:order-2">
                       <motion.div
-                        className="absolute left-4 w-52 h-36 rounded-[100px] z-30 shadow-lg"
+                        className="absolute left-1/12 md:left-4 w-[50%] md:w-[40%] aspect-video rounded-[100px] z-30 shadow-lg"
                         style={{ y: parallax1Y }}
                       >
                         <Image src={img1} fill className="object-cover rounded-[100px]" loading='lazy' alt="" />         
                       </motion.div>
                       <motion.div
-                        className="absolute left-1/3 w-44 h-44 rounded-[48px] z-10 shadow-lg"
+                        className="absolute left-1/2 md:left-1/3 w-[40%] md:w-[30%] aspect-square rounded-[48px] z-10 shadow-lg"
                         style={{ y: parallax2Y }}
                       >
                         <Image src={img3} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />
                       </motion.div>
                       {
-                        dimensions.width > 690 && (
+                        dimensions.width >= 768 && (
                             <motion.div
-                              className="absolute right-2 w-46 h-32 rounded-[60px] z-20 shadow-lg"
+                              className="absolute right-2 w-[32%] aspect-[3/2] rounded-[60px] z-20 shadow-lg"
                               style={{ y: parallax3Y }}
                             >
                               <Image src={img2} fill className="object-cover rounded-[60px]" loading='lazy' alt="" />
@@ -147,59 +155,26 @@ export default function AboutUs() {
     )
 }
 
-const Block = ({ id, className, children, ...rest }) => {
-    return (
-      <motion.div
-        id={id}
-        variants={{
-            initial: {
-                scale: 0.5,
-                y: 50,
-                opacity: 0,
-            },
-            animate: {
-                scale: 1,
-                y: 0,
-                opacity: 1,
-            },
-        }}
-        transition={{
-            type: "spring",
-            mass: 3,
-            stiffness: 400,
-            damping: 50,
-        }}
-        className={twMerge(
-            "col-span-4 rounded-lg bg-white shadow-lg",
-            className
-        )}
-        {...rest}
-      >
-        { children }
-      </motion.div>
-    );
-};
-
 const Panel = ({ open, setOpen, id, Icon, title, description }) => {
     const dimensions = useWindowDimensions();
     const isOpen = open === id;
     const formattedDescription = description.replace(/\n/g, '<br />');
 
-    const panelVariants = {
+    const panelVariants1 = {
         open: {
             width: "100%",
-            height: "100%",
+            height: "265px",
         },
         closed: {
             width: "0%",
-            height: "100%",
+            height: "0px",
         },
     };
     
-    const panelVariantsSm = {
+    const panelVariants2 = {
         open: {
             width: "100%",
-            height: "100%",
+            height: "445px",
         },
         closed: {
             width: "100%",
@@ -236,18 +211,18 @@ const Panel = ({ open, setOpen, id, Icon, title, description }) => {
           <div className="w-6 aspect-square text-[var(--primary2)] grid place-items-center">
             <Icon />
           </div>
-          <span className="w-4 h-4 bg-white group-hover:bg-slate-50 transition-colors border-r-[1px] border-b-[1px] border-slate-200 rotate-45 absolute bottom-0 right-[50%] translate-y-[50%] translate-x-[50%] z-20" />
+          <span className="w-4 h-4 bg-white group-hover:bg-slate-50 transition-colors border-r-[1px] border-b-[1px] border-slate-200 rotate-45 absolute bottom-0 right-[50%] translate-y-[50%] translate-x-[50%] z-40" />
         </button>
   
         <AnimatePresence>
           {isOpen && (
             <motion.div
               key={`panel-${id}`}
-              variants={dimensions.width && dimensions.width > 1024 ? panelVariants : panelVariantsSm}
+              variants={dimensions.width && dimensions.width > 1024 ? panelVariants1 : panelVariants2}
               initial="closed"
               animate="open"
               exit="closed"
-              className="w-full h-full overflow-none relative flex"
+              className="relative z-[35] bg-gray-100 w-full h-full overflow-none flex"
             >
               <motion.div
                 variants={descriptionVariants}
