@@ -4,43 +4,57 @@ import Image from 'next/image'
 import Logo from '../assets/logo.svg'
 import { MdEmail, MdPhone } from "react-icons/md";
 import { PiTrademark } from "react-icons/pi";
+import { IoLogoInstagram, IoLogoFacebook, IoLogoWhatsapp } from "react-icons/io5";
 
 export default function Footer() {
   return (
     <div className='flex flex-col gap-10 w-full justify-center pt-10 pb-4 bg-[var(--pastal)] text-white'>
-      <div className='flex flex-col sm:flex-row gap-8 justify-between items-center px-8 md:px-28 lg:px-44'>
-        <div className='flex flex-col gap-2 items-center sm:items-start'>
-          <div className='relative flex flex-row gap-1 mb-1'>
-            <Image src={Logo} className='w-12 h-8 object-contain' alt='AdVinci' />
-            <h3 className='text-2xl font-medium'>AdVinci</h3>
+      <div className='flex flex-col gap-8 lg:gap-0'>
+        <div className='flex flex-col sm:flex-row gap-8 justify-between px-8 md:px-28 lg:px-36 xl:px-44'>
+          <div className='flex flex-col gap-2 items-center sm:items-start'>
+            <div className='relative flex flex-row gap-1 mb-1'>
+              <Image src={Logo} className='w-12 h-8 object-contain' alt='AdVinci' />
+              <h3 className='text-2xl font-medium'>AdVinci</h3>
+            </div>
+            <div className='flex flex-row gap-1.5 text-white hover:text-[var(--primary1)]'>
+              <MdEmail className='w-6 h-6 text-inherit transition ease-in duration-100' />
+              <span className='transition ease-in duration-100'><a href="mailto:arita@advinci.it">arita@advinci.it</a></span>
+            </div>
+            <div className='flex flex-row gap-1.5 text-white hover:text-[var(--primary1)]'>
+              <MdPhone className='w-6 h-6 text-inherit transition ease-in duration-100' />
+              <span className='transition ease-in duration-100'><a href="tel:+393508008361">+393508008361</a></span>
+            </div>
+            <div className='flex flex-row gap-1.5'>
+              <PiTrademark className='w-6 h-6 text-white' />
+              <span>PIVA 02154870436</span>
+            </div>
           </div>
-          <div className='flex flex-row gap-1.5 text-white hover:text-[var(--primary1)]'>
-            <MdEmail className='w-6 h-6 text-inherit transition ease-in duration-100' />
-            <span className='transition ease-in duration-100'><a href="mailto:arita@advinci.it">arita@advinci.it</a></span>
-          </div>
-          <div className='flex flex-row gap-1.5 text-white hover:text-[var(--primary1)]'>
-            <MdPhone className='w-6 h-6 text-inherit transition ease-in duration-100' />
-            <span className='transition ease-in duration-100'><a href="tel:+3508008361">+3508008361</a></span>
-          </div>
-          <div className='flex flex-row gap-1.5'>
-            <PiTrademark className='w-6 h-6 text-white' />
-            <span>PIVA 02154870436</span>
+          <div className='flex flex-col sm:flex-row gap-6 sm:gap-16 text-center sm:text-right'>
+            <div className='flex flex-col gap-1.5'>
+              <span className='mb-0.5'>Company</span>
+              <Link className='text-neutral-200 hover:text-white' href='/#Services' >Services</Link>
+              <Link className='text-neutral-200 hover:text-white' href='/aboutus' >About Us</Link>
+              <Link className='text-neutral-200 hover:text-white' href='/pricing' >Pricing</Link>
+            </div>
+            <div className='flex flex-col gap-1.5'>
+              <span className='mb-0.5'>Support</span>
+              <Link className='text-neutral-200 hover:text-white' href='/#Contact' >Contact</Link>
+              <Link className='text-neutral-200 hover:text-white' href='/FAQ' >FAQ</Link>
+              <Link className='text-neutral-200 hover:text-white' href='/privacy' >Privacy Policy</Link>
+              <Link className='text-neutral-200 hover:text-white' href='/terms' >Terms of Service</Link>
+            </div>
           </div>
         </div>
-        <div className='flex flex-col sm:flex-row gap-6 sm:gap-16 text-center sm:text-right'>
-          <div className='flex flex-col gap-1.5'>
-            <span className='mb-0.5'>Company</span>
-            <Link className='text-neutral-200 hover:text-white' href='/#Services' >Services</Link>
-            <Link className='text-neutral-200 hover:text-white' href='/aboutus' >About Us</Link>
-            <Link className='text-neutral-200 hover:text-white' href='/pricing' >Pricing</Link>
-          </div>
-          <div className='flex flex-col gap-1.5'>
-            <span className='mb-0.5'>Support</span>
-            <Link className='text-neutral-200 hover:text-white' href='/#Contact' >Contact</Link>
-            <Link className='text-neutral-200 hover:text-white' href='/FAQ' >FAQ</Link>
-            <Link className='text-neutral-200 hover:text-white' href='/privacy' >Privacy Policy</Link>
-            <Link className='text-neutral-200 hover:text-white' href='/terms' >Terms of Service</Link>
-          </div>
+        <div className='relative top-0 lg:-top-8 h-fit lg:h-0 flex flex-row gap-2 justify-center'>
+          <Link href="https://www.instagram.com/advinci.studio?igsh=bW52ZXN5c3V6Ym5l" target="_blank">
+            <IoLogoInstagram className='w-12 h-12 text-white hover:text-[var(--primary1)] transition ease-in duration-100' />
+          </Link>
+          <Link href="https://www.facebook.com/people/Advincistudio/61575626319583/" target="_blank">
+            <IoLogoFacebook className='w-12 h-12 text-white hover:text-[var(--primary1)] transition ease-in duration-100' />
+          </Link>
+          <Link href="https://wa.me/+393508008361" target="_blank">
+            <IoLogoWhatsapp className='w-12 h-12 text-white hover:text-[var(--primary1)] transition ease-in duration-100' />
+          </Link>
         </div>
       </div>
       <span className='flex justify-center items-center text-base sm:text-lg'>© { new Date().getFullYear() } Advinci. All rights reserved.</span>
