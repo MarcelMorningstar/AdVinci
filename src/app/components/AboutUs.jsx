@@ -52,7 +52,7 @@ export default function AboutUs() {
         setMobile(false)
       }
 
-      console.log(ref.current.offsetHeight)
+      console.log(dimensions.height)
     }, [dimensions])
 
     useLayoutEffect(() => {
@@ -61,9 +61,12 @@ export default function AboutUs() {
       }
     }, [dimensions]);
 
-    const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.6 * refHeight, 0.6 * refHeight] : [-0.5 * refHeight, 0.6 * refHeight]);
-    const raw2Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.2 * refHeight, 1 * refHeight] : [0.2 * refHeight, 1.05 * refHeight]);
-    const raw3Y = useTransform(scrollYProgress, [0, 1], [-1.3 * refHeight, 1 * refHeight]);
+    // const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.6 * refHeight, 0.6 * refHeight] : [-0.5 * refHeight, 0.6 * refHeight]);
+    // const raw2Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.2 * refHeight, 1 * refHeight] : [0.2 * refHeight, 1.05 * refHeight]);
+    // const raw3Y = useTransform(scrollYProgress, [0, 1], [-1.3 * refHeight, 1 * refHeight]);
+    const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.6 * refHeight, 0.6 * refHeight] : [-0.3 * dimensions.height, 0.2 * dimensions.height]);
+    const raw2Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.2 * refHeight, 1 * refHeight] : [-0.1 * dimensions.height, 0.4 * dimensions.height]);
+    const raw3Y = useTransform(scrollYProgress, [0, 1], [-0.6 * dimensions.height, 0.3 * dimensions.height]);
     const parallax1Y = useSpring(raw1Y, { stiffness: 70, damping: 7 });
     const parallax2Y = useSpring(raw2Y, { stiffness: 70, damping: 7 });
     const parallax3Y = useSpring(raw3Y, { stiffness: 70, damping: 7 });
@@ -74,7 +77,7 @@ export default function AboutUs() {
             <div className="flex flex-col gap-20 justify-center items-center">
               <h1 className="w-10/12 text-center xl:text-left text-4xl sm:text-5xl font-bold z-30 px-2">About Us</h1>
               <div className="w-10/12 flex flex-col xl:flex-row gap-8 items-stretch">
-                  <div className="relative z-40 flex flex-col h-[600px] lg:h-[420px] w-full max-w-6xl mx-auto shadow overflow-hidden rounded-lg">
+                  <div className="relative z-40 flex flex-col h-[600px] lg:h-[420px] w-full max-w-6xl mx-auto shadow overflow-hidden rounded-lg bg-[var(--background)]">
                     {items.map((item) => {
                       return (
                         <Panel
