@@ -11,9 +11,9 @@ import { TbInfoHexagonFilled } from "react-icons/tb";
 import { FaPaintBrush, FaHandsHelping } from "react-icons/fa";
 import { TypeAnimation } from 'react-type-animation';
 import { useInView } from "react-intersection-observer";
-import img1 from '../assets/service1.jpg'
-import img2 from '../assets/service2.jpg'
-import img3 from '../assets/service3.jpg'
+import img1 from '../assets/service1.png'
+import img2 from '../assets/service2.png'
+import img3 from '../assets/service3.png'
 import styles from '../styles/Services.module.scss'
 
 const serviceData = {
@@ -52,7 +52,7 @@ export default function Services() {
     return (
         <section id="Services" className="min-h-[80vh] flex flex-col gap-32 justify-center items-center pt-32">
             <div className="w-10/12 flex flex-col justify-center items-center">
-                <div className='flex flex-col justify-center items-center gap-2 mb-8'>
+                <div className='flex flex-col justify-center items-center gap-2 mb-12'>
                     <h2 className='text-center text-3xl sm:text-5xl font-bold'>What We Offer</h2>
                     <p className='text-center w-2/3'>At AdVinci, we deliver smart digital advertising solutions designed to grow your brand and connect you with your local audience.
                     Discover our three core services — built to help your business stand out, attract more customers, and thrive in today's fast-moving world.</p>
@@ -70,7 +70,7 @@ export default function Services() {
                 </motion.div> */}
 
                 <div className="flex flex-col w-full gap-32">
-                    <div ref={ref1} className="grid grid-cols-2 gap-12 min-h-[20vh]">
+                    <div ref={ref1} className="flex flex-col-reverse lg:grid grid-cols-2 gap-8 lg:gap-12 min-h-[20vh]">
                         <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={1}>
                             {inView1 && (
                                 <>
@@ -91,13 +91,17 @@ export default function Services() {
                                 </>
                             )}
                         </div>
-                        <div className="relative left-1/2 -translate-x-1/2 w-2/3 aspect-[4/3] rounded-lg">
-                            <Image src={img1} fill sizes="250px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[1].title} />
+                        <div className="w-full h-full flex items-center justify-center">
+                            <div className="relative w-2/3 aspect-[4/3] rounded-lg">
+                                <Image src={img1} fill sizes="500px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[1].title} />
+                            </div>
                         </div>
                     </div>
-                    <div ref={ref2} className="grid grid-cols-2 gap-12 min-h-[20vh]">
-                        <div className="relative left-1/2 -translate-x-1/2 w-2/3 aspect-[4/3] rounded-lg">
-                            <Image src={img2} fill sizes="250px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[2].title} />
+                    <div ref={ref2} className="flex flex-col lg:grid grid-cols-2 gap-12 min-h-[20vh]">
+                        <div className="w-full h-full flex items-center justify-center">
+                            <div className="relative w-2/3 aspect-[4/3] rounded-lg">
+                                <Image src={img2} fill sizes="500px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[2].title} />
+                            </div>
                         </div>
                         <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={2}>
                             {inView2 && (
@@ -120,7 +124,7 @@ export default function Services() {
                             )}
                         </div>
                     </div>
-                    <div ref={ref3} className="grid grid-cols-2 gap-12 min-h-[20vh]">
+                    <div ref={ref3} className="flex flex-col-reverse lg:grid grid-cols-2 gap-12 min-h-[20vh]">
                         <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={3}>
                             {inView3 && (
                                 <>
@@ -141,8 +145,10 @@ export default function Services() {
                                 </>
                             )}
                         </div>
-                        <div className="relative left-1/2 -translate-x-1/2 w-2/3 aspect-[4/3] rounded-lg">
-                            <Image src={img3} fill sizes="250px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[3].title} />
+                        <div className="w-full h-full flex items-center justify-center">
+                            <div className="relative w-2/3 aspect-[4/3] rounded-lg">
+                                <Image src={img3} fill sizes="500px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[3].title} />
+                            </div>
                         </div>
                     </div>
                 </div>
