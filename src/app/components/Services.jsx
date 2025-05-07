@@ -10,6 +10,7 @@ import { BsMegaphoneFill } from "react-icons/bs";
 import { TbInfoHexagonFilled } from "react-icons/tb";
 import { FaPaintBrush, FaHandsHelping } from "react-icons/fa";
 import { TypeAnimation } from 'react-type-animation';
+import { useInView } from "react-intersection-observer";
 import img1 from '../assets/service1.jpg'
 import img2 from '../assets/service2.jpg'
 import img3 from '../assets/service3.jpg'
@@ -35,6 +36,19 @@ const serviceData = {
 }
 
 export default function Services() {
+    const { ref: ref1, inView: inView1 } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    const { ref: ref2, inView: inView2 } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    const { ref: ref3, inView: inView3 } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+
     return (
         <section id="Services" className="min-h-[80vh] flex flex-col gap-32 justify-center items-center pt-32">
             <div className="w-10/12 flex flex-col justify-center items-center">
@@ -43,7 +57,7 @@ export default function Services() {
                     <p className='text-center w-2/3'>At AdVinci, we deliver smart digital advertising solutions designed to grow your brand and connect you with your local audience.
                     Discover our three core services — built to help your business stand out, attract more customers, and thrive in today's fast-moving world.</p>
                 </div>
-                <motion.div 
+                {/* <motion.div 
                     initial="initial"
                     whileInView={"animate"}
                     viewport={{ amount: 0.1, once: true }}
@@ -53,10 +67,87 @@ export default function Services() {
                     className="w-full mx-auto grid max-w-4xl grid-flow-dense grid-cols-12 gap-5"
                 >
                     <ServiceBlock />
-                </motion.div>
+                </motion.div> */}
+
+                <div className="flex flex-col w-full gap-32">
+                    <div ref={ref1} className="grid grid-cols-2 gap-12 min-h-[20vh]">
+                        <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={1}>
+                            {inView1 && (
+                                <>
+                                    <TypeAnimation
+                                        sequence={[serviceData[1].title]}
+                                        wrapper="h3"
+                                        speed={50}
+                                        style={{ fontSize: '2rem', fontWeight: '500' }}
+                                        repeat={0}
+                                    />
+                                    <TypeAnimation
+                                        sequence={[serviceData[1].text]}
+                                        wrapper="p"
+                                        speed={75}
+                                        style={{ fontSize: '1rem', color: '#4B5563' }}
+                                        repeat={0}
+                                    />
+                                </>
+                            )}
+                        </div>
+                        <div className="relative left-1/2 -translate-x-1/2 w-2/3 aspect-[4/3] rounded-lg">
+                            <Image src={img1} fill sizes="250px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[1].title} />
+                        </div>
+                    </div>
+                    <div ref={ref2} className="grid grid-cols-2 gap-12 min-h-[20vh]">
+                        <div className="relative left-1/2 -translate-x-1/2 w-2/3 aspect-[4/3] rounded-lg">
+                            <Image src={img2} fill sizes="250px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[2].title} />
+                        </div>
+                        <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={2}>
+                            {inView2 && (
+                                <>
+                                    <TypeAnimation
+                                        sequence={[serviceData[2].title]}
+                                        wrapper="h3"
+                                        speed={50}
+                                        style={{ fontSize: '2rem', fontWeight: '500' }}
+                                        repeat={0}
+                                    />
+                                    <TypeAnimation
+                                        sequence={[serviceData[2].text]}
+                                        wrapper="p"
+                                        speed={75}
+                                        style={{ fontSize: '1rem', color: '#4B5563' }}
+                                        repeat={0}
+                                    />
+                                </>
+                            )}
+                        </div>
+                    </div>
+                    <div ref={ref3} className="grid grid-cols-2 gap-12 min-h-[20vh]">
+                        <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={3}>
+                            {inView3 && (
+                                <>
+                                    <TypeAnimation
+                                        sequence={[serviceData[3].title]}
+                                        wrapper="h3"
+                                        speed={50}
+                                        style={{ fontSize: '2rem', fontWeight: '500' }}
+                                        repeat={0}
+                                    />
+                                    <TypeAnimation
+                                        sequence={[serviceData[3].text]}
+                                        wrapper="p"
+                                        speed={75}
+                                        style={{ fontSize: '1rem', color: '#4B5563' }}
+                                        repeat={0}
+                                    />
+                                </>
+                            )}
+                        </div>
+                        <div className="relative left-1/2 -translate-x-1/2 w-2/3 aspect-[4/3] rounded-lg">
+                            <Image src={img3} fill sizes="250px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[3].title} />
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            {/* <BrandLine /> */}
             <div className={styles.image}>
                 <div className={styles.topline}>
                   <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -77,140 +168,140 @@ export default function Services() {
     )
 }
 
-const Block = ({ id, className, children, ...rest }) => {
-    return (
-      <motion.div
-        id={id}
-        variants={{
-            initial: {
-                scale: 0.5,
-                y: 50,
-                opacity: 0,
-            },
-            animate: {
-                scale: 1,
-                y: 0,
-                opacity: 1,
-            },
-        }}
-        transition={{
-            type: "spring",
-            mass: 3,
-            stiffness: 400,
-            damping: 50,
-        }}
-        className={twMerge(
-            "col-span-4 rounded-lg bg-white shadow-lg",
-            className
-        )}
-        {...rest}
-      >
-        { children }
-      </motion.div>
-    );
-};
+// const Block = ({ id, className, children, ...rest }) => {
+//     return (
+//       <motion.div
+//         id={id}
+//         variants={{
+//             initial: {
+//                 scale: 0.5,
+//                 y: 50,
+//                 opacity: 0,
+//             },
+//             animate: {
+//                 scale: 1,
+//                 y: 0,
+//                 opacity: 1,
+//             },
+//         }}
+//         transition={{
+//             type: "spring",
+//             mass: 3,
+//             stiffness: 400,
+//             damping: 50,
+//         }}
+//         className={twMerge(
+//             "col-span-4 rounded-lg bg-white shadow-lg",
+//             className
+//         )}
+//         {...rest}
+//       >
+//         { children }
+//       </motion.div>
+//     );
+// };
 
-const ServiceBlock = () => {
-    const [id, setID] = useState(0);
+// const ServiceBlock = () => {
+//     const [id, setID] = useState(0);
 
-    return (
-        <>
-            <Block className="col-span-12 row-span-2 lg:col-span-6 px-8 sm:px-12 py-6 sm:py-8">
-                {
-                    id == 0 ? (
-                        <div className="flex flex-col gap-2" key={0}>
-                            <TbInfoHexagonFilled className="w-12 h-12 text-[var(--primary2)]" />
-                            <h2 className="text-3xl font-medium">
-                                Hover over any <i className="text-5xl">Service</i> block to learn more - the details will appear here.
-                            </h2>
-                        </div>
-                    ) : (
-                        <div className="flex flex-col gap-2" key={id}>
-                            <TypeAnimation
-                                sequence={[serviceData[id].title]}
-                                wrapper="h3"
-                                speed={50}
-                                style={{ fontSize: '2rem', fontWeight: '500' }}
-                                repeat={0}
-                            />
-                            <TypeAnimation
-                                sequence={[serviceData[id].text]}
-                                wrapper="p"
-                                speed={75}
-                                style={{ fontSize: '1rem', color: '#4B5563' }}
-                                repeat={0}
-                            />
-                        </div>
-                    )
-                }
-            </Block>
-            <Block
-                onMouseEnter={() => setID(1)}
-                onMouseLeave={() => setID(0)}
-                whileHover={{
-                    rotate: "2.1deg",
-                    scale: 1.07,
-                }}
-                className={styles.block}
-            >
-                <Image src={img1} fill sizes="250px" className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[1].title} />
+//     return (
+//         <>
+//             <Block className="col-span-12 row-span-2 lg:col-span-6 px-8 sm:px-12 py-6 sm:py-8">
+//                 {
+//                     id == 0 ? (
+//                         <div className="flex flex-col gap-2" key={0}>
+//                             <TbInfoHexagonFilled className="w-12 h-12 text-[var(--primary2)]" />
+//                             <h2 className="text-3xl font-medium">
+//                                 Hover over any <i className="text-5xl">Service</i> block to learn more - the details will appear here.
+//                             </h2>
+//                         </div>
+//                     ) : (
+//                         <div className="flex flex-col gap-2" key={id}>
+//                             <TypeAnimation
+//                                 sequence={[serviceData[id].title]}
+//                                 wrapper="h3"
+//                                 speed={50}
+//                                 style={{ fontSize: '2rem', fontWeight: '500' }}
+//                                 repeat={0}
+//                             />
+//                             <TypeAnimation
+//                                 sequence={[serviceData[id].text]}
+//                                 wrapper="p"
+//                                 speed={75}
+//                                 style={{ fontSize: '1rem', color: '#4B5563' }}
+//                                 repeat={0}
+//                             />
+//                         </div>
+//                     )
+//                 }
+//             </Block>
+//             <Block
+//                 onMouseEnter={() => setID(1)}
+//                 onMouseLeave={() => setID(0)}
+//                 whileHover={{
+//                     rotate: "2.1deg",
+//                     scale: 1.07,
+//                 }}
+//                 className={styles.block}
+//             >
+//                 <Image src={img1} fill sizes="250px" className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[1].title} />
 
-                <div className={styles.glass} />
+//                 <div className={styles.glass} />
 
-                <div className={styles.iconContainer}>
-                    <BsMegaphoneFill className={styles.icon} />
-                </div>
-            </Block>
-            <Block
-                onMouseEnter={() => setID(2)}
-                onMouseLeave={() => setID(0)}
-                whileHover={{
-                    rotate: "-2.1deg",
-                    scale: 1.07,
-                }}
-                className={styles.block}
-            >
-                <Image src={img2} fill sizes="250px" className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[2].title} />
+//                 <div className={styles.iconContainer}>
+//                     <BsMegaphoneFill className={styles.icon} />
+//                 </div>
+//             </Block>
+//             <Block
+//                 onMouseEnter={() => setID(2)}
+//                 onMouseLeave={() => setID(0)}
+//                 whileHover={{
+//                     rotate: "-2.1deg",
+//                     scale: 1.07,
+//                 }}
+//                 className={styles.block}
+//             >
+//                 <Image src={img2} fill sizes="250px" className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[2].title} />
 
-                <div className={styles.glass} />
+//                 <div className={styles.glass} />
 
-                <div className={styles.iconContainer}>
-                    <FaPaintBrush className={styles.icon} />
-                </div>
-            </Block>
-            <Block
-                onMouseEnter={() => setID(3)}
-                onMouseLeave={() => setID(0)}
-                whileHover={{
-                    rotate: "-2.1deg",
-                    scale: 1.07,
-                }}
-                className={styles.block}
-            >
-                <Image src={img3} fill sizes="250px" className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[2].title} />
+//                 <div className={styles.iconContainer}>
+//                     <FaPaintBrush className={styles.icon} />
+//                 </div>
+//             </Block>
+//             <Block
+//                 onMouseEnter={() => setID(3)}
+//                 onMouseLeave={() => setID(0)}
+//                 whileHover={{
+//                     rotate: "-2.1deg",
+//                     scale: 1.07,
+//                 }}
+//                 className={styles.block}
+//             >
+//                 <Image src={img3} fill sizes="250px" className="object-cover z-0 rounded-lg" loading='lazy' alt={serviceData[2].title} />
 
-                <div className={styles.glass} />
+//                 <div className={styles.glass} />
 
-                <div className={styles.iconContainer}>
-                    <FaHandsHelping className={styles.icon} />
-                </div>
-            </Block>
-            <Block 
-                onMouseEnter={() => setID(4)}
-                onMouseLeave={() => setID(0)}
-                whileHover={{
-                    rotate: "-2.1deg",
-                    scale: 1.07,
-                }}
-                className="col-span-6 lg:col-span-3 aspect-square bg-[linear-gradient(to_bottom_left,_var(--primary1),_var(--primary2)_60%)]"
-            >
-                <Link
-                    href="/#Contact"
-                    className="grid w-full h-full place-content-center text-3xl text-white"
-                >
-                    <MdEmail />
-                </Link>
-            </Block>
-        </>
-    )
-};
+//                 <div className={styles.iconContainer}>
+//                     <FaHandsHelping className={styles.icon} />
+//                 </div>
+//             </Block>
+//             <Block 
+//                 onMouseEnter={() => setID(4)}
+//                 onMouseLeave={() => setID(0)}
+//                 whileHover={{
+//                     rotate: "-2.1deg",
+//                     scale: 1.07,
+//                 }}
+//                 className="col-span-6 lg:col-span-3 aspect-square bg-[linear-gradient(to_bottom_left,_var(--primary1),_var(--primary2)_60%)]"
+//             >
+//                 <Link
+//                     href="/#Contact"
+//                     className="grid w-full h-full place-content-center text-3xl text-white"
+//                 >
+//                     <MdEmail />
+//                 </Link>
+//             </Block>
+//         </>
+//     )
+// };
