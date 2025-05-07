@@ -77,14 +77,14 @@ export default function Services() {
                         </div>
                         <div className="w-full h-full flex items-center justify-center">
                             <div className="relative w-2/3 aspect-[4/3] rounded-lg">
-                                <Image src={img1} fill sizes="500px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[1].title} />
+                                <Image src={img1} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={serviceData[1].title} />
                             </div>
                         </div>
                     </div>
                     <div className="flex flex-col lg:grid grid-cols-2 gap-12 min-h-[20vh]">
                         <div className="w-full h-full flex items-center justify-center">
                             <div className="relative w-2/3 aspect-[4/3] rounded-lg">
-                                <Image src={img2} fill sizes="500px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[2].title} />
+                                <Image src={img2} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={serviceData[2].title} />
                             </div>
                         </div>
                         <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={2}>
@@ -99,7 +99,7 @@ export default function Services() {
                         </div>
                         <div className="w-full h-full flex items-center justify-center">
                             <div className="relative w-2/3 aspect-[4/3] rounded-lg">
-                                <Image src={img3} fill sizes="500px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[3].title} />
+                                <Image src={img3} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={serviceData[3].title} />
                             </div>
                         </div>
                     </div>
