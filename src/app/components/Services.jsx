@@ -1,15 +1,15 @@
 'use client'
 
 import React, { useState } from "react";
-import Link from 'next/link';
+// import Link from 'next/link';
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { twMerge } from "tailwind-merge";
-import { MdEmail } from "react-icons/md";
-import { BsMegaphoneFill } from "react-icons/bs";
-import { TbInfoHexagonFilled } from "react-icons/tb";
-import { FaPaintBrush, FaHandsHelping } from "react-icons/fa";
-import { TypeAnimation } from 'react-type-animation';
+// import { motion } from "framer-motion";
+// import { twMerge } from "tailwind-merge";
+// import { MdEmail } from "react-icons/md";
+// import { BsMegaphoneFill } from "react-icons/bs";
+// import { TbInfoHexagonFilled } from "react-icons/tb";
+// import { FaPaintBrush, FaHandsHelping } from "react-icons/fa";
+// import { TypeAnimation } from 'react-type-animation';
 import { useInView } from "react-intersection-observer";
 import img1 from '../assets/service1.png'
 import img2 from '../assets/service2.png'
@@ -70,26 +70,10 @@ export default function Services() {
                 </motion.div> */}
 
                 <div className="flex flex-col w-full gap-32">
-                    <div ref={ref1} className="flex flex-col-reverse lg:grid grid-cols-2 gap-8 lg:gap-12 min-h-[20vh]">
+                    <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-8 lg:gap-12 min-h-[20vh]">
                         <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={1}>
-                            {inView1 && (
-                                <>
-                                    <TypeAnimation
-                                        sequence={[serviceData[1].title]}
-                                        wrapper="h3"
-                                        speed={50}
-                                        style={{ fontSize: '2rem', fontWeight: '500' }}
-                                        repeat={0}
-                                    />
-                                    <TypeAnimation
-                                        sequence={[serviceData[1].text]}
-                                        wrapper="p"
-                                        speed={75}
-                                        style={{ fontSize: '1rem', color: '#4B5563' }}
-                                        repeat={0}
-                                    />
-                                </>
-                            )}
+                            <h3 className="text-3xl font-medium">{ serviceData[1].title }</h3>
+                            <p className="text-base text-gray-500">{ serviceData[1].text }</p>
                         </div>
                         <div className="w-full h-full flex items-center justify-center">
                             <div className="relative w-2/3 aspect-[4/3] rounded-lg">
@@ -97,53 +81,21 @@ export default function Services() {
                             </div>
                         </div>
                     </div>
-                    <div ref={ref2} className="flex flex-col lg:grid grid-cols-2 gap-12 min-h-[20vh]">
+                    <div className="flex flex-col lg:grid grid-cols-2 gap-12 min-h-[20vh]">
                         <div className="w-full h-full flex items-center justify-center">
                             <div className="relative w-2/3 aspect-[4/3] rounded-lg">
                                 <Image src={img2} fill sizes="500px" className="object-cover rounded-lg" loading='lazy' alt={serviceData[2].title} />
                             </div>
                         </div>
                         <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={2}>
-                            {inView2 && (
-                                <>
-                                    <TypeAnimation
-                                        sequence={[serviceData[2].title]}
-                                        wrapper="h3"
-                                        speed={50}
-                                        style={{ fontSize: '2rem', fontWeight: '500' }}
-                                        repeat={0}
-                                    />
-                                    <TypeAnimation
-                                        sequence={[serviceData[2].text]}
-                                        wrapper="p"
-                                        speed={75}
-                                        style={{ fontSize: '1rem', color: '#4B5563' }}
-                                        repeat={0}
-                                    />
-                                </>
-                            )}
+                            <h3 className="text-3xl font-medium">{ serviceData[2].title }</h3>
+                            <p className="text-base text-gray-500">{ serviceData[2].text }</p>
                         </div>
                     </div>
-                    <div ref={ref3} className="flex flex-col-reverse lg:grid grid-cols-2 gap-12 min-h-[20vh]">
+                    <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-12 min-h-[20vh]">
                         <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={3}>
-                            {inView3 && (
-                                <>
-                                    <TypeAnimation
-                                        sequence={[serviceData[3].title]}
-                                        wrapper="h3"
-                                        speed={50}
-                                        style={{ fontSize: '2rem', fontWeight: '500' }}
-                                        repeat={0}
-                                    />
-                                    <TypeAnimation
-                                        sequence={[serviceData[3].text]}
-                                        wrapper="p"
-                                        speed={75}
-                                        style={{ fontSize: '1rem', color: '#4B5563' }}
-                                        repeat={0}
-                                    />
-                                </>
-                            )}
+                            <h3 className="text-3xl font-medium">{ serviceData[3].title }</h3>
+                            <p className="text-base text-gray-500">{ serviceData[3].text }</p>
                         </div>
                         <div className="w-full h-full flex items-center justify-center">
                             <div className="relative w-2/3 aspect-[4/3] rounded-lg">
