@@ -36,18 +36,18 @@ const serviceData = {
 }
 
 export default function Services() {
-    const { ref: ref1, inView: inView1 } = useInView({
-        triggerOnce: true,
-        threshold: 0.2,
-    });
-    const { ref: ref2, inView: inView2 } = useInView({
-        triggerOnce: true,
-        threshold: 0.2,
-    });
-    const { ref: ref3, inView: inView3 } = useInView({
-        triggerOnce: true,
-        threshold: 0.2,
-    });
+    // const { ref: ref1, inView: inView1 } = useInView({
+    //     triggerOnce: true,
+    //     threshold: 0.2,
+    // });
+    // const { ref: ref2, inView: inView2 } = useInView({
+    //     triggerOnce: true,
+    //     threshold: 0.2,
+    // });
+    // const { ref: ref3, inView: inView3 } = useInView({
+    //     triggerOnce: true,
+    //     threshold: 0.2,
+    // });
 
     return (
         <section id="Services" className="min-h-[80vh] flex flex-col gap-32 justify-center items-center pt-32">
