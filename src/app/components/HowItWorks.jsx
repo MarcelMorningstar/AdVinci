@@ -111,7 +111,7 @@ export default function HowItWorks() {
                                             <Image src={img1} sizes="64px" className="w-16 h-16 object-contain" loading='lazy' alt="" />
                                         </h3>
                                         <h3 className="text-2xl sm:text-3xl font-bold">Strategy & Design</h3>
-                                        <p className="text-sm sm:text-base text-gray-500">We work closely with you to define the project, craft the advertisement, and shape a strategic campaign.</p>
+                                        <p className="text-sm sm:text-lg text-gray-500">We work closely with you to define the project, craft the advertisement, and shape a strategic campaign.</p>
                                     </div>
                                 </div>
                                 <motion.div 
@@ -139,7 +139,7 @@ export default function HowItWorks() {
                                             <Image src={img2} sizes="64px" className="w-16 h-16 object-contain" loading='lazy' alt="" />
                                         </h3>
                                         <h3 className="text-2xl sm:text-3xl font-bold">Launch & Activate</h3>
-                                        <p className="text-sm sm:text-base text-gray-500">We launch your campaign, making it visible to your target audience and ensuring maximum reach.</p>
+                                        <p className="text-sm sm:text-lg text-gray-500">We launch your campaign, making it visible to your target audience and ensuring maximum reach.</p>
                                     </div>
                                 </div>
                                 {/* <div className="absolute w-screen h-3 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div> */}
@@ -161,7 +161,7 @@ export default function HowItWorks() {
                                             <Image src={img3} sizes="64px" className="w-16 h-16 object-contain" loading='lazy' alt="" />
                                         </h3>
                                         <h3 className="text-2xl sm:text-3xl font-bold">Measure & Optimize</h3>
-                                        <p className="text-sm sm:text-base text-gray-500">We track performance, analyze results, and refine the campaign for continuous improvement.</p>
+                                        <p className="text-sm sm:text-lg text-gray-500">We track performance, analyze results, and refine the campaign for continuous improvement.</p>
                                     </div>
                                 </div>
                                 {/* <div className="absolute w-full h-3 -left-1/2 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div> */}

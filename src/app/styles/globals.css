@@ -9,7 +9,7 @@
 }
 
 :root {
-  --background: #fafafa;
+  --background: #cdd1fa;
   --foreground: #1a1a1a;
   --primary1: #03C4FB;
   --primary2: #9A51B8;
@@ -18,7 +18,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #fafafa;
+    --background: #b8a8a0;
     --foreground: #1a1a1a;
     --primary1: #03C4FB;
     --primary2: #9A51B8;
@@ -47,7 +47,7 @@ i {
   text-shadow: 1px 1px 2px var(--primary1), -1px -1px 2px var(--primary2);
 }
 
-h1, h2 {
+h1, h2, h3 {
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
 }
 

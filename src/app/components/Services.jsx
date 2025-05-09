@@ -54,7 +54,7 @@ export default function Services() {
             <div className="w-10/12 flex flex-col justify-center items-center">
                 <div className='flex flex-col justify-center items-center gap-2 mb-12'>
                     <h2 className='text-center text-3xl sm:text-5xl font-bold'>What We Offer</h2>
-                    <p className='text-center w-2/3'>At AdVinci, we deliver smart digital advertising solutions designed to grow your brand and connect you with your local audience.
+                    <p className='text-center w-3/4'>At AdVinci, we deliver smart digital advertising solutions designed to grow your brand and connect you with your local audience.
                     Discover our three core services — built to help your business stand out, attract more customers, and thrive in today's fast-moving world.</p>
                 </div>
                 {/* <motion.div 
@@ -71,9 +71,9 @@ export default function Services() {
 
                 <div className="flex flex-col w-full gap-32">
                     <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-8 lg:gap-12 min-h-[20vh]">
-                        <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={1}>
-                            <h3 className="text-3xl font-medium">{ serviceData[1].title }</h3>
-                            <p className="text-base text-gray-500">{ serviceData[1].text }</p>
+                        <div className="flex flex-col gap-2 rounded-lg px-12 sm:px-16 py-8 sm:py-12" key={1}>
+                            <h3 className="text-4xl font-medium text-center">{ serviceData[1].title }</h3>
+                            <p className="text-lg text-center">{ serviceData[1].text }</p>
                         </div>
                         <motion.div 
                             className="w-full h-full flex items-center justify-center"
@@ -82,7 +82,7 @@ export default function Services() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                             viewport={{ once: true }}
                         >
-                            <div className="relative w-2/3 aspect-[4/3] rounded-lg">
+                            <div className="relative w-3/4 aspect-[4/3] rounded-3xl shadow-2xl">
                                 <Image src={img1} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={serviceData[1].title} />
                             </div>
                         </motion.div>
@@ -95,19 +95,19 @@ export default function Services() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                             viewport={{ once: true }}
                         >
-                            <div className="relative w-2/3 aspect-[4/3] rounded-lg">
+                            <div className="relative w-3/4 aspect-[4/3] rounded-3xl shadow-2xl">
                                 <Image src={img2} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={serviceData[2].title} />
                             </div>
                         </motion.div>
-                        <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={2}>
-                            <h3 className="text-3xl font-medium">{ serviceData[2].title }</h3>
-                            <p className="text-base text-gray-500">{ serviceData[2].text }</p>
+                        <div className="flex flex-col gap-2 rounded-lg px-12 sm:px-16 py-8 sm:py-12" key={2}>
+                            <h3 className="text-4xl font-medium text-center">{ serviceData[2].title }</h3>
+                            <p className="text-lg text-center">{ serviceData[2].text }</p>
                         </div>
                     </div>
                     <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-12 min-h-[20vh]">
-                        <div className="flex flex-col gap-2 rounded-lg bg-white shadow-lg px-12 sm:px-16 py-8 sm:py-12" key={3}>
-                            <h3 className="text-3xl font-medium">{ serviceData[3].title }</h3>
-                            <p className="text-base text-gray-500">{ serviceData[3].text }</p>
+                        <div className="flex flex-col gap-2 rounded-lg px-12 sm:px-16 py-8 sm:py-12" key={3}>
+                            <h3 className="text-4xl font-medium text-center">{ serviceData[3].title }</h3>
+                            <p className="text-lg text-center">{ serviceData[3].text }</p>
                         </div>
                         <motion.div 
                             className="w-full h-full flex items-center justify-center"
@@ -116,7 +116,7 @@ export default function Services() {
                             transition={{ duration: 0.8, ease: 'easeOut' }}
                             viewport={{ once: true }}
                         >
-                            <div className="relative w-2/3 aspect-[4/3] rounded-lg">
+                            <div className="relative w-3/4 aspect-[4/3] rounded-3xl shadow-2xl">
                                 <Image src={img3} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={serviceData[3].title} />
                             </div>
                         </motion.div>
