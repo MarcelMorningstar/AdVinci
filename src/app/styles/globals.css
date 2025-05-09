@@ -18,7 +18,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #b8a8a0;
+    /* --background: #b8a8a0; 1.lapa */ 
+    --background2: #a793ad;
+    /* --background: #a88cb1; */
+    /* --background: #a88cb1; */
     --foreground: #1a1a1a;
     --primary1: #03C4FB;
     --primary2: #9A51B8;
@@ -49,6 +52,10 @@ i {
 
 h1, h2, h3 {
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.shadow-big {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 #signature {
