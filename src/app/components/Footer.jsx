@@ -8,7 +8,7 @@ import { IoLogoInstagram, IoLogoFacebook, IoLogoWhatsapp } from "react-icons/io5
 
 export default function Footer() {
   return (
-    <div className='flex flex-col gap-10 w-full justify-center pt-10 pb-4 bg-[var(--pastal)] text-white'>
+    <div className='flex flex-col gap-10 w-full justify-center pt-10 pb-4 bg-[var(--foreground)] text-white'>
       <div className='flex flex-col gap-8 lg:gap-0'>
         <div className='flex flex-col sm:flex-row gap-8 justify-between px-8 md:px-28 lg:px-36 xl:px-44'>
           <div className='flex flex-col gap-2 items-center sm:items-start'>

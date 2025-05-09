@@ -49,7 +49,7 @@ export default function Contact() {
     // };
 
     return (
-        <section id='Contact' className='w-full flex justify-center items-center py-24'>
+        <section id='Contact' className='w-full flex justify-center items-center py-24 bg-neutral-200'>
             <div className='w-full max-w-[800px] px-4 sm:px-16'>
                 { <ContactForm1 /> }
             </div>

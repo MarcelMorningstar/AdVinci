@@ -22,7 +22,7 @@ export default function HowItWorks() {
 
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.66%"]);
 
-    const backgroundColor = useTransform(scrollYProgress, [0, 0.5, 1], ["#fafafa", "#6A75CD", "#9A51B8"]);
+    const backgroundColor = useTransform(scrollYProgress, [0, 0.5, 1], ["#b8a8a0", "#535353", "#04243D"]);
 
     useEffect(() => {
         const interval = setInterval(() => {
