@@ -36,13 +36,13 @@ const FAQData = [
   },
   {
     "id": 7,
-    "question": "Do we need a website to advertise digitally with AdVinci?",
+    "question": "How soon can we start seeing results?",
     "answer": "Many clients notice increased visibility immediately after launching their campaign, with measurable improvements typically within weeks."
   },
   {
     "id": 8,
     "question": "Do we need a website to advertise digitally with AdVinci?",
-    "answer": "Yes, digital advertising is highly adaptable. You can easily adjust targeting, budgets, or messaging at any time based on real-time feedback."
+    "answer": "No, a website isn’t mandatory. We can effectively direct customers to your social media, physical location, or provide your contact details directly through ads."
   },
   {
     "id": 9,

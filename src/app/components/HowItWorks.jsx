@@ -2,22 +2,27 @@
 
 import React, { useEffect, useState, useRef  } from "react";
 import Image from "next/image";
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll  } from "framer-motion";
 import img1 from '../assets/step1.png'
 import img2 from '../assets/step2.png'
 import img3 from '../assets/step3.png'
+import img4 from '../assets/aboutus1.jpg'
+import img5 from '../assets/aboutus2.jpg'
+import img6 from '../assets/aboutus3.jpg'
 
 export default function HowItWorks() {
     const containerRef = useRef(null);
     const [progress, setProgress] = useState(0);
     const [resetting, setResetting] = useState(false);
     const [step, setStep] = useState(0);
-    
+
     const { scrollYProgress } = useScroll({
         target: containerRef,
     });
 
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66.66%"]);
+
+    const backgroundColor = useTransform(scrollYProgress, [0, 0.5, 1], ["#fafafa", "#6A75CD", "#9A51B8"]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -55,7 +60,7 @@ export default function HowItWorks() {
         <section id="HowWeBuildYourBrand" className="">
             <div className='flex flex-col gap-6 min-h-[50vh] items-center justify-center'>
                 <div className='flex flex-col gap-2 px-4 w-11/12'>
-                    <h2 className='text-center text-4xl sm:text-7xl font-bold'>How We <i className="text-5xl sm:text-8xl">Grow</i> Your Business</h2>
+                    <h2 className='text-center text-4xl sm:text-7xl font-bold'>How We Grow Your Business</h2>
                 </div>
 
                 <div className="flex flex-col w-full p-4 items-center">
@@ -89,20 +94,22 @@ export default function HowItWorks() {
                 </div>
             </div>
 
-            <div ref={containerRef} className="relative h-[300vh]">
+            <motion.div ref={containerRef} className="relative h-[300vh]" style={{ backgroundColor: backgroundColor }}>
                 <div className="sticky top-0 flex h-screen items-center overflow-hidden">
                     <motion.div style={{ x }} className="flex snap-y snap-mandatory">
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
                             <div className="relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center">
                                 <div className="w-full h-full flex flex-1 justify-center items-end lg:items-center">
-                                    <div className="relative w-7/12 sm:w-9/12 lg:10/12 h-7/12 sm:h-9/12 lg:h-10/12">
-                                        <Image src={img1} fill sizes="(max-width: 600px) 300px, 600px" className="h-full object-contain" loading='lazy' alt="" />
+                                    <div className="relative w-7/12 sm:w-9/12 aspect-square shadow-2xl rounded-2xl">
+                                        <Image src={img4} sizes="(max-width: 600px) 300px, 600px" className="h-full object-cover aspect-square rounded-2xl" loading='lazy' alt="" />
                                     </div>
                                 </div>
                                 <div className="relative z-30 w-6 h-6 bg-[var(--primary1)] rounded-3xl mt-auto" />
                                 <div className="flex flex-1">
                                     <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
-                                        <h3 className="text-lg font-semibold text-[var(--primary2)]">01</h3>
+                                        <h3 className="text-lg font-semibold text-[var(--primary2)]">
+                                            <Image src={img1} sizes="64px" className="w-16 h-16 object-contain" loading='lazy' alt="" />
+                                        </h3>
                                         <h3 className="text-2xl sm:text-3xl font-bold">Strategy & Design</h3>
                                         <p className="text-sm sm:text-base text-gray-500">We work closely with you to define the project, craft the advertisement, and shape a strategic campaign.</p>
                                     </div>
@@ -119,8 +126,8 @@ export default function HowItWorks() {
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
                             <div className="relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center">
                                 <div className="w-full h-full flex flex-1 justify-center items-end lg:items-center">
-                                    <div className="relative w-7/12 sm:w-9/12 lg:10/12 h-7/12 sm:h-9/12 lg:h-10/12">
-                                        <Image src={img2} fill sizes="(max-width: 600px) 300px, 600px" className="h-full object-contain" loading='lazy' alt="" />
+                                    <div className="relative w-7/12 sm:w-9/12 lg:10/12 aspect-square shadow-2xl rounded-2xl">
+                                        <Image src={img5} fill sizes="(max-width: 600px) 300px, 600px" className="h-full object-cover aspect-square rounded-2xl" loading='lazy' alt="" />
                                     </div>
                                 </div>
                                 <div 
@@ -128,7 +135,9 @@ export default function HowItWorks() {
                                 />
                                 <div className="flex flex-1">
                                     <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
-                                        <h3 className="text-lg font-semibold text-[var(--primary2)]">02</h3>
+                                        <h3 className="text-lg font-semibold text-[var(--primary2)]">
+                                            <Image src={img2} sizes="64px" className="w-16 h-16 object-contain" loading='lazy' alt="" />
+                                        </h3>
                                         <h3 className="text-2xl sm:text-3xl font-bold">Launch & Activate</h3>
                                         <p className="text-sm sm:text-base text-gray-500">We launch your campaign, making it visible to your target audience and ensuring maximum reach.</p>
                                     </div>
@@ -139,8 +148,8 @@ export default function HowItWorks() {
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
                             <div className="relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center">
                                 <div className="w-full h-full flex flex-1 justify-center items-end lg:items-center">
-                                    <div className="relative w-7/12 sm:w-9/12 lg:10/12 h-7/12 sm:h-9/12 lg:h-10/12">
-                                        <Image src={img3} fill sizes="(max-width: 600px) 300px, 600px" className="h-full object-contain" loading='lazy' alt="" />
+                                    <div className="relative w-7/12 sm:w-9/12 aspect-square shadow-2xl rounded-2xl">
+                                        <Image src={img6} fill sizes="(max-width: 600px) 300px, 600px" className="h-full object-cover aspect-square rounded-2xl" loading='lazy' alt="" />
                                     </div>
                                 </div>
                                 <div 
@@ -148,7 +157,9 @@ export default function HowItWorks() {
                                 />
                                 <div className="flex flex-1">
                                     <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
-                                        <h3 className="text-lg font-semibold text-[var(--primary2)]">03</h3>
+                                        <h3 className="text-lg font-semibold text-[var(--primary2)]">
+                                            <Image src={img3} sizes="64px" className="w-16 h-16 object-contain" loading='lazy' alt="" />
+                                        </h3>
                                         <h3 className="text-2xl sm:text-3xl font-bold">Measure & Optimize</h3>
                                         <p className="text-sm sm:text-base text-gray-500">We track performance, analyze results, and refine the campaign for continuous improvement.</p>
                                     </div>
@@ -158,7 +169,7 @@ export default function HowItWorks() {
                         </div>
                     </motion.div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }

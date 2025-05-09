@@ -65,18 +65,18 @@ export default function AboutUs() {
     // const raw2Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.2 * refHeight, 1 * refHeight] : [0.2 * refHeight, 1.05 * refHeight]);
     // const raw3Y = useTransform(scrollYProgress, [0, 1], [-1.3 * refHeight, 1 * refHeight]);
     const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.6 * refHeight, 0.6 * refHeight] : [-0.3 * dimensions.height, 0.2 * dimensions.height]);
-    const raw2Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.2 * refHeight, 1 * refHeight] : [-0.1 * dimensions.height, 0.4 * dimensions.height]);
+    const raw2Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.2 * refHeight, 1 * refHeight] : [-0.09 * dimensions.height, 0.4 * dimensions.height]);
     const raw3Y = useTransform(scrollYProgress, [0, 1], [-0.6 * dimensions.height, 0.3 * dimensions.height]);
     const parallax1Y = useSpring(raw1Y, { stiffness: 70, damping: 7 });
     const parallax2Y = useSpring(raw2Y, { stiffness: 70, damping: 7 });
     const parallax3Y = useSpring(raw3Y, { stiffness: 70, damping: 7 });
 
     return (
-        <section id="AboutUs" className="flex flex-col gap-20 sm:gap-16 pt-44 pb-16">
+        <section id="AboutUs" className="flex flex-col pt-44">
             {/* <div className="h-[30vh]"></div> */}
-            <div className="flex flex-col gap-20 justify-center items-center">
-              <h1 className="w-10/12 text-center xl:text-left text-4xl sm:text-5xl font-bold z-30 px-2">About Us</h1>
-              <div className="w-10/12 flex flex-col xl:flex-row gap-8 items-stretch">
+            <div className="flex flex-col justify-center items-center">
+              <h1 className="w-10/12 mb-20 sm:mb-16 text-center xl:text-left text-4xl sm:text-5xl font-bold z-30 px-2">About Us</h1>
+              <div className="w-10/12 flex flex-col xl:flex-row gap-8 pb-32 items-stretch">
                   <div className="relative z-40 flex flex-col h-[600px] lg:h-[420px] w-full max-w-6xl mx-auto shadow overflow-hidden rounded-lg bg-[var(--background)]">
                     {items.map((item) => {
                       return (
@@ -95,13 +95,13 @@ export default function AboutUs() {
                   </div>
                   <div ref={ref} className="relative left-1/2 -translate-x-1/2 xl:left-0 xl:translate-x-0 w-full h-96 md:w-11/12 lg:w-3/4 xl:w-full order-first xl:order-2">
                       <motion.div
-                        className="absolute left-1/12 md:left-4 w-[50%] md:w-[40%] aspect-video rounded-[100px] z-30 shadow-lg"
+                        className="absolute left-1/12 md:left-4 w-[70%] md:w-[49%] 2xl:w-[45%] aspect-video rounded-[100px] z-30 shadow-lg"
                         style={{ y: parallax1Y }}
                       >
                         <Image src={img1} fill className="object-cover rounded-[100px]" loading='lazy' alt="" />         
                       </motion.div>
                       <motion.div
-                        className="absolute left-1/2 md:left-1/3 w-[40%] md:w-[30%] aspect-square rounded-[48px] z-10 shadow-lg"
+                        className="absolute left-1/3 md:left-1/3 w-[60%] md:w-[45%] 2xl:w-[35%] aspect-[3/2] rounded-[48px] z-10 shadow-lg"
                         style={{ y: parallax2Y }}
                       >
                         <Image src={img3} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />
@@ -109,7 +109,7 @@ export default function AboutUs() {
                       {
                         dimensions.width >= 768 && (
                             <motion.div
-                              className="absolute right-2 w-[32%] aspect-[3/2] rounded-[60px] z-20 shadow-lg"
+                              className="absolute right-2 w-[37%] 2xl:w-[35%] aspect-square rounded-[60px] z-20 shadow-lg"
                               style={{ y: parallax3Y }}
                             >
                               <Image src={img2} fill className="object-cover rounded-[60px]" loading='lazy' alt="" />
@@ -120,7 +120,7 @@ export default function AboutUs() {
                   </div>
               </div>
 
-              <div className="relative w-full h-28 bg-[var(--pastal)]">
+              <div className="relative z-40 w-full h-28 bg-[var(--pastal)]">
                 <div className={styles.topline}>
                   <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
                       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
@@ -137,7 +137,7 @@ export default function AboutUs() {
                 </div>
               </div>
               
-              <div className="flex gap-52">
+              <div className="relative z-30 flex gap-52 bg-[linear-gradient(to_right,_var(--primary1)_16%,_var(--primary2)_70%)] pt-24 pb-16">
                   <div className="w-full flex flex-col gap-20 sm:gap-16 justify-center items-center">
                     <h1 className="text-center text-4xl sm:text-5xl font-bold">Our Journey</h1>
                     <div className="w-10/12 md:w-9/12 flex flex-col lg:flex-row gap-12 items-center lg:items-start">
