@@ -1,16 +1,19 @@
 'use client'
 
 import React, { useEffect, useState, useRef  } from "react";
+import {useTranslations} from 'next-intl';
 import Image from "next/image";
 import { motion, useTransform, useScroll  } from "framer-motion";
-import img1 from '../assets/step1.png'
-import img2 from '../assets/step2.png'
-import img3 from '../assets/step3.png'
-import img4 from '../assets/aboutus1.jpg'
-import img5 from '../assets/aboutus2.jpg'
-import img6 from '../assets/aboutus3.jpg'
+import img1 from '../assets/step1Icon.png'
+import img2 from '../assets/step2Icon.png'
+import img3 from '../assets/step3Icon.png'
+import img4 from '../assets/step1.png'
+import img5 from '../assets/step2.png'
+import img6 from '../assets/step3.png'
+import styles from '../styles/How.module.scss';
 
 export default function HowItWorks() {
+    const t = useTranslations('how');
     const containerRef = useRef(null);
     const [progress, setProgress] = useState(0);
     const [resetting, setResetting] = useState(false);
@@ -60,7 +63,7 @@ export default function HowItWorks() {
         <section id="HowWeBuildYourBrand" className="">
             <div className='flex flex-col gap-6 min-h-[50vh] items-center justify-center'>
                 <div className='flex flex-col gap-2 px-4 w-11/12'>
-                    <h2 className='text-center text-4xl sm:text-7xl font-bold'>How We Grow Your Business</h2>
+                    <h2 className='text-center text-4xl sm:text-7xl font-bold'>{ t("title") }</h2>
                 </div>
 
                 <div className="flex flex-col w-full p-4 items-center">
@@ -78,17 +81,17 @@ export default function HowItWorks() {
                     </div>
                     <div className="relative flex justify-between w-11/12 sm:w-2/3 lg:w-1/2 top-[8px]">
                         <div className="px-3 sm:px-4 py-2 bg-white shadow-md rounded-xl text-sm md:text-base font-bold text-[var(--primary2)] text-nowrap">
-                            STEP 01
+                            { t('step') } 01
                         </div>
                         <div
                             className={`px-3 sm:px-4 py-2 rounded-xl text-sm md:text-base font-bold duration-75 transition-all ${step >= 2 ? "bg-white text-[var(--primary2)] shadow-md" : "bg-gray-100 text-gray-600"} text-nowrap`}
                         >
-                            STEP 02
+                            { t('step') } 02
                         </div>
                         <div
                             className={`px-3 sm:px-4 py-2 rounded-xl text-sm md:text-base font-bold duration-75 transition-all ${step >= 3 ? "bg-white text-[var(--primary2)] shadow-md" : "bg-gray-100 text-gray-600"} text-nowrap`}
                         >
-                            STEP 03
+                            { t('step') } 03
                         </div>
                     </div>
                 </div>
@@ -98,20 +101,20 @@ export default function HowItWorks() {
                 <div className="sticky top-0 flex h-screen items-center overflow-hidden">
                     <motion.div style={{ x }} className="flex snap-y snap-mandatory">
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
-                            <div className="relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center">
-                                <div className="w-full h-full flex flex-1 justify-center items-end lg:items-center">
-                                    <div className="relative w-7/12 sm:w-9/12 aspect-square shadow-2xl rounded-2xl">
-                                        <Image src={img4} sizes="(max-width: 600px) 300px, 600px" className="h-full object-cover aspect-square rounded-2xl" loading='lazy' alt="" />
+                            <div className={`relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center ${styles.shortscreengap}`}>
+                                <div className={`w-full h-full flex flex-1 justify-center items-end lg:items-center ${styles.shortscreenscale}`}>
+                                    <div className="relative max-h-10/12 w-10/12 aspect-video rounded-2xl">
+                                        <Image src={img4} fill sizes="(max-width: 600px) 300px, 600px" className="h-full w-full object-contain aspect-square rounded-2xl" loading='lazy' alt="" />
                                     </div>
                                 </div>
                                 <div className="relative z-30 w-6 h-6 bg-[var(--primary1)] rounded-3xl mt-auto" />
                                 <div className="flex flex-1">
-                                    <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
+                                    <div className={`relative h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-neutral-100 shadow-2xl rounded-xl px-12 sm:px-16 py-6 sm:py-12 ${styles.shortscreenscale}`} >
                                         <h3 className="text-lg font-semibold text-[var(--primary2)]">
-                                            <Image src={img1} sizes="64px" className="w-16 h-16 object-contain" loading='lazy' alt="" />
+                                            <Image src={img1} sizes="64px" className="w-12 sm:w-16 h-12 sm:h-16 object-contain" loading='lazy' alt="" />
                                         </h3>
-                                        <h3 className="text-2xl sm:text-3xl font-bold">Strategy & Design</h3>
-                                        <p className="text-sm sm:text-lg text-gray-500">We work closely with you to define the project, craft the advertisement, and shape a strategic campaign.</p>
+                                        <h3 className="text-xl sm:text-3xl font-bold">{ t("how1.title") }</h3>
+                                        <p className="text-sm sm:text-lg text-gray-500">{ t("how1.description") }</p>
                                     </div>
                                 </div>
                                 <motion.div 
@@ -124,44 +127,44 @@ export default function HowItWorks() {
                             </div>
                         </div>
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
-                            <div className="relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center">
-                                <div className="w-full h-full flex flex-1 justify-center items-end lg:items-center">
-                                    <div className="relative w-7/12 sm:w-9/12 lg:10/12 aspect-square shadow-2xl rounded-2xl">
-                                        <Image src={img5} fill sizes="(max-width: 600px) 300px, 600px" className="h-full object-cover aspect-square rounded-2xl" loading='lazy' alt="" />
+                            <div className={`relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center ${styles.shortscreengap}`}>
+                                <div className={`w-full h-full flex flex-1 justify-center items-end lg:items-center ${styles.shortscreenscale}`}>
+                                    <div className="relative max-h-10/12 w-10/12 aspect-video rounded-2xl">
+                                        <Image src={img5} fill sizes="(max-width: 600px) 300px, 600px" className="h-full w-full object-contain aspect-square rounded-2xl" loading='lazy' alt="" />
                                     </div>
                                 </div>
                                 <div 
                                     className={`relative z-30 w-6 h-6 bg-[var(--primary1)] origin-center rounded-3xl mt-auto duration-200 ease-linear`}
                                 />
                                 <div className="flex flex-1">
-                                    <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
+                                    <div className={`relative h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-neutral-100 shadow-md rounded-xl px-12 sm:px-16 py-6 sm:py-12 ${styles.shortscreenscale}`}>
                                         <h3 className="text-lg font-semibold text-[var(--primary2)]">
-                                            <Image src={img2} sizes="64px" className="w-16 h-16 object-contain" loading='lazy' alt="" />
+                                            <Image src={img2} sizes="64px" className="w-12 sm:w-16 h-12 sm:h-16 object-contain" loading='lazy' alt="" />
                                         </h3>
-                                        <h3 className="text-2xl sm:text-3xl font-bold">Launch & Activate</h3>
-                                        <p className="text-sm sm:text-lg text-gray-500">We launch your campaign, making it visible to your target audience and ensuring maximum reach.</p>
+                                        <h3 className="text-xl sm:text-3xl font-bold">{ t("how2.title") }</h3>
+                                        <p className="text-sm sm:text-lg text-gray-500">{ t("how2.description") }</p>
                                     </div>
                                 </div>
                                 {/* <div className="absolute w-screen h-3 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div> */}
                             </div>
                         </div>
                         <div className="flex h-screen w-screen justify-center items-center snap-center">
-                            <div className="relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center">
-                                <div className="w-full h-full flex flex-1 justify-center items-end lg:items-center">
-                                    <div className="relative w-7/12 sm:w-9/12 aspect-square shadow-2xl rounded-2xl">
-                                        <Image src={img6} fill sizes="(max-width: 600px) 300px, 600px" className="h-full object-cover aspect-square rounded-2xl" loading='lazy' alt="" />
+                            <div className={`relative flex flex-col gap-4 xs:gap-8 sm:gap-12 lg:gap-0 lg:flex-row h-full sm:h-5/6 lg:h-2/4 w-4/5 justify-center items-center ${styles.shortscreengap}`}>
+                                <div className={`w-full h-full flex flex-1 justify-center items-end lg:items-center ${styles.shortscreenscale}`}>
+                                    <div className="relative max-h-10/12 w-10/12 aspect-video rounded-2xl">
+                                        <Image src={img6} fill sizes="(max-width: 600px) 300px, 600px" className="h-full w-full object-contain aspect-square rounded-2xl" loading='lazy' alt="" />
                                     </div>
                                 </div>
                                 <div 
                                     className={`relative z-30 w-6 h-6 bg-[var(--primary1)] origin-center rounded-3xl mt-auto duration-200 ease-linear`}
                                 />
                                 <div className="flex flex-1">
-                                    <div className="h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-white shadow-md rounded-xl px-16 sm:px-24 py-8 sm:py-16">
+                                    <div className={`relative h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-neutral-100 shadow-md rounded-xl px-12 sm:px-16 py-6 sm:py-12 ${styles.shortscreenscale}`}>
                                         <h3 className="text-lg font-semibold text-[var(--primary2)]">
-                                            <Image src={img3} sizes="64px" className="w-16 h-16 object-contain" loading='lazy' alt="" />
+                                            <Image src={img3} sizes="64px" className="w-12 sm:w-16 h-12 sm:h-16 object-contain" loading='lazy' alt="" />
                                         </h3>
-                                        <h3 className="text-2xl sm:text-3xl font-bold">Measure & Optimize</h3>
-                                        <p className="text-sm sm:text-lg text-gray-500">We track performance, analyze results, and refine the campaign for continuous improvement.</p>
+                                        <h3 className="text-xl sm:text-3xl font-bold">{ t("how3.title") }</h3>
+                                        <p className="text-sm sm:text-lg text-gray-500">{ t("how3.description") }</p>
                                     </div>
                                 </div>
                                 {/* <div className="absolute w-full h-3 -left-1/2 lg:bottom-0 lg:mb-[6px] bg-[var(--primary1)]"></div> */}

@@ -1,0 +1,29 @@
+@media (max-height: 900px) and (min-width: 640px) {
+  .shortscreenscale {
+    transform: scale(0.9);
+  }
+
+  .shortscreengap {
+    gap: 0 !important;
+  }
+}
+
+@media (max-height: 800px) and (min-width: 640px) {
+  .shortscreenscale {
+    transform: scale(0.8);
+  }
+
+  .shortscreengap {
+    gap: 0 !important;
+  }
+}
+
+@media (max-height: 690px) and (min-width: 640px) {
+  .shortscreenscale {
+    transform: scale(0.65);
+  }
+
+  .shortscreengap {
+    gap: 0 !important;
+  }
+}

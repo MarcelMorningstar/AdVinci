@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useActionState } from 'react'
+import {useTranslations} from 'next-intl';
 import FormLayout from './FormLayout'
 import Input from "./Input"
 import PhoneInput from 'react-phone-input-2'
@@ -11,6 +12,7 @@ import { sendMail } from '../utilities/mail'
 import 'react-phone-input-2/lib/style.css'
 
 export default function ContactForm1() {
+  const t = useTranslations('contact');
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState({
     company: '',
@@ -30,37 +32,39 @@ export default function ContactForm1() {
       file: formDataFromDom.get('file')
     };
 
+    console.log(formDataObj)
+
     const newErrors = {};
     let valid = true;
 
     if (!formDataObj.company) {
-      newErrors.company = 'Company name is required';
+      newErrors.company = t("validation.item1");
       valid = false;
     }
 
     if (!formDataObj.email) {
-      newErrors.email = 'Email is required';
+      newErrors.email = t("validation.item3");
       valid = false;
     } else if (!/\S+@\S+\.\S+/.test(formDataObj.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = t("validation.item2");
       valid = false;
     }
 
     const phoneNumber = parsePhoneNumberFromString(formDataObj.phone);
 
     if (!phoneNumber || !phoneNumber.isValid()) {
-      newErrors.phone = 'Please enter a valid phone number';
+      newErrors.phone = t("validation.item4");
       valid = false;
     }
 
     if (!formDataObj.message) {
-      newErrors.message = 'Message is required';
+      newErrors.message = t("validation.item5");
       valid = false;
     }
 
     if (!valid) {
       setErrors(newErrors);
-      return { type: 'error', message: 'Please fix the errors above.' };
+      return { type: 'error', message: t("validation.info2") };
     }
     
     setErrors({
@@ -81,11 +85,11 @@ export default function ContactForm1() {
   useEffect(() => {
     if (state.message && state.type === 'success') {
       setAgreed(false);
-      toast.success(state.message);
+      toast.success(t("validation.info3"));
     }
     if (state.message && state.type === 'error') {
       setAgreed(false);
-      toast.error(state.message);
+      toast.error(t("validation.info4"));
     }
   }, [state]);
 
@@ -93,7 +97,7 @@ export default function ContactForm1() {
     const file = e.target.files[0];
 
     if (file && file.size > 20 * 1024 * 1024) {
-      setErrors({...errors, file: "File size must be under 20MB"});
+      setErrors({...errors, file: t("validation.item6")});
       e.target.value = null;
       return;
     }
@@ -112,13 +116,13 @@ export default function ContactForm1() {
   return (
     <FormLayout action={formAction} title="Design with us">
       <div className='relative w-full'>
-        <Input type="text" label="Company Name" name="company" styles="w-full" />
-        {errors.company && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.company}</span>}
+        <Input type="text" label={t("form.item1")} name="company" styles="w-full" />
+        {errors.company && <span className='absolute -top-3 left-3 bg-neutral-200 text-red-800'>{errors.company}</span>}
       </div>
 
       <div className='relative w-full'>
-        <Input type="email" label="Email" name="email" styles="w-full" />
-        {errors.email && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.email}</span>}
+        <Input type="email" label={t("form.item2")} name="email" styles="w-full" />
+        {errors.email && <span className='absolute -top-3 left-3 bg-neutral-200 text-red-800'>{errors.email}</span>}
       </div>
       <div className='relative w-full'>
         <PhoneInput
@@ -147,22 +151,22 @@ export default function ContactForm1() {
             width: '100%',
           }}
           country={'it'}
-          placeholder="Phone"
+          placeholder={t("form.item3")}
           enableSearch
           disableSearchIcon
           searchPlaceholder='Search'
           searchNotFound='No entries to show'
         />
-        {errors.phone && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.phone}</span>}
+        {errors.phone && <span className='absolute -top-3 left-3 bg-neutral-200 text-red-800'>{errors.phone}</span>}
       </div>
 
       <div className='relative w-full'>
-        <textarea name="message" id="" className="w-full max-h-48 font-medium bg-transparent border-0 outline outline-gray-300 rounded-lg px-3 py-4 focus:outline-2 focus:outline-gray-500 focus:ring-0" placeholder="Message"></textarea>
-        {errors.message && <span className='absolute -top-3 left-3 bg-[var(--background)] text-red-800'>{errors.message}</span>}
+        <textarea name="message" id="" className="w-full max-h-48 font-medium bg-transparent border-0 outline outline-gray-300 rounded-lg px-3 py-4 focus:outline-2 focus:outline-gray-500 focus:ring-0" placeholder={t("form.item4")}></textarea>
+        {errors.message && <span className='absolute -top-3 left-3 bg-neutral-200 text-red-800'>{errors.message}</span>}
       </div>
 
       <div className="flex flex-col gap-1">
-        <label className="flex flex-row items-end gap-1 text-sm font-medium" htmlFor="file_input">Upload your idea (optional)<p className="text-xs font-normal" id="file_input_help">Image, PDF (Max file size 20MB).</p></label>
+        <label className="flex flex-row items-end gap-1 text-sm font-medium" htmlFor="file_input">{t("form.item5")}<p className="text-xs font-normal" id="file_input_help">Image, PDF (Max file size 20MB).</p></label>
         <input type="file" name="file" accept="image/*,.pdf" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" id="file_input" onChange={handleFileChange} />
       </div>
       

@@ -1,8 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
-import Link from 'next/link';
+import { Link, useRouter, usePathname } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
+import {useTranslations} from 'next-intl';
 import Logo from '../assets/logo.svg'
 import { Menu, MenuHandler, MenuList, MenuItem } from "@material-tailwind/react";
 import { useWindowDimensions } from "../utilities/window";
@@ -10,29 +12,42 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import styles from '../styles/Navbar.module.scss';
 
 export default function Navbar() {
+  const t = useTranslations('navbar');
   const [openMenu, setOpenMenu] = useState(false)
   const dimensions = useWindowDimensions()
 
+  const router = useRouter();
+  const pathname = usePathname();
+  const locale = useLocale();
+
+  function changeLocale(locale) {
+    router.replace(pathname, {locale: locale});
+  }
+
   return (
-    <nav className='fixed z-50 flex flex-row justify-between w-full h-20 px-[12%] bg-[var(--foreground)]'>
-      <div className='flex flex-row gap-1 items-end pb-2.5'>
+    <nav className='sticky top-0 z-50 w-screen flex flex-row justify-between h-20 px-[12%] bg-[var(--foreground)]'>
+      <div className='flex flex-row gap-2 items-end pb-2.5'>
         <Link href="/#Home" className='relative h-8/12 aspect-[1.47]'>
           <Image src={Logo} fill className='object-contain' priority alt='AdVinci' />
         </Link>
         {
           dimensions.width > 920 && (
             <div className='flex felx-row gap-3 items-end h-10/12'>
-              <Link href="/#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Services</Link>
-              <Link href="/aboutus" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>About Us</Link>
-              <Link href="/pricing" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>Pricing</Link>
-              <Link href="/FAQ" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>FAQ</Link>
+              <Link href="/#Services" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>{ t("item1") }</Link>
+              <Link href="/aboutus" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>{ t("item2") }</Link>
+              <Link href="/pricing" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>{ t("item3") }</Link>
+              <Link href="/FAQ" className='text-xl text-gray-300 whitespace-nowrap hover:text-white cursor-pointer'>{ t("item4") }</Link>
             </div>
           )
         }
+        <div className='flex flex-row gap-1.5'>
+          <button onClick={() => changeLocale("en")} className={`text-base ${locale == "en" ? "text-[var(--primary1)]" : "text-gray-400"} hover:text-[var(--primary1)] cursor-pointer`}>EN</button>
+          <button onClick={() => changeLocale("it")} className={`text-base ${locale == "it" ? "text-[var(--primary1)]" : "text-gray-400"} hover:text-[var(--primary1)] cursor-pointer`}>IT</button>
+        </div>
       </div>
 
       <div className='flex flex-row gap-3 items-end h-full'>
-        <Link href="/#Contact" className={styles.outlineborder}>Contact</Link>
+        <Link href="/#Contact" className={styles.outlineborder}>{ t("item7") }</Link>
         {
           dimensions.width <= 950 && (
             <Menu open={openMenu} handler={setOpenMenu} placement="bottom-end" className="border-0 rounded-md">
@@ -41,27 +56,27 @@ export default function Navbar() {
                 </MenuHandler>
                 <MenuList className="relative z-50 w-auto text-right py-3 px-4">
                   <ul className="w-full focus:outline-none">
-                    <span className="text-foreground text-base font-semibold capitalize">Company Overview</span>
+                    <span className="text-foreground text-base font-semibold capitalize">{ t("category1") }</span>
                     <Link href='/#Services' className="block">
                       <MenuItem className='text-right'>
-                        <span className="text-zinc-700 capitalize hover:text-black">Services</span>
+                        <span className="text-zinc-700 capitalize hover:text-black">{ t("item1") }</span>
                       </MenuItem>
                     </Link>
                     <Link href='/aboutus' className="block">
                       <MenuItem className='text-right'>
-                        <span className="text-zinc-700 capitalize hover:text-black">About Us</span>
+                        <span className="text-zinc-700 capitalize hover:text-black">{ t("item2") }</span>
                       </MenuItem>
                     </Link>
                     <Link href='/pricing' className="block">
                       <MenuItem className='text-right'>
-                        <span className="text-zinc-700 capitalize hover:text-black">Pricing</span>
+                        <span className="text-zinc-700 capitalize hover:text-black">{ t("item3") }</span>
                       </MenuItem>
                     </Link>
                     <hr className="text-zinc-500 my-3" />
-                    <span className="text-foreground text-base font-semibold capitalize">Support</span>
+                    <span className="text-foreground text-base font-semibold capitalize">{ t("category3") }</span>
                     <Link href='/FAQ' className="block">
                       <MenuItem className='text-right'>
-                        <span className="text-zinc-700 capitalize hover:text-black">FAQ</span>
+                        <span className="text-zinc-700 capitalize hover:text-black">{ t("item4") }</span>
                       </MenuItem>
                     </Link>
                   </ul>

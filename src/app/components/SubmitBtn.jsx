@@ -1,6 +1,9 @@
 import React from 'react'
+import {useTranslations} from 'next-intl';
 
 export default function SubmitBtn({ agreed, pending }) {
+  const t = useTranslations('contact');
+  
   return (
     <button 
       type="submit" 
@@ -15,7 +18,7 @@ export default function SubmitBtn({ agreed, pending }) {
         {pending ? (
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" className='h-16'><circle fill="#FFFFFF" stroke="#FFFFFF" strokeWidth="16" r="15" cx="40" cy="100"><animate attributeName="opacity" calcMode="spline" dur="0.8" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#FFFFFF" stroke="#FFFFFF" strokeWidth="16" r="15" cx="100" cy="100"><animate attributeName="opacity" calcMode="spline" dur="0.8" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#FFFFFF" stroke="#FFFFFF" strokeWidth="16" r="15" cx="160" cy="100"><animate attributeName="opacity" calcMode="spline" dur="0.8" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>
         ) : (
-          "Send Message"
+          t("form.item9")
         )}
       </div>
     </button>

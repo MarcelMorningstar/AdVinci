@@ -1,41 +1,17 @@
 'use client'
 
-import React, { useLayoutEffect, useState } from "react";
-// import Link from 'next/link';
+import React from "react";
+import {useTranslations} from 'next-intl';
 import Image from "next/image";
 import { motion } from "framer-motion";
-// import { twMerge } from "tailwind-merge";
-// import { MdEmail } from "react-icons/md";
-// import { BsMegaphoneFill } from "react-icons/bs";
-// import { TbInfoHexagonFilled } from "react-icons/tb";
-// import { FaPaintBrush, FaHandsHelping } from "react-icons/fa";
-// import { TypeAnimation } from 'react-type-animation';
-// import { useInView } from "react-intersection-observer";
 import img1 from '../assets/service1.png'
 import img2 from '../assets/service2.png'
 import img3 from '../assets/service3.png'
 import styles from '../styles/Services.module.scss'
 
-const serviceData = {
-    1: {
-        "title": "Digital Advertising",
-        "text": "Reach your audience through our growing network of digital totems, placed in high-traffic local areas. Clients can advertise directly on our network, or we can design and build additional digital advertising solutions tailored to support your business needs."
-    },
-    2: {
-        "title": "Digital Advertising Design",
-        "text": "Eye-catching, modern, and on-brand - we craft digital ads that not only look great, but perform even better. From static designs to animated visuals, our creatives are designed to stop the scroll and deliver results."
-    },
-    3: {
-        "title": "Digital Advertising Consultation & Project Planning",
-        "text": "From concept to execution, we provide expert guidance for your digital ad campaigns. Whether you're launching your first campaign or scaling up, our team helps you strategize, plan, and implement for maximum impact."
-    },
-    4: {
-        "title": "Email Us",
-        "text": "Click it to go to the Contact Form."
-    },
-}
-
 export default function Services() {
+    const t = useTranslations('services');
+
     // const { ref: ref1, inView: inView1 } = useInView({
     //     triggerOnce: true,
     //     threshold: 0.2,
@@ -50,12 +26,11 @@ export default function Services() {
     // });
 
     return (
-        <section id="Services" className="min-h-[80vh] flex flex-col gap-32 justify-center items-center pt-32">
+        <section id="Services" className="min-h-[80vh] flex flex-col gap-32 justify-center items-center pt-32 overflow-x-hidden overflow-y-clip">
             <div className="w-10/12 flex flex-col justify-center items-center">
                 <div className='flex flex-col justify-center items-center gap-2 mb-12'>
-                    <h2 className='text-center text-3xl sm:text-5xl font-bold'>What We Offer</h2>
-                    <p className='text-center w-3/4'>At AdVinci, we deliver smart digital advertising solutions designed to grow your brand and connect you with your local audience.
-                    Discover our three core services — built to help your business stand out, attract more customers, and thrive in today's fast-moving world.</p>
+                    <h2 className='text-center text-3xl sm:text-5xl font-bold'>{ t("title") }</h2>
+                    <p className='text-center w-3/4'>{ t("description") }</p>
                 </div>
                 {/* <motion.div 
                     initial="initial"
@@ -72,8 +47,8 @@ export default function Services() {
                 <div className="flex flex-col w-full gap-32">
                     <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-8 lg:gap-12 min-h-[20vh]">
                         <div className="flex flex-col gap-2 rounded-lg px-12 sm:px-16 py-8 sm:py-12" key={1}>
-                            <h3 className="text-4xl font-medium text-center">{ serviceData[1].title }</h3>
-                            <p className="text-lg text-center">{ serviceData[1].text }</p>
+                            <h3 className="text-4xl font-medium text-center">{ t("service1.title") }</h3>
+                            <p className="text-lg text-center">{ t("service1.description") }</p>
                         </div>
                         <motion.div 
                             className="w-full h-full flex items-center justify-center"
@@ -83,7 +58,7 @@ export default function Services() {
                             viewport={{ once: true }}
                         >
                             <div className="relative w-3/4 aspect-[4/3] rounded-3xl shadow-2xl">
-                                <Image src={img1} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={serviceData[1].title} />
+                                <Image src={img1} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={ t("service1.title") } />
                             </div>
                         </motion.div>
                     </div>
@@ -96,18 +71,18 @@ export default function Services() {
                             viewport={{ once: true }}
                         >
                             <div className="relative w-3/4 aspect-[4/3] rounded-3xl shadow-2xl">
-                                <Image src={img2} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={serviceData[2].title} />
+                                <Image src={img2} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={ t("service2.title") } />
                             </div>
                         </motion.div>
                         <div className="flex flex-col gap-2 rounded-lg px-12 sm:px-16 py-8 sm:py-12" key={2}>
-                            <h3 className="text-4xl font-medium text-center">{ serviceData[2].title }</h3>
-                            <p className="text-lg text-center">{ serviceData[2].text }</p>
+                            <h3 className="text-4xl font-medium text-center">{ t("service2.title") }</h3>
+                            <p className="text-lg text-center">{ t("service2.description") }</p>
                         </div>
                     </div>
                     <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-12 min-h-[20vh]">
                         <div className="flex flex-col gap-2 rounded-lg px-12 sm:px-16 py-8 sm:py-12" key={3}>
-                            <h3 className="text-4xl font-medium text-center">{ serviceData[3].title }</h3>
-                            <p className="text-lg text-center">{ serviceData[3].text }</p>
+                            <h3 className="text-4xl font-medium text-center">{ t("service3.title") }</h3>
+                            <p className="text-lg text-center">{ t("service3.description") }</p>
                         </div>
                         <motion.div 
                             className="w-full h-full flex items-center justify-center"
@@ -117,7 +92,7 @@ export default function Services() {
                             viewport={{ once: true }}
                         >
                             <div className="relative w-3/4 aspect-[4/3] rounded-3xl shadow-2xl">
-                                <Image src={img3} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={serviceData[3].title} />
+                                <Image src={img3} fill sizes="500px" className="object-cover rounded-3xl" loading='lazy' alt={ t("service3.title") } />
                             </div>
                         </motion.div>
                     </div>

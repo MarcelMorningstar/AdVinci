@@ -1,4 +1,5 @@
 import React from 'react'
+import {useTranslations} from 'next-intl';
 import Link from 'next/link'
 import Image from 'next/image'
 import Logo from '../assets/logo.svg'
@@ -7,6 +8,8 @@ import { PiTrademark } from "react-icons/pi";
 import { IoLogoInstagram, IoLogoFacebook, IoLogoWhatsapp } from "react-icons/io5";
 
 export default function Footer() {
+  const t = useTranslations('footer');
+
   return (
     <div className='flex flex-col gap-10 w-full justify-center pt-10 pb-4 bg-[var(--foreground)] text-white'>
       <div className='flex flex-col gap-8 lg:gap-0'>
@@ -14,7 +17,7 @@ export default function Footer() {
           <div className='flex flex-col gap-2 items-center sm:items-start'>
             <div className='relative flex flex-row gap-1 mb-1'>
               <Image src={Logo} className='w-12 h-8 object-contain' alt='AdVinci' />
-              <h3 className='text-2xl font-medium'>AdVinci</h3>
+              <h4 className='text-2xl text-white font-medium'>AdVinci</h4>
             </div>
             <div className='flex flex-row gap-1.5 text-white hover:text-[var(--primary1)]'>
               <MdEmail className='w-6 h-6 text-inherit transition ease-in duration-100' />
@@ -57,7 +60,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <span className='flex justify-center items-center text-base sm:text-lg'>© { new Date().getFullYear() } Advinci. All rights reserved.</span>
+      <span className='flex justify-center items-center text-base sm:text-lg'>© { new Date().getFullYear() } Advinci. { t("title") }</span>
     </div>
   )
 }

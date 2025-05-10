@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
+import {useTranslations} from 'next-intl';
 import { useWindowDimensions } from "../utilities/window";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
-import { twMerge } from "tailwind-merge";
 import { FaStar, FaLightbulb } from "react-icons/fa";
 import { FaEarthAfrica } from "react-icons/fa6";
 import img from '../assets/arita.jpg'
@@ -13,37 +13,40 @@ import img2 from '../assets/aboutus2.jpg'
 import img3 from '../assets/aboutus3.jpg'
 import styles from '../styles/About.module.scss';
 
-const items = [
-    {
-      id: 1,
-      title: "Our Mission",
-      Icon: FaStar,
-      description:
-        "Our mission is to transform digital advertising into measurable success for every client through innovation and partnership",
-    },
-    {
-      id: 2,
-      title: "Our Vision",
-      Icon: FaEarthAfrica,
-      description:
-        "Helping businesses grow, succeed, and deliver more value — through powerful advertising and trusted partnership.",
-    },
-    {
-      id: 3,
-      title: "Why AdVinci?",
-      Icon: FaLightbulb,
-      description:
-        "We create fast, bold advertising solutions — from sleek designs to powerful videos that connect. At the cutting edge of technology, we’re the place for creative minds who want to grow, innovate, and make an impact.",
-    }
-];
+
 
 export default function AboutUs() {
+    const t = useTranslations('about');
+
+    const items = [
+      {
+        id: 1,
+        title: t("about1.title"),
+        Icon: FaStar,
+        description: t("about1.description"),
+      },
+      {
+        id: 2,
+        title: t("about2.title"),
+        Icon: FaEarthAfrica,
+        description: t("about2.description"),
+      },
+      {
+        id: 3,
+        title: t("about3.title"),
+        Icon: FaLightbulb,
+        description: t("about3.description"),
+      }
+    ];
+
     const ref = useRef(null)
     const [refHeight, setRefHeight] = useState(0);
     const [mobile, setMobile] = useState(false)
     const [open, setOpen] = useState(items[0].id);
     const dimensions = useWindowDimensions();
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] })
+    
+    
 
     useEffect(() => {
       if (dimensions.width < 768) {
@@ -51,8 +54,6 @@ export default function AboutUs() {
       } else {
         setMobile(false)
       }
-
-      console.log(dimensions.height)
     }, [dimensions])
 
     useLayoutEffect(() => {
@@ -75,7 +76,7 @@ export default function AboutUs() {
         <section id="AboutUs" className="flex flex-col pt-44">
             {/* <div className="h-[30vh]"></div> */}
             <div className="flex flex-col justify-center items-center">
-              <h1 className="w-10/12 mb-20 sm:mb-16 text-center xl:text-left text-4xl sm:text-5xl font-bold z-30 px-2">About Us</h1>
+              <h2 className="w-10/12 mb-20 sm:mb-16 text-center xl:text-left text-4xl sm:text-5xl font-bold z-30 px-2">{ t("title") }</h2>
               <div className="w-10/12 flex flex-col xl:flex-row gap-8 pb-32 items-stretch">
                   <div className="relative z-40 flex flex-col h-[600px] lg:h-[420px] w-full max-w-6xl mx-auto shadow overflow-hidden rounded-lg bg-[var(--background)]">
                     {items.map((item) => {
@@ -139,15 +140,15 @@ export default function AboutUs() {
               
               <div className="relative z-30 flex gap-52 pt-24 pb-16 bg-[var(--background2)]">
                   <div className="w-full flex flex-col gap-20 sm:gap-16 justify-center items-center">
-                    <h1 className="text-center text-4xl sm:text-5xl font-bold">Our Journey</h1>
+                    <h1 className="text-center text-4xl sm:text-5xl font-bold">{ t("title2") }</h1>
                     <div className="w-10/12 md:w-9/12 flex flex-col lg:flex-row gap-12 items-center lg:items-start">
                         <div className="relative w-[300px] sm:w-[400px] h-[400px] shrink-0">
                           <Image src={img} fill className="object-cover rounded-2xl" loading='lazy' alt="" />
                         </div>
                         <div className="flex flex-col gap-2.5 justify-center text-xl text-center lg:text-left">
-                          <p>I'm Arita, founder of AdVinci. With a strong background in art, design, and digital media, creativity has been at the core of my journey. Originally from the Baltics, I spent a decade in England gaining international experience before relocating to Italy, where I established AdVinci.</p>
-                          <p>I also spent several years working in Estonia, one of the world’s most digitally advanced and tech-driven countries, further strengthening my expertise in digital innovation. Over the years, I have designed property interiors, created art collections, and evolved into active digital creation.</p>
-                          <p>Today, my hands-on experience in digital marketing, design, and content strategy drives AdVinci’s approach, helping businesses grow their online presence with creativity and precision.</p>
+                          <p>{ t("text1") }</p>
+                          <p>{ t("text2") }</p>
+                          <p>{ t("text3") }</p>
                           <span id="signature" className="text-8xl">Arita Bluka</span>
                         </div>
                     </div>
@@ -199,7 +200,7 @@ const Panel = ({ open, setOpen, id, Icon, title, description }) => {
     return (
       <>
         <button
-          className="bg-[var(--background2)] hover:[var(--background2)] transition-colors p-3 border-l-[1px] border-r-[1px] border-b-[1px] border-[var(--background2)] flex flex-row-reverse justify-end items-center gap-4 relative group"
+          className="bg-[var(--background2)] hover:bg-[#8e7995] transition-colors p-3 border-l-[1px] border-r-[1px] border-b-[1px] border-[var(--background2)] flex flex-row-reverse justify-end items-center gap-4 relative group"
           onClick={() => setOpen(id)}
         >
           <span
@@ -214,7 +215,7 @@ const Panel = ({ open, setOpen, id, Icon, title, description }) => {
           <div className="w-6 aspect-square text-[var(--primary2)] grid place-items-center">
             <Icon />
           </div>
-          <span className="w-4 h-4 bg-white group-hover:bg-slate-50 transition-colors border-r-[1px] border-b-[1px] border-slate-200 rotate-45 absolute bottom-0 right-[50%] translate-y-[50%] translate-x-[50%] z-40" />
+          <span className="w-4 h-4 bg-[var(--background2)] group-hover:bg-[#8e7995] transition-colors border-r-[1px] border-b-[1px] border-[var(--background2)] rotate-45 absolute bottom-0 right-[50%] translate-y-[50%] translate-x-[50%] z-40" />
         </button>
   
         <AnimatePresence>
@@ -225,7 +226,7 @@ const Panel = ({ open, setOpen, id, Icon, title, description }) => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="relative z-[35] bg-gray-100 w-full h-full overflow-none flex"
+              className="relative z-[35] bg-neutral-100 w-full h-full overflow-none flex"
             >
               <motion.div
                 variants={descriptionVariants}

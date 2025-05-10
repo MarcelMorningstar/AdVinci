@@ -1,12 +1,14 @@
 "use client"
 
 import React, { useState, useRef } from 'react'
+import {useTranslations} from 'next-intl';
 import Logo from './Logo'
 import MobileLogo from './MobileLogo'
 import { useWindowDimensions } from "../utilities/window";
 import styles from '../styles/Hero.module.scss';
 
 export default function Hero() {
+    const t = useTranslations('hero');
     const sectionRef = useRef<HTMLElement>(null)
     const [cursor, setCursor] = useState({ x: 0, y: 0 })
     const [mouseOnCard, setMouseOnCard] = useState(false)
@@ -44,7 +46,7 @@ export default function Hero() {
                             )
                         }
                         <div className='flex flex-col max-w-11/12'>
-                            <h1 className='text-3xl sm:text-4xl text-center text-gray-400'>Smart Advertising that Works</h1>
+                            <h1 className='text-3xl sm:text-4xl text-center text-gray-400'>{ t('welcome') }</h1>
                         </div>
                     </div>
                 )
