@@ -53,7 +53,7 @@
         "title": "Design with Us",
         "description": "We reply to every message personally.",
         "form": {
-            "item1": "Company Name",
+            "item1": "Name",
             "item2": "Email",
             "item3": "Phone",
             "item4": "Message",
@@ -64,7 +64,7 @@
             "item9": "Send Message"
         },
         "validation": {
-            "item1": "Company Name is required",
+            "item1": "Name is required",
             "item2": "Email is invalid",
             "item3": "Email is required",
             "item4": "Please enter a valid phone number",

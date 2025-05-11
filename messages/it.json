@@ -1,138 +1,138 @@
 {
     "navbar": {
-        "item1": "Services",
-        "item2": "About Us",
-        "item3": "Pricing",
-        "item4": "FAQ",
-        "item5": "Privacy Policy",
-        "item6": "Terms of Service",
-        "item7": "Contact",
-        "category1": "Company Overview",
-        "category2": "Company",
-        "category3": "Support"
+        "item1": "Servizi",
+        "item2": "Chi Siamo",
+        "item3": "Prezzi",
+        "item4": "Domande Frequenti",
+        "item5": "Politica sulla Privacy",
+        "item6": "Termini di Servizio",
+        "item7": "Contatto",
+        "category1": "Panoramica Aziendale",
+        "category2": "Azienda",
+        "category3": "Supporto"
     },
     "footer": {
-        "title": "All rights reserved."
+        "title": "Tutti i diritti riservati."
     },
     "hero": {
-        "welcome": "IT"
+        "welcome": "Pubblicità Intelligente che Funziona"
     },
     "services": {
-        "title": "What We Offer",
-        "description": "At AdVinci, we deliver smart digital advertising solutions designed to grow your brand and connect you with your local audience. Discover our three core services — built to help your business stand out, attract more customers, and thrive in today's fast-moving world.",
+        "title": "Cosa Offriamo",
+        "description": "In AdVinci offriamo soluzioni di pubblicità digitale intelligenti pensate per far crescere il tuo brand e connetterti con il pubblico locale. Scopri i nostri tre servizi principali — creati per aiutare la tua attività a distinguersi, attirare più clienti e prosperare nel mondo dinamico di oggi.",
         "service1": {
-            "title": "Digital Advertising",
-            "description": "Reach your audience through our growing network of digital totems, placed in high-traffic local areas. Clients can advertise directly on our network, or we can design and build additional digital advertising solutions tailored to support your business needs."
+            "title": "Pubblicità Digitale",
+            "description": "Raggiungi il tuo pubblico attraverso la nostra rete in crescita di totem digitali, posizionati in aree locali ad alto traffico. I clienti possono pubblicizzare direttamente sulla nostra rete o possiamo progettare e realizzare soluzioni pubblicitarie digitali aggiuntive su misura per le esigenze della tua azienda."
         },
         "service2": {
-            "title": "Digital Advertising Design",
-            "description": "Eye-catching, modern, and on-brand - we craft digital ads that not only look great, but perform even better. From static designs to animated visuals, our creatives are designed to stop the scroll and deliver results."
+            "title": "Design di Pubblicità Digitale",
+            "description": "Accattivanti, moderne e coerenti con il brand: creiamo pubblicità digitali che non solo hanno un bell'aspetto, ma offrono prestazioni ancora migliori. Dai design statici alle animazioni, i nostri creativi sono progettati per catturare l'attenzione e ottenere risultati."
         },
         "service3": {
-            "title": "Digital Advertising Consultation & Project Planning",
-            "description": "From concept to execution, we provide expert guidance for your digital ad campaigns. Whether you're launching your first campaign or scaling up, our team helps you strategize, plan, and implement for maximum impact."
+            "title": "Consulenza e Pianificazione di Progetti di Pubblicità Digitale",
+            "description": "Dal concept all'esecuzione, forniamo consulenza esperta per le tue campagne pubblicitarie digitali. Che tu stia lanciando la tua prima campagna o ampliando la portata, il nostro team ti aiuta a definire la strategia, pianificare e implementare per il massimo impatto."
         }
     },
     "how": {
-        "title": "How We Grow Your Business",
-        "step": "STEP",
+        "title": "Come Facciamo Crescere la Tua Attività",
+        "step": "PASSO",
         "how1": {
-            "title": "Strategy & Design",
-            "description": "We work closely with you to define the project, craft the advertisement, and shape a strategic campaign."
+            "title": "Strategia e Design",
+            "description": "Lavoriamo a stretto contatto con te per definire il progetto, creare l'annuncio e configurare una campagna strategica."
         },
         "how2": {
-            "title": "Launch & Activate",
-            "description": "We launch your campaign, making it visible to your target audience and ensuring maximum reach."
+            "title": "Lancio e Attivazione",
+            "description": "Lanciamo la tua campagna rendendola visibile al tuo pubblico target e garantendone la massima copertura."
         },
         "how3": {
-            "title": "Measure & Optimize",
-            "description": "We track performance, analyze results, and refine the campaign for continuous improvement."
+            "title": "Misura e Ottimizza",
+            "description": "Monitoriamo le prestazioni, analizziamo i risultati e perfezioniamo la campagna per un miglioramento continuo."
         }
     },
     "contact": {
-        "title": "Design with Us",
-        "description": "We reply to every message personally.",
+        "title": "Progetta con Noi",
+        "description": "Rispondiamo personalmente a ogni messaggio.",
         "form": {
-            "item1": "Company Name",
+            "item1": "Nome",
             "item2": "Email",
-            "item3": "Phone",
-            "item4": "Message",
-            "item5": "Upload your idea (optional)",
-            "item6": "I agree to the",
-            "item7": "Terms",
-            "item8": "Privacy Policy",
-            "item9": "Send Message"
+            "item3": "Telefono",
+            "item4": "Messaggio",
+            "item5": "Carica la tua idea (opzionale)",
+            "item6": "Accetto i",
+            "item7": "Termini",
+            "item8": "Politica sulla Privacy",
+            "item9": "Invia Messaggio"
         },
         "validation": {
-            "item1": "Company Name is required",
-            "item2": "Email is invalid",
-            "item3": "Email is required",
-            "item4": "Please enter a valid phone number",
-            "item5": "Message is required",
-            "item6": "File size must be under 20MB",
-            "info1": "Image, PDF (Max file size 20MB).",
-            "info2": "Please fix the errors above."
+            "item1": "Il nome è obbligatorio",
+            "item2": "Email non valida",
+            "item3": "L'email è obbligatoria",
+            "item4": "Inserisci un numero di telefono valido",
+            "item5": "Il messaggio è obbligatorio",
+            "item6": "La dimensione del file deve essere inferiore a 20MB",
+            "info1": "Immagine, PDF (dimensione massima del file 20MB).",
+            "info2": "Correggi gli errori sopra indicati.",
+            "info3": "Modulo inviato con successo!",
+            "info4": "Qualcosa è andato storto, contattaci a arita@advinci.it"
         }
     },
     "about": {
-        "title": "About Us",
+        "title": "Chi Siamo",
         "about1": {
-            "title": "Our Mission",
-            "description": "Our mission is to transform digital advertising into measurable success for every client through innovation and partnership"
+            "title": "La Nostra Missione",
+            "description": "La nostra missione è trasformare la pubblicità digitale in un successo misurabile per ogni cliente attraverso innovazione e partnership."
         },
         "about2": {
-            "title": "Our Vision",
-            "description": "Helping businesses grow, succeed, and deliver more value — through powerful advertising and trusted partnership."
+            "title": "La Nostra Visione",
+            "description": "Aiutiamo le aziende a crescere, avere successo e offrire più valore — tramite pubblicità efficace e partnership di fiducia."
         },
         "about3": {
-            "title": "Why AdVinci?",
-            "description": "We create fast, bold advertising solutions — from sleek designs to powerful videos that connect. At the cutting edge of technology, we’re the place for creative minds who want to grow, innovate, and make an impact."
+            "title": "Perché AdVinci?",
+            "description": "Creiamo soluzioni pubblicitarie rapide e audaci — da design eleganti a video di grande impatto che creano connessioni. All'avanguardia della tecnologia, siamo il luogo per menti creative che vogliono crescere, innovare e fare la differenza."
         },
-        "title2": "Our Journey",
-        "text1": "I'm Arita, founder of AdVinci. With a strong background in art, design, and digital media, creativity has been at the core of my journey. Originally from the Baltics, I spent a decade in England gaining international experience before relocating to Italy, where I established AdVinci.",
-        "text2": "I also spent several years working in Estonia, one of the world’s most digitally advanced and tech-driven countries, further strengthening my expertise in digital innovation. Over the years, I have designed property interiors, created art collections, and evolved into active digital creation.",
-        "text3": "Today, my hands-on experience in digital marketing, design, and content strategy drives AdVinci’s approach, helping businesses grow their online presence with creativity and precision."
+        "title2": "Il Nostro Viaggio",
+        "text1": "Sono Arita, fondatrice di AdVinci. Con una solida formazione in arte, design e media digitali, la creatività è sempre stata al centro del mio percorso. Originaria dei Paesi Baltici, ho trascorso un decennio in Inghilterra accumulando esperienza internazionale prima di trasferirmi in Italia, dove ho fondato AdVinci.",
+        "text2": "Ho lavorato inoltre per diversi anni in Estonia, uno dei paesi più avanzati e orientati alla tecnologia al mondo, rafforzando ulteriormente la mia esperienza nell'innovazione digitale. Negli anni ho progettato interni, creato collezioni d'arte e mi sono evoluta verso la creazione digitale attiva.",
+        "text3": "Oggi, la mia esperienza pratica in marketing digitale, design e strategia dei contenuti guida l'approccio di AdVinci, aiutando le aziende a crescere online con creatività e precisione."
     },
     "faq": {
-        "question1": "Why is digital advertising better than traditional advertising for my business?",
-        "answer1": "Digital advertising allows precise local targeting, instant visibility, and detailed performance tracking, often at lower costs compared to traditional methods.",
-        "question2": "How exactly does digital advertising benefit small businesses?",
-        "answer2": "It helps you precisely target local customers, increases foot traffic to your shop, provides measurable results, and improves customer engagement compared to traditional methods.",
-        "question3": "What kind of businesses does AdVinci work with?",
-        "answer3": "We focus on small and medium businesses, helping you effectively reach your community even if you’re completely new to digital advertising.",
-        "question4": "Can you help us create content if we have none ready?",
-        "answer4": "Absolutely! Our experts will guide you from concept to completion, creating attractive ads tailored to your business’s unique strengths.",
-        "question5": "How quickly can AdVinci set up our advertising campaign?",
-        "answer5": "We typically launch your customized digital campaign within 7–10 days from our initial consultation, allowing quick visibility and results.",
-        "question6": "What results can we expect from digital advertising with AdVinci?",
-        "answer6": "You’ll typically see increased customer awareness, more visits to your business, and improved sales opportunities, all easily measured through digital analytics.",
-        "question7": "How soon can we start seeing results?",
-        "answer7": "Many clients notice increased visibility immediately after launching their campaign, with measurable improvements typically within weeks.",
-        "question8": "Do we need a website to advertise digitally with AdVinci?",
-        "answer8": "No, a website isn’t mandatory. We can effectively direct customers to your social media, physical location, or provide your contact details directly through ads.",
-        "question9": "Can we adjust our advertising campaign after it’s launched?",
-        "answer9": "Yes, digital advertising is highly adaptable. You can easily adjust targeting, budgets, or messaging at any time based on real-time feedback.",
-        "question10": "Is digital advertising suitable for seasonal or event-based promotions?",
-        "answer10": "Perfectly! Digital advertising excels at quickly promoting seasonal offers, events, or limited-time discounts to attract immediate local attention.",
-        "question11": "How do we measure if our advertising campaign is successful?",
-        "answer11": "AdVinci provides detailed visibility reports showing exactly how many local people viewed your advertisements and interacted with them. However, the ultimate measure of success will be clear to you directly—more customers walking through your door, increased inquiries, and a noticeable boost in sales. We aim for tangible results that you can truly feel in your business, beyond just statistics on a report."
+        "question1": "Perché la pubblicità digitale è migliore di quella tradizionale per la mia attività?",
+        "answer1": "La pubblicità digitale consente un targeting locale preciso, visibilità immediata e tracciamento dettagliato delle performance, spesso a costi inferiori rispetto ai metodi tradizionali.",
+        "question2": "In che modo la pubblicità digitale aiuta concretamente le piccole imprese?",
+        "answer2": "Ti permette di raggiungere con precisione i clienti locali, aumenta il traffico nel tuo negozio, fornisce risultati misurabili e migliora il coinvolgimento dei clienti rispetto ai metodi tradizionali.",
+        "question3": "Con che tipo di aziende lavora AdVinci?",
+        "answer3": "Ci concentriamo su piccole e medie imprese, aiutandoti a raggiungere efficacemente la tua comunità anche se sei completamente nuovo alla pubblicità digitale.",
+        "question4": "Potete aiutarci a creare i contenuti se non ne abbiamo pronti?",
+        "answer4": "Assolutamente! I nostri esperti ti guideranno dal concept alla realizzazione, creando annunci accattivanti su misura per i punti di forza unici della tua attività.",
+        "question5": "Quanto velocemente può AdVinci avviare la nostra campagna pubblicitaria?",
+        "answer5": "In genere lanciamo la tua campagna digitale personalizzata entro 7–10 giorni dalla nostra consulenza iniziale, consentendo visibilità e risultati rapidi.",
+        "question6": "Quali risultati possiamo aspettarci dalla pubblicità digitale con AdVinci?",
+        "answer6": "Di solito noterai una maggiore consapevolezza dei clienti, più visite alla tua attività e opportunità di vendita migliorate, il tutto facilmente misurabile tramite analitiche digitali.",
+        "question7": "Quanto tempo occorre prima di vedere i risultati?",
+        "answer7": "Molti clienti notano maggiore visibilità subito dopo il lancio della campagna, con miglioramenti misurabili di solito entro poche settimane.",
+        "question8": "Abbiamo bisogno di un sito web per fare pubblicità digitale con AdVinci?",
+        "answer8": "No, un sito web non è obbligatorio. Possiamo indirizzare efficacemente i clienti ai tuoi social media, alla tua sede fisica o fornire i tuoi contatti direttamente tramite gli annunci.",
+        "question9": "Possiamo modificare la campagna pubblicitaria dopo il lancio?",
+        "answer9": "Sì, la pubblicità digitale è altamente adattabile. Puoi facilmente regolare targeting, budget o messaggi in qualsiasi momento in base ai feedback in tempo reale.",
+        "question10": "La pubblicità digitale è adatta per promozioni stagionali o basate su eventi?",
+        "answer10": "Perfettamente! La pubblicità digitale eccelle nel promuovere rapidamente offerte stagionali, eventi o sconti a tempo limitato per attirare immediatamente l'attenzione locale.",
+        "question11": "Come misuriamo se la nostra campagna pubblicitaria è efficace?",
+        "answer11": "AdVinci fornisce report dettagliati di visibilità che mostrano esattamente quante persone locali hanno visualizzato i tuoi annunci e interagito con essi. Tuttavia, la misura finale del successo sarà evidente a te direttamente: più clienti che varcano la tua porta, maggiori richieste e un evidente aumento delle vendite. Puntiamo a risultati tangibili che puoi percepire nella tua attività, oltre alle mere statistiche su un report."
     },
     "terms": {
-        "title": "Terms and Conditions",
-        "subTitle1": "Applicable to:",
-        "text1": "Founding-Client Offer - 25% Off\nReferral Credit - €50 for You and a Friend",
-        "subTitle2": "1. Organizer",
-        "text2": "These promotional offers are managed and operated by AdVinci, a digital advertising provider registered and based in San Severino Marche (MC), Italy.",
-        "subTitle3": "2. Founding-Client Offer",
-        "text3": "Summary\nThe first 10 businesses to confirm and sign a paid advertising package agreement with AdVinci will receive 25% off the total list price of the selected package.\nConditions\nOffer valid only for new clients with no prior contract with AdVinci.\nDiscount applies to the first campaign booking only.\nOffer is limited to 10 contracts or 60 calendar days from the date of publication, whichever occurs first.\nBookings must be signed and confirmed by both parties within the eligibility period.\nNot combinable with other discounts unless explicitly stated.",
-        "subTitle4": "3. Referral Credit",
-        "text4": "Summary\nBoth the referrer (existing client) and referee (new client) receive a €50 credit on their next invoice after the new client completes a paid booking of any package.\nConditions\nThe referral must be declared by the referee at the time of booking.\nCredits will be automatically applied to the next invoice after successful payment by the referred client.\nA referrer may receive a maximum of €200 in total referral credits.\nReferral credits have no cash value, are non-transferable, and expire if not used within 6 months.\nThis offer cannot be used in conjunction with the Founding-Client Offer by the same referee.",
-        "subTitle5": "4. General Terms for All Promotions",
-        "text5": "All offers are valid only within Italy, specifically intended for businesses operating in or targeting audiences in San Severino Marche and surrounding areas.\nPromotions are subject to availability of advertising slots and technical feasibility.\nAdVinci reserves the right to modify or terminate promotions at any time, with at least 7 days' notice published on its official website.\nAny commercial offer constitutes an invitation to treat, not a binding offer, until confirmed in writing by AdVinci.\nAll clients must agree to and sign a standard advertising contract outlining campaign dates, deliverables, billing terms, and creative responsibilities.\nInvoices will include 22% IVA (VAT) and, where applicable, local advertising tax (Imposta Comunale sulla Pubblicità) per Art. 62-71 of D.Lgs. 507/1993.",
-        "subTitle6": "5. Legal and Consumer Protection",
-        "text6": "Promotions comply with Articles 20-28 of the Codice del Consumo concerning unfair commercial practices, transparency, and misleading offers.\nThe operator adheres to D.Lgs. 70/2003 on electronic commerce and digital communication.\nDisputes or unresolved claims may be directed to local ADR (Alternative Dispute Resolution) entities or handled via Online Dispute Resolution (ODR) in accordance with Regulation (EU) No 524/2013.\nJurisdiction: Tribunale di Macerata, unless otherwise agreed in writing."
+        "title": "Termini e Condizioni",
+        "subTitle1": "Valido per:",
+        "text1": "Offerta Cliente Fondatore - 25% di Sconto\nCredito di Riferimento - €50 per Te e un Amico",
+        "subTitle2": "1. Organizzatore",
+        "text2": "Queste offerte promozionali sono gestite e operate da AdVinci, un fornitore di pubblicità digitale registrato e con sede a San Severino Marche (MC), Italia.",
+        "subTitle3": "2. Offerta Cliente Fondatore",
+        "text3": "Sintesi\nLe prime 10 aziende che confermano e firmano un accordo per un pacchetto pubblicitario a pagamento con AdVinci riceveranno il 25% di sconto sul prezzo di listino totale del pacchetto selezionato.\nCondizioni\nL'offerta è valida solo per nuovi clienti senza precedenti contratti con AdVinci.\nLo sconto si applica solo alla prima prenotazione della campagna.\nL'offerta è limitata a 10 contratti o 60 giorni di calendario dalla data di pubblicazione, a seconda di quale evento si verifichi per primo.\nLe prenotazioni devono essere firmate e confermate da entrambe le parti entro il periodo di idoneità.\nNon cumulabile con altri sconti salvo diversa indicazione esplicita.",
+        "subTitle4": "3. Credito di Riferimento",
+        "text4": "Sintesi\nSia il referente (cliente esistente) che il referito (nuovo cliente) ricevono un credito di €50 sulla loro prossima fattura dopo che il nuovo cliente ha completato una prenotazione a pagamento di qualsiasi pacchetto.\nCondizioni\nIl referral deve essere dichiarato dal referito al momento della prenotazione.\nI crediti verranno applicati automaticamente alla fattura successiva dopo il pagamento effettuato dal cliente referito.\nUn referente può ricevere un massimo di €200 in crediti di referral in totale.\nI crediti di referral non hanno valore in contanti, non sono trasferibili e scadono se non utilizzati entro 6 mesi.\nQuesta offerta non può essere utilizzata insieme all'Offerta Cliente Fondatore dallo stesso referito.",
+        "subTitle5": "4. Termini Generali per Tutte le Promozioni",
+        "text5": "Tutte le offerte sono valide solo in Italia, destinate specificamente alle aziende che operano o mirano a pubblici a San Severino Marche e aree circostanti.\nLe promozioni sono soggette alla disponibilità di spazi pubblicitari e alla fattibilità tecnica.\nAdVinci si riserva il diritto di modificare o terminare le promozioni in qualsiasi momento, con almeno 7 giorni di preavviso pubblicato sul proprio sito ufficiale.\nQualsiasi offerta commerciale costituisce un invito a offrire, non un'offerta vincolante, finché non viene confermata per iscritto da AdVinci.\nTutti i clienti devono accettare e firmare un contratto pubblicitario standard che definisce date della campagna, deliverable, termini di fatturazione e responsabilità creative.\nLe fatture includeranno il 22% di IVA e, se applicabile, l'imposta comunale sulla pubblicità (Imposta Comunale sulla Pubblicità) ai sensi degli artt. 62-71 del D.Lgs. 507/1993.",
+        "subTitle6": "5. Protezione Legale e del Consumatore",
+        "text6": "Le promozioni sono conformi agli articoli 20‑28 del Codice del Consumo relativi alle pratiche commerciali scorrette, alla trasparenza e alle offerte ingannevoli.\nL'operatore aderisce al D.Lgs. 70/2003 in materia di commercio elettronico e comunicazioni digitali.\nEventuali controversie o reclami non risolti possono essere inviati agli organismi ADR (Alternative Dispute Resolution) locali o gestiti tramite la piattaforma ODR (Online Dispute Resolution) ai sensi del Regolamento (UE) n. 524/2013.\nForo competente: Tribunale di Macerata, salvo diverso accordo scritto tra le parti."
     },
-    "privacy": {
-
-    }
+    "privacy": {}
 }

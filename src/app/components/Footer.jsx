@@ -9,6 +9,7 @@ import { IoLogoInstagram, IoLogoFacebook, IoLogoWhatsapp } from "react-icons/io5
 
 export default function Footer() {
   const t = useTranslations('footer');
+  const t2 = useTranslations('navbar');
 
   return (
     <div className='flex flex-col gap-10 w-full justify-center pt-10 pb-4 bg-[var(--foreground)] text-white'>
@@ -34,17 +35,17 @@ export default function Footer() {
           </div>
           <div className='flex flex-col sm:flex-row gap-6 sm:gap-16 text-center sm:text-right'>
             <div className='flex flex-col gap-1.5'>
-              <span className='mb-0.5'>Company</span>
-              <Link className='text-neutral-200 hover:text-white' href='/#Services' >Services</Link>
-              <Link className='text-neutral-200 hover:text-white' href='/aboutus' >About Us</Link>
-              <Link className='text-neutral-200 hover:text-white' href='/pricing' >Pricing</Link>
+              <span className='mb-0.5'>{ t2("category2") }</span>
+              <Link className='text-neutral-200 hover:text-white' href='/#Services' >{ t2("item1") }</Link>
+              <Link className='text-neutral-200 hover:text-white' href='/aboutus' >{ t2("item2") }</Link>
+              <Link className='text-neutral-200 hover:text-white' href='/pricing' >{ t2("item3") }</Link>
             </div>
             <div className='flex flex-col gap-1.5'>
-              <span className='mb-0.5'>Support</span>
-              <Link className='text-neutral-200 hover:text-white' href='/#Contact' >Contact</Link>
-              <Link className='text-neutral-200 hover:text-white' href='/FAQ' >FAQ</Link>
-              <Link className='text-neutral-200 hover:text-white' href='/privacy' >Privacy Policy</Link>
-              <Link className='text-neutral-200 hover:text-white' href='/terms' >Terms of Service</Link>
+              <span className='mb-0.5'>{ t2("category3") }</span>
+              <Link className='text-neutral-200 hover:text-white' href='/#Contact' >{ t2("item7") }</Link>
+              <Link className='text-neutral-200 hover:text-white' href='/FAQ' >{ t2("item4") }</Link>
+              <Link className='text-neutral-200 hover:text-white' href='/privacy' >{ t2("item5") }</Link>
+              <Link className='text-neutral-200 hover:text-white' href='/terms' >{ t2("item6") }</Link>
             </div>
           </div>
         </div>
