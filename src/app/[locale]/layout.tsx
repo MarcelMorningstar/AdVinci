@@ -3,7 +3,6 @@ import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {routing} from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import { Nunito_Sans, Reenie_Beanie } from "next/font/google";
 import "../styles/globals.css";
 
@@ -51,8 +50,6 @@ export default async function RootLayout({
           <main>
             {children}
           </main>
-          
-          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

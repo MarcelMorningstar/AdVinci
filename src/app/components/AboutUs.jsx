@@ -13,8 +13,6 @@ import img2 from '../assets/aboutus2.jpg'
 import img3 from '../assets/aboutus3.jpg'
 import styles from '../styles/About.module.scss';
 
-
-
 export default function AboutUs() {
     const t = useTranslations('about');
 
@@ -46,8 +44,6 @@ export default function AboutUs() {
     const dimensions = useWindowDimensions();
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] })
     
-    
-
     useEffect(() => {
       if (dimensions.width < 768) {
         setMobile(true)

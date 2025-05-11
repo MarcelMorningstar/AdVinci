@@ -3,8 +3,7 @@
 import React from 'react'
 import {useTranslations} from 'next-intl';
 import FAQ from '../../components/FAQ'
-
-
+import Footer from '../../components/Footer'
 
 export default function Page() {
   const t = useTranslations('faq');
@@ -81,24 +80,29 @@ export default function Page() {
   };
 
   return (
-    <section className='flex flex-col items-center px-8 sm:px-16 py-36 bg-neutral-200'>
-      <div className='flex flex-col justify-center items-center gap-2 mb-4'>
-        <h1 className='text-center text-3xl sm:text-5xl font-bold'>Frequently Asked Questions</h1>
-      </div>
-
-      <div className='w-full lg:w-3/4 xl:w-1/2'>
-        {
-          FAQData.map((item) => (
-            <FAQ 
-              key={item.id}
-              id={item.id}
-              question={item.question}
-              answer={item.answer}
-              handelClick={() => handelClick(item.id)}
-            />
-          ))
-        }
-      </div>
-    </section>
+    <>
+      <section className='flex flex-col items-center px-8 sm:px-16 pt-32 pb-12 bg-neutral-200'>
+        <div className='flex flex-col justify-center items-center gap-2'>
+          <h2 className='text-center text-3xl sm:text-5xl font-bold'>Frequently Asked Questions</h2>
+        </div>
+      
+        <div className='w-full lg:w-3/4 xl:w-1/2'>
+          {
+            FAQData.map((item) => (
+              <FAQ 
+                key={item.id}
+                id={item.id}
+                question={item.question}
+                answer={item.answer}
+                handelClick={() => handelClick(item.id)}
+              />
+            ))
+          }
+        </div>
+      
+      </section>
+      
+      <Footer color="#1a1a1a" />
+    </>
   )
 }
