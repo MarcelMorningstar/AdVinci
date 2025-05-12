@@ -58,9 +58,6 @@ export default function AboutUs() {
       }
     }, [dimensions]);
 
-    // const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.6 * refHeight, 0.6 * refHeight] : [-0.5 * refHeight, 0.6 * refHeight]);
-    // const raw2Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.2 * refHeight, 1 * refHeight] : [0.2 * refHeight, 1.05 * refHeight]);
-    // const raw3Y = useTransform(scrollYProgress, [0, 1], [-1.3 * refHeight, 1 * refHeight]);
     const raw1Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.6 * refHeight, 0.6 * refHeight] : [-0.3 * dimensions.height, 0.2 * dimensions.height]);
     const raw2Y = useTransform(scrollYProgress, [0, 1], mobile ? [-0.2 * refHeight, 1 * refHeight] : [-0.09 * dimensions.height, 0.4 * dimensions.height]);
     const raw3Y = useTransform(scrollYProgress, [0, 1], [-0.6 * dimensions.height, 0.3 * dimensions.height]);

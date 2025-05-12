@@ -13,7 +13,7 @@ export default function ContactFormCheckBox({ agreed, setAgreed }) {
                 className='w-4 h-4 text-[var(--primary2)] bg-gray-100 border-gray-300 rounded-sm focus:ring-[var(--primary2)]'
             />
             <label>
-                {t("form.item6")} <a href="/terms" target="_blank" className='text-[var(--primary2)] hover:font-semibold'>{t("form.item7")}</a> & <a href="/privacy" target="_blank" className='text-[var(--primary2)] hover:font-semibold'>{t("form.item8")}</a>
+                {t("form.item6")} <a href="/privacy" target="_blank" className='text-[var(--primary2)] hover:font-semibold'>{t("form.item8")}</a>
             </label>
         </div>
         

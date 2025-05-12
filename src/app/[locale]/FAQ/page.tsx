@@ -81,7 +81,7 @@ export default function Page() {
 
   return (
     <>
-      <section className='flex flex-col items-center px-8 sm:px-16 pt-32 pb-12 bg-neutral-200'>
+      <section className='flex flex-col items-center px-8 sm:px-16 pt-24 pb-12 bg-neutral-200'>
         <div className='flex flex-col justify-center items-center gap-2'>
           <h2 className='text-center text-3xl sm:text-5xl font-bold'>{ t("title") }</h2>
         </div>
