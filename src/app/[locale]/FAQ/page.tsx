@@ -83,7 +83,7 @@ export default function Page() {
     <>
       <section className='flex flex-col items-center px-8 sm:px-16 pt-32 pb-12 bg-neutral-200'>
         <div className='flex flex-col justify-center items-center gap-2'>
-          <h2 className='text-center text-3xl sm:text-5xl font-bold'>Frequently Asked Questions</h2>
+          <h2 className='text-center text-3xl sm:text-5xl font-bold'>{ t("title") }</h2>
         </div>
       
         <div className='w-full lg:w-3/4 xl:w-1/2'>
