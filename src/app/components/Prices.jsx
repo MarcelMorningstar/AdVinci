@@ -5,17 +5,13 @@ import { useMotionValue, useTransform, animate } from "framer-motion";
 
 export default function Prices() {
     const [price, setPrice] = useState(0);
-    const [adDuration, setAdDuration] = useState("16");
-    const [campaignDuration, setCampaignDuration] = useState("4");
+    const [adDuration, setAdDuration] = useState("10");
+    const [campaignDuration, setCampaignDuration] = useState("1");
     const [adType, setAdType] = useState("static");
     const [designWithUs, setDesignWithUs] = useState("noThanks");
-    const [swapOption, setSwapOption] = useState("no");
-    const [call, setCall] = useState("no2");
-    const [CampaignPlan, setCampaignPlan] = useState("basic");
-    const [analytics, setAnalytics] = useState("no3");
 
     useEffect(() => {
-        let p1 = 0, p2 = 0, p3 = 0, p4 = 0, p5 = 0, p6 = 0, p7 = 0;
+        let p1 = 0, p2 = 0, p3 = 0, p4 = 0;
 
         switch (adDuration) {
             case "10":
@@ -70,42 +66,8 @@ export default function Prices() {
                 break;
         }
 
-        switch (swapOption) {
-            case "yes":
-                p5 = 20
-                break;
-            case "no":
-                p5 = 0
-                break;
-            default:
-                break;
-        }
-
-        switch (call) {
-            case "yes2":
-                p5 = 60
-                break;
-            case "no2":
-                p5 = 0
-                break;
-            default:
-                break;
-        }
-        
-        switch (CampaignPlan) {
-            case "plus":
-                p5 = 350
-                break;
-            case "basic":
-                p5 = 0
-                break;
-            default:
-                break;
-        }
-
-        console.log(p1, p2, p3, p4, p5, p6, p7)
-        setPrice(p1 + p2 + p3 + p4 + p5 + p6 + p7)
-    }, [adDuration, campaignDuration, adType, designWithUs, swapOption, call, CampaignPlan, analytics])
+        setPrice(p1 + p2 + p3 + p4)
+    }, [adDuration, campaignDuration, adType, designWithUs])
 
     return (
         <div className='relative bg-neutral-200'>
@@ -113,15 +75,9 @@ export default function Prices() {
                 <h2 className='text-center text-3xl sm:text-4xl'>San Severino Marche</h2>
                 <div className='flex flex-row gap-2 justify-center'>
                     <AnimatedCounter target={price} />
-                    {
-                        analytics === "yes3" && (
-                            <h3 className="text-4xl sm:text-5xl text-center font-medium">+ {50}€/month</h3>
-                        )
-                    }
                 </div>
             </div>
             <div className='flex flex-col items-center pt-44 pb-12 gap-4'>
-                
                 <div className='flex flex-col gap-3'>
                     <div className='flex flex-col gap-1'>
                         <h4 className='text-center'>Slot Duration</h4>
@@ -240,102 +196,6 @@ export default function Prices() {
                                 <label htmlFor="animated2" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-[var(--primary2)] peer-checked:text-[var(--primary2)] peer-checked:shadow-lg hover:text-gray-600 hover:bg-gray-100">
                                     <div className="block">
                                         <div className="w-full text-lg font-semibold">Animated</div>
-                                        <div className="w-full">Lorem ipsum dolor sit amet</div>
-                                    </div>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-            
-                    <div className='flex flex-col gap-1'>
-                        <h4 className='text-center'>24h Rapid Swap</h4>
-                        <ul className="grid w-full gap-6 md:grid-cols-2">
-                            <li>
-                                <input type="radio" id="yes" name="swapOption" value="yes" className="hidden peer" checked={swapOption === "yes"} onChange={() => setSwapOption("yes")} />
-                                <label htmlFor="yes" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-[var(--primary2)] peer-checked:text-[var(--primary2)] peer-checked:shadow-lg hover:text-gray-600 hover:bg-gray-100">                           
-                                    <div className="block">
-                                        <div className="w-full text-lg font-semibold">Yes</div>
-                                        <div className="w-full">Lorem ipsum dolor sit amet</div>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <input type="radio" id="no" name="swapOption" value="no" className="hidden peer" checked={swapOption === "no"} onChange={() => setSwapOption("no")} />
-                                <label htmlFor="no" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-[var(--primary2)] peer-checked:text-[var(--primary2)] peer-checked:shadow-lg hover:text-gray-600 hover:bg-gray-100">
-                                    <div className="block">
-                                        <div className="w-full text-lg font-semibold">No</div>
-                                        <div className="w-full">Lorem ipsum dolor sit amet</div>
-                                    </div>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-            
-                    <div className='flex flex-col gap-1'>
-                        <h4 className='text-center'>1h strategy Call</h4>
-                        <ul className="grid w-full gap-6 md:grid-cols-2">
-                            <li>
-                                <input type="radio" id="yes2" name="call" value="yes2" className="hidden peer" checked={call === "yes2"} onChange={() => setCall("yes2")} />
-                                <label htmlFor="yes2" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-[var(--primary2)] peer-checked:text-[var(--primary2)] peer-checked:shadow-lg hover:text-gray-600 hover:bg-gray-100">                           
-                                    <div className="block">
-                                        <div className="w-full text-lg font-semibold">Yes</div>
-                                        <div className="w-full">Lorem ipsum dolor sit amet</div>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <input type="radio" id="no2" name="call" value="no2" className="hidden peer" checked={call === "no2"} onChange={() => setCall("no2")}  />
-                                <label htmlFor="no2" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-[var(--primary2)] peer-checked:text-[var(--primary2)] peer-checked:shadow-lg hover:text-gray-600 hover:bg-gray-100">
-                                    <div className="block">
-                                        <div className="w-full text-lg font-semibold">No</div>
-                                        <div className="w-full">Lorem ipsum dolor sit amet</div>
-                                    </div>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-            
-                    <div className='flex flex-col gap-1'>
-                        <h4 className='text-center'>Campaign plan</h4>
-                        <ul className="grid w-full gap-6 md:grid-cols-2">
-                            <li>
-                                <input type="radio" id="basic" name="CampaignPlan" value="basic" className="hidden peer" checked={CampaignPlan === "basic"} onChange={() => setCampaignPlan("basic")} />
-                                <label htmlFor="basic" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-[var(--primary2)] peer-checked:text-[var(--primary2)] peer-checked:shadow-lg hover:text-gray-600 hover:bg-gray-100">                           
-                                    <div className="block">
-                                        <div className="w-full text-lg font-semibold">Basic</div>
-                                        <div className="w-full">Free of charge</div>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <input type="radio" id="plus" name="CampaignPlan" value="plus" className="hidden peer" checked={CampaignPlan === "plus"} onChange={() => setCampaignPlan("plus")} />
-                                <label htmlFor="plus" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-[var(--primary2)] peer-checked:text-[var(--primary2)] peer-checked:shadow-lg hover:text-gray-600 hover:bg-gray-100">
-                                    <div className="block">
-                                        <div className="w-full text-lg font-semibold">Expansion Plus</div>
-                                        <div className="w-full">Expansion Plus</div>
-                                    </div>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-            
-                    <div className='flex flex-col gap-1'>
-                        <h4 className='text-center'>AI audience analytics</h4>
-                        <ul className="grid w-full gap-6 md:grid-cols-2">
-                            <li>
-                                <input type="radio" id="yes3" name="analytics" value="yes3" className="hidden peer" checked={analytics === "yes3"} onChange={() => setAnalytics("yes3")} />
-                                <label htmlFor="yes3" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-[var(--primary2)] peer-checked:text-[var(--primary2)] peer-checked:shadow-lg hover:text-gray-600 hover:bg-gray-100">                           
-                                    <div className="block">
-                                        <div className="w-full text-lg font-semibold">Yes</div>
-                                        <div className="w-full">Lorem ipsum dolor sit amet</div>
-                                    </div>
-                                </label>
-                            </li>
-                            <li>
-                                <input type="radio" id="no3" name="analytics" value="no3" className="hidden peer" checked={analytics === "no3"} onChange={() => setAnalytics("no3")} />
-                                <label htmlFor="no3" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-[var(--primary2)] peer-checked:text-[var(--primary2)] peer-checked:shadow-lg hover:text-gray-600 hover:bg-gray-100">
-                                    <div className="block">
-                                        <div className="w-full text-lg font-semibold">No</div>
                                         <div className="w-full">Lorem ipsum dolor sit amet</div>
                                     </div>
                                 </label>
