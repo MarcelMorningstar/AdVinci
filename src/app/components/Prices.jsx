@@ -25,14 +25,32 @@ export default function Prices() {
     }, [adDuration, campaignDuration, designWithUs])
 
     return (
-        <div className='flex flex-col gap-8 pt-24 pb-12 bg-neutral-200'>
-            <div className='w-full'>
+        <div className='w-3/4 xl:w-2/3 flex flex-col items-center gap-6 pt-24 pb-12'>
+            <div className='flex flex-col items-center gap-1'>
                 <h2 className='text-center text-4xl'>San Severino Marche</h2>
-                <div className='flex flex-row gap-2 justify-center'>
+                <p className='text-center text-base max-w-[640px] text-gray-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ratione, suscipit officia accusantium qui cupiditate optio ipsa ducimus, enim consectetur eveniet explicabo doloribus cumque praesentium atque reprehenderit. Vero, tenetur architecto?</p>
+                <button 
+                    type="button" 
+                    className={`
+                    mt-2 px-9 py-3 rounded-full
+                    flex items-center gap-2 
+                    text-gray-600
+                    font-bold
+                    shadow-[-5px_-5px_10px_rgba(242,_242,_242,_0.8),_5px_5px_10px_rgba(0,_0,_0,_0.25)]
+                    
+                    transition-all
+
+                    hover:shadow-[-1px_-1px_5px_rgba(242,_242,_242,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(242,_242,_242,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
+                    hover:text-[var(--primary2)]
+                `}>
+                    Offers
+                </button>
+            </div>
+            
+            <div className='flex flex-col gap-3 items-center'>
+                <div>
                     <AnimatedCounter target={price} />
                 </div>
-            </div>
-            <div className='flex flex-col items-center'>
                 <div className='flex flex-col gap-5'>
                     <div className='flex flex-col gap-1'>
                         <h4 className='text-center text-2xl font-medium'>Slot Duration</h4>

@@ -8,10 +8,10 @@ export default function SubmitBtn({ agreed, pending }) {
     <button 
       type="submit" 
       disabled={!agreed || pending}
-      className={`flex justify-center items-center h-16 text-white rounded-lg text-xl py-4 text-center transition-all duration-750 ease-in-out focus:outline-none ${
+      className={`flex justify-center items-center h-16 text-white rounded-full text-xl py-4 text-center transition-all duration-750 ease-in-out focus:outline-none ${
         !agreed || pending
           ? "bg-gray-400 cursor-not-allowed opacity-60"
-          : "bg-[linear-gradient(to_right,_var(--primary1)_16%,_var(--primary2)_70%)] bg-[length:150%] bg-right hover:bg-left active:bg-left focus:bg-left cursor-pointer"
+          : "bg-[linear-gradient(to_right,_var(--primary1)_16%,_var(--primary2)_70%)] bg-[length:150%] bg-right hover:bg-left active:bg-left focus:bg-left cursor-pointer shadow-md"
       }`}
     >
       <div>
