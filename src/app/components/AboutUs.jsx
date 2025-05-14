@@ -89,13 +89,13 @@ export default function AboutUs() {
                   </div>
                   <div ref={ref} className="relative left-1/2 -translate-x-1/2 xl:left-0 xl:translate-x-0 w-full h-96 md:w-11/12 lg:w-3/4 xl:w-full order-first xl:order-2">
                       <motion.div
-                        className="absolute left-1/12 md:left-4 w-[70%] md:w-[49%] 2xl:w-[45%] aspect-video rounded-[100px] z-30 shadow-2xl"
+                        className="absolute left-1/12 md:left-4 w-[70%] md:w-[49%] 2xl:w-[49%] aspect-video rounded-[100px] z-30 shadow-2xl"
                         style={{ y: parallax1Y }}
                       >
                         <Image src={img1} fill className="object-cover rounded-[100px]" loading='lazy' alt="" />         
                       </motion.div>
                       <motion.div
-                        className="absolute left-1/3 md:left-1/3 w-[60%] md:w-[45%] 2xl:w-[35%] aspect-[3/2] rounded-[48px] z-10 shadow-2xl"
+                        className="absolute left-1/3 md:left-1/3 w-[60%] md:w-[45%] 2xl:w-[38%] aspect-[3/2] rounded-[48px] z-10 shadow-2xl"
                         style={{ y: parallax2Y }}
                       >
                         <Image src={img3} fill className="object-cover rounded-[48px]" loading='lazy' alt="" />
@@ -103,7 +103,7 @@ export default function AboutUs() {
                       {
                         dimensions.width >= 768 && (
                             <motion.div
-                              className="absolute right-2 w-[37%] 2xl:w-[35%] aspect-square rounded-[60px] z-20 shadow-2xl"
+                              className="absolute right-2 w-[37%] 2xl:w-[38%] aspect-square rounded-[60px] z-20 shadow-2xl"
                               style={{ y: parallax3Y }}
                             >
                               <Image src={img2} fill className="object-cover rounded-[60px]" loading='lazy' alt="" />

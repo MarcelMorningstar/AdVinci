@@ -110,10 +110,12 @@ export default function HowItWorks() {
                                 <div className="relative z-30 w-6 h-6 bg-[var(--primary1)] rounded-3xl mt-auto" />
                                 <div className="flex flex-1">
                                     <div className={`relative h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-neutral-100 shadow-2xl rounded-xl px-12 sm:px-16 py-6 sm:py-12 ${styles.shortscreenscale}`} >
-                                        <h3 className="text-lg font-semibold text-[var(--primary2)]">
-                                            <Image src={img1} sizes="64px" className="w-12 sm:w-16 h-12 sm:h-16 object-contain" loading='lazy' alt="" />
-                                        </h3>
-                                        <h3 className="text-xl sm:text-3xl font-bold">{ t("how1.title") }</h3>
+                                        <div className="flex flex-row justify-between items-end">
+                                            <h3 className="text-2xl sm:text-4xl font-bold">{ t("how1.title") }</h3>
+                                            <h3 className="text-lg font-semibold text-[var(--primary2)]">
+                                                <Image src={img1} sizes="64px" className="w-12 sm:w-16 h-12 sm:h-16 object-contain" loading='lazy' alt="" />
+                                            </h3>
+                                        </div>
                                         <p className="text-sm sm:text-lg text-gray-500">{ t("how1.description") }</p>
                                     </div>
                                 </div>
@@ -138,10 +140,12 @@ export default function HowItWorks() {
                                 />
                                 <div className="flex flex-1">
                                     <div className={`relative h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-neutral-100 shadow-md rounded-xl px-12 sm:px-16 py-6 sm:py-12 ${styles.shortscreenscale}`}>
-                                        <h3 className="text-lg font-semibold text-[var(--primary2)]">
-                                            <Image src={img2} sizes="64px" className="w-12 sm:w-16 h-12 sm:h-16 object-contain" loading='lazy' alt="" />
-                                        </h3>
-                                        <h3 className="text-xl sm:text-3xl font-bold">{ t("how2.title") }</h3>
+                                        <div className="flex flex-row justify-between items-end">
+                                            <h3 className="text-xl sm:text-3xl font-bold">{ t("how2.title") }</h3>
+                                            <h3 className="text-lg font-semibold text-[var(--primary2)]">
+                                                <Image src={img2} sizes="64px" className="w-12 sm:w-16 h-12 sm:h-16 object-contain" loading='lazy' alt="" />
+                                            </h3>
+                                        </div>
                                         <p className="text-sm sm:text-lg text-gray-500">{ t("how2.description") }</p>
                                     </div>
                                 </div>
@@ -160,10 +164,12 @@ export default function HowItWorks() {
                                 />
                                 <div className="flex flex-1">
                                     <div className={`relative h-fit w-[80vw] sm:w-[70vw] lg:w-auto flex flex-col gap-1 sm:gap-4 bg-neutral-100 shadow-md rounded-xl px-12 sm:px-16 py-6 sm:py-12 ${styles.shortscreenscale}`}>
-                                        <h3 className="text-lg font-semibold text-[var(--primary2)]">
-                                            <Image src={img3} sizes="64px" className="w-12 sm:w-16 h-12 sm:h-16 object-contain" loading='lazy' alt="" />
-                                        </h3>
-                                        <h3 className="text-xl sm:text-3xl font-bold">{ t("how3.title") }</h3>
+                                        <div className="flex flex-row justify-between items-end">
+                                            <h3 className="text-xl sm:text-3xl font-bold">{ t("how3.title") }</h3>
+                                            <h3 className="text-lg font-semibold text-[var(--primary2)]">
+                                                <Image src={img3} sizes="64px" className="w-12 sm:w-16 h-12 sm:h-16 object-contain" loading='lazy' alt="" />
+                                            </h3>
+                                        </div>
                                         <p className="text-sm sm:text-lg text-gray-500">{ t("how3.description") }</p>
                                     </div>
                                 </div>
