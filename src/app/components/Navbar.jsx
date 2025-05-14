@@ -42,7 +42,7 @@ export default function Navbar() {
         }
       </div>
 
-      <div className='flex flex-row gap-3 items-end h-full'>
+      <div className='flex flex-row gap-5 items-end h-full'>
         <div className='flex flex-row mb-1 gap-1.5'>
           <button onClick={() => changeLocale("en")} className={`text-base ${locale == "en" ? "text-[var(--primary1)]" : "text-gray-400"} hover:text-[var(--primary1)] cursor-pointer`}>EN</button>
           <button onClick={() => changeLocale("it")} className={`text-base ${locale == "it" ? "text-[var(--primary1)]" : "text-gray-400"} hover:text-[var(--primary1)] cursor-pointer`}>IT</button>

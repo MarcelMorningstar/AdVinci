@@ -4,7 +4,7 @@ import React from "react";
 import {useTranslations} from 'next-intl';
 import Image from "next/image";
 import { motion } from "framer-motion";
-import img1 from '../assets/service1.jpg'
+import img1 from '../assets/service1.png'
 import img2 from '../assets/service2.jpg'
 import img3 from '../assets/service3.jpg'
 import styles from '../styles/Services.module.scss'

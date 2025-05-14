@@ -61,12 +61,12 @@ export default function HowItWorks() {
 
     return (
         <section id="HowWeBuildYourBrand" className="">
-            <div className='flex flex-col gap-6 min-h-[50vh] items-center justify-center'>
+            <div className='flex flex-col gap-6 min-h-[32vh] items-center justify-center'>
                 <div className='flex flex-col gap-2 px-4 w-11/12'>
                     <h2 className='text-center text-4xl sm:text-7xl font-bold'>{ t("title") }</h2>
                 </div>
 
-                <div className="flex flex-col w-full p-4 items-center">
+                <div className="flex flex-col w-full p-4 items-center gap-1">
                     <div className="relative w-11/12 sm:w-2/3 lg:w-1/2 h-2 bg-[linear-gradient(to_right,_var(--primary1)_8%,_var(--primary2)_60%)] rounded-full">
                         <div>
                             <motion.div
