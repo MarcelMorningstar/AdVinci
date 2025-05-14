@@ -205,7 +205,7 @@ const Panel = ({ open, setOpen, id, Icon, title, description }) => {
             {title}
           </span>
           <span className="block text-xl font-light">{title}</span>
-          <div className="w-6 aspect-square text-[var(--primary2)] grid place-items-center">
+          <div className="w-6 aspect-square text-neutral-100 grid place-items-center">
             <Icon />
           </div>
           <span className="w-4 h-4 bg-[var(--background2)] group-hover:bg-[#8e7995] transition-colors border-r-[1px] border-b-[1px] border-[var(--background2)] rotate-45 absolute bottom-0 right-[50%] translate-y-[50%] translate-x-[50%] z-40" />
