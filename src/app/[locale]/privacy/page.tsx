@@ -35,7 +35,7 @@ const English = () => {
       </div>
 
       <div className='my-4 flex flex-col gap-2.5'>
-        <p>AdVinci ("we", "us", "our") respects your privacy and is committed to protecting the personal data you share with us. This Privacy Policy explains how we collect, use, disclose and safeguard your information when you visit <a href="https://advinci.it" target="_blank">https://advinci.it</a> (the "Website") or engage our digital advertising, design and consultancy services (collectively, the "Services"). It also describes your rights under the EU General Data Protection Regulation (Regulation (EU) 2016/679 – GDPR) and applicable Italian data‑protection laws.</p>
+        <p>AdVinci (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) respects your privacy and is committed to protecting the personal data you share with us. This Privacy Policy explains how we collect, use, disclose and safeguard your information when you visit <a href="https://advinci.it" target="_blank">https://advinci.it</a> (the &quot;Website&quot;) or engage our digital advertising, design and consultancy services (collectively, the &quot;Services&quot;). It also describes your rights under the EU General Data Protection Regulation (Regulation (EU) 2016/679 – GDPR) and applicable Italian data‑protection laws.</p>
         
         <div>
           <h4 className='text-xl font-bold'>1. Who is the Data Controller?</h4>
@@ -188,7 +188,7 @@ const English = () => {
           <ol>
             <li><strong>Access</strong> your personal data (art. 15);</li>
             <li><strong>Rectify</strong> inaccurate or incomplete data (art. 16);</li>
-            <li><strong>Erase</strong> data ("right to be forgotten", art. 17);</li>
+            <li><strong>Erase</strong> data (&quot;right to be forgotten&quot;, art. 17);</li>
             <li><strong>Restrict</strong> processing (art. 18);</li>
             <li><strong>Port</strong> data to another controller (art. 20);</li>
             <li><strong>Object</strong> to processing based on legitimate interest or direct marketing (art. 21);</li>
@@ -249,7 +249,7 @@ const Italian = () => {
       </div>
 
       <div className='my-4 flex flex-col gap-2.5'>
-        <p>AdVinci ("noi", "ci", "nostro") rispetta la tua privacy ed è impegnata a proteggere i dati personali che condividi con noi. La presente Informativa sulla Privacy spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando visiti <a href="https://advinci.it" target="_blank">https://advinci.it</a> (il "Sito") o usufruisci dei nostri servizi di pubblicità digitale, design e consulenza (collettivamente, i "Servizi"). Descrive inoltre i tuoi diritti ai sensi del Regolamento Generale sulla Protezione dei Dati dell’UE (Regolamento (UE) 2016/679 – GDPR) e delle leggi italiane applicabili in materia di protezione dei dati.</p>
+        <p>AdVinci (&quot;noi&quot;, &quot;ci&quot;, &quot;nostro&quot;) rispetta la tua privacy ed è impegnata a proteggere i dati personali che condividi con noi. La presente Informativa sulla Privacy spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando visiti <a href="https://advinci.it" target="_blank">https://advinci.it</a> (il &quot;Sito&quot;) o usufruisci dei nostri servizi di pubblicità digitale, design e consulenza (collettivamente, i &quot;Servizi&quot;). Descrive inoltre i tuoi diritti ai sensi del Regolamento Generale sulla Protezione dei Dati dell’UE (Regolamento (UE) 2016/679 – GDPR) e delle leggi italiane applicabili in materia di protezione dei dati.</p>
 
         <div>
           <h4 className='text-xl font-bold'>1. Chi è il Titolare del trattamento?</h4>
@@ -402,7 +402,7 @@ const Italian = () => {
           <ol>
             <li><strong>Accedere</strong> ai tuoi dati personali (art. 15);</li>
             <li><strong>Rettificare</strong> dati inesatti o incompleti (art. 16);</li>
-            <li><strong>Cancellare</strong> i dati ("diritto all’oblio", art. 17);</li>
+            <li><strong>Cancellare</strong> i dati (&quot;diritto all’oblio&quot;, art. 17);</li>
             <li><strong>Limitare</strong> il trattamento (art. 18);</li>
             <li><strong>Portare</strong> i dati a un altro titolare (art. 20);</li>
             <li><strong>Opporti</strong> al trattamento basato su interesse legittimo o marketing diretto (art. 21);</li>
