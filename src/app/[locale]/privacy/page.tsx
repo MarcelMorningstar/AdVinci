@@ -220,7 +220,7 @@ const English = () => {
         
         <div>
           <h4 className='text-xl font-bold'>12. Changes to this Policy</h4>
-          <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top will change accordingly. Significant changes will be communicated via the Website or by e‑mail if appropriate.</p>
+          <p>We may update this Privacy Policy from time to time. The &quot;Last updated&quot; date at the top will change accordingly. Significant changes will be communicated via the Website or by e‑mail if appropriate.</p>
         </div>
         
         <div>
