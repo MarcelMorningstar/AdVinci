@@ -3,6 +3,10 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link';
 import { useMotionValue, animate } from "framer-motion";
+import { RiRefreshFill } from "react-icons/ri";
+import { PiVideoConferenceFill } from "react-icons/pi";
+import { TbPresentationAnalyticsFilled } from "react-icons/tb";
+import { FaChartPie } from "react-icons/fa";
 import styles from "../styles/Pricing.module.scss"
 
 export default function Prices() {
@@ -48,7 +52,7 @@ export default function Prices() {
     }
 
     return (
-        <div className='w-3/4 xl:w-2/3 flex flex-col items-center gap-4 pt-24 pb-12'>
+        <div className='w-3/4 lg:w-2/3 xl:w-2/3 2xl:w-1/2 flex flex-col items-center gap-4 pt-24 pb-12'>
             <div className='flex flex-col items-center gap-1'>
                 <h2 className='text-center text-4xl'>San Severino Marche</h2>
                 <div>
@@ -58,17 +62,15 @@ export default function Prices() {
             </div>
 
             <Link href="/offers" className='w-11/12 xs:w-full sm:w-[110%] rounded-full shadow-md flex flex-row items-center justify-center py-4 px-4 transition-all duration-750 ease-in-out bg-gradient-to-r from-pink-500 to-orange-400 bg-[length:150%] bg-right hover:bg-left active:bg-left focus:bg-left cursor-pointer'>
-                {/* <span className='text-sm xs:text-base sm:text-lg text-center text-white font-bold'>Limited Time – Claim Your Offer</span> */}
-                {/* <span className='text-sm xs:text-base sm:text-lg text-center text-white font-bold'>Limited Time Offer</span> */}
                 <span className='text-base sm:text-lg text-center text-white font-bold'>Special Offers</span>
             </Link>
             
-            <div className='flex flex-col gap-8 items-center mt-6'>
-                <div className='flex flex-col gap-4 w-full'>
+            <div className='w-full flex flex-col gap-8 items-center mt-6'>
+                <div className='w-full sm:w-2/3 lg:w-full flex flex-col gap-4'>
                     <div>
                         <AnimatedCounter target={price} />
                     </div>
-                    <ul className="flex flex-row w-full gap-6">
+                    <ul className="flex flex-col lg:flex-row w-full gap-6">
                         <li className={styles.plan}>
                             <div className={styles.itemContent}>
                                 <input type="radio" id="starter" name="plan" value="starter" className={styles.peer} checked={plan === "starter"} onChange={() => starterPlan()} />
@@ -113,7 +115,7 @@ export default function Prices() {
                         </li>
                     </ul>
                 </div>
-                <div className='flex flex-col gap-6'>
+                <div className='w-full flex flex-col gap-6'>
                     <div className='flex flex-col gap-1'>
                         <h4 className='text-center text-2xl font-medium'>Choose Your Ad Duration</h4>
                         <ul className="flex flex-wrap w-full gap-6">
@@ -231,13 +233,73 @@ export default function Prices() {
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div className='grid grid-cols-2'>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-            </div>
+                <div className='w-full flex flex-col items-center gap-1'>
+                    <h4 className='text-2xl font-semibold'>Add-ons & Extras</h4>
+                    <div className='w-full grid grid-rows-4 grid-cols-1 lg:grid-rows-2 lg:grid-cols-2 gap-6'>
+                        <div className='w-full bg-white text-gray-600 rounded-lg p-5'>
+                            <div className='flex flex-row justify-between gap-5'>
+                                <div className='flex flex-row gap-1.5'>
+                                    <RiRefreshFill className='h-8 w-8 text-orange-500' />
+                                    <h5 className='text-2xl font-semibold'>24h rapid swap</h5>
+                                </div>
+                                <div className='flex flex-row items-start gap-0.5'>
+                                    <span className='text-lg font-medium'>€</span>
+                                    <span className=' text-3xl font-semibold'>20</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p>upload before 14.00, live next day</p>
+                            </div>
+                        </div>
+                        <div className='w-full bg-white text-gray-600 rounded-lg p-5'>
+                            <div className='flex flex-row justify-between gap-5'>
+                                <div className='flex flex-row gap-1.5'>
+                                    <PiVideoConferenceFill className='h-8 w-8 text-blue-500' />
+                                    <h5 className='text-2xl font-semibold'>1hr strategy call</h5>
+                                </div>
+                                <div className='flex flex-row items-start gap-0.5'>
+                                    <span className='text-lg font-medium'>€</span>
+                                    <span className=' text-3xl font-semibold'>60</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Zoom or in person</p>
+                            </div>
+                        </div>
+                        <div className='w-full bg-white text-gray-600 rounded-lg p-5'>
+                            <div className='flex flex-row justify-between gap-5'>
+                                <div className='flex flex-row gap-1.5'>
+                                    <TbPresentationAnalyticsFilled className='h-8 w-8 text-green-500' />
+                                    <h5 className='text-2xl font-semibold'>Full advertising campaign plan</h5>
+                                </div>
+                                <div className='flex flex-row items-start gap-0.5'>
+                                    <span className='text-lg font-medium'>€</span>
+                                    <span className=' text-3xl font-semibold'>250</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Fees credited back if you book Expansion Plus</p>
+                            </div>
+                        </div>
+                        <div className='w-full bg-white text-gray-600 rounded-lg p-5'>
+                            <div className='flex flex-row justify-between gap-5'>
+                                <div className='flex flex-row gap-1.5'>
+                                    <FaChartPie className='h-8 w-8 text-purple-500' />
+                                    <h5 className='text-2xl font-semibold'>AI audience analytics</h5>
+                                </div>
+                                <div className='flex flex-row items-start gap-0.5'>
+                                    <span className='text-lg font-medium'>€</span>
+                                    <span className=' text-3xl font-semibold'>50</span>
+                                    <span className='text-lg font-medium whitespace-nowrap'>/month</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Who is viewing your add and when</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
     )
 }

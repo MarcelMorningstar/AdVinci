@@ -13,7 +13,7 @@ export default function Page() {
 
   return (
     <>
-      <section className='flex justify-center pt-32 pb-12 bg-neutral-200'>
+      <section className='min-h-screen flex justify-center pt-32 pb-12 bg-neutral-200'>
           <div className='w-[90vw] sm:w-[70vw]'>
               <h1 className="text-4xl font-bold">
                   { t("title") }

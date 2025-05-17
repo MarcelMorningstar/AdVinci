@@ -5,7 +5,7 @@ import Footer from '../../components/Footer'
 export default function Page() {
   return (
     <>
-      <section className='flex justify-center bg-neutral-200'>
+      <section className='min-h-screen flex justify-center bg-neutral-200'>
         <Prices />
       </section>
 

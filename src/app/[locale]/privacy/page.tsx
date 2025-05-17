@@ -7,7 +7,7 @@ export default function Page() {
 
   return (
     <>
-      <section className='flex justify-center pt-32 pb-12 bg-neutral-200'>
+      <section className='min-h-screen flex justify-center pt-32 pb-12 bg-neutral-200'>
         {
           locale === "it" ? (
             <Italian />
@@ -88,7 +88,7 @@ const English = () => {
         </div>
         
         <div>
-          <h4 className='text-xl font-bold'>3. Legal Bases & Purposes of Processing</h4>
+          <h4 className='text-xl font-bold'>3. Legal Bases & Purposes of Processing</h4>
           <table className='text-left'>
             <thead>
               <tr>
@@ -123,7 +123,7 @@ const English = () => {
         </div>
         
         <div>
-          <h4 className='text-xl font-bold'>4. Cookies & Similar Technologies</h4>
+          <h4 className='text-xl font-bold'>4. Cookies & Similar Technologies</h4>
           <ul>
             <li><strong>Strictly necessary cookies</strong> – essential for site navigation and security.</li>
             <li><strong>Analytics cookies</strong> (e.g., Vercel Analytics, Google Analytics 4) – help us understand site performance. Set only with your consent.</li>
@@ -133,7 +133,7 @@ const English = () => {
         </div>
         
         <div>
-          <h4 className='text-xl font-bold'>5. Who will receive your data?</h4>
+          <h4 className='text-xl font-bold'>5. Who will receive your data?</h4>
           <ul>
             <li><strong>Service providers</strong>: hosting (Vercel Inc., EU data centre), e‑mail & CRM (Google Workspace, HubSpot), payment processors, analytics providers, professional advisers.</li>
             <li><strong>Business partners & subcontractors</strong> strictly for fulfilling design or campaign services.</li>
@@ -143,12 +143,12 @@ const English = () => {
         </div>
         
         <div>
-          <h4 className='text-xl font-bold'>6. International Transfers</h4>
-          <p>Some providers (e.g., Vercel Inc. & Google LLC) are located outside the European Economic Area. Where this results in a transfer of personal data, it is safeguarded by EU Standard Contractual Clauses or adequacy decisions in accordance with arts. 44‑49 GDPR.</p>
+          <h4 className='text-xl font-bold'>6. International Transfers</h4>
+          <p>Some providers (e.g., Vercel Inc. & Google LLC) are located outside the European Economic Area. Where this results in a transfer of personal data, it is safeguarded by EU Standard Contractual Clauses or adequacy decisions in accordance with arts. 44‑49 GDPR.</p>
         </div>
         
         <div>
-          <h4 className='text-xl font-bold'>7. Data Retention</h4>
+          <h4 className='text-xl font-bold'>7. Data Retention</h4>
           <table className='text-left'>
             <thead>
               <tr>
@@ -159,19 +159,19 @@ const English = () => {
             <tbody>
               <tr>
                 <td className='pr-3'>Contact inquiries (no contract)</td>
-                <td className='pr-3'>12 months after last contact</td>
+                <td className='pr-3'>12 months after last contact</td>
               </tr>
               <tr>
                 <td className='pr-3'>Client contractual records</td>
-                <td className='pr-3'>10 years (Italian Civil Code & tax law)</td>
+                <td className='pr-3'>10 years (Italian Civil Code & tax law)</td>
               </tr>
               <tr>
                 <td className='pr-3'>Invoices & accounting</td>
-                <td className='pr-3'>10 years</td>
+                <td className='pr-3'>10 years</td>
               </tr>
               <tr>
                 <td className='pr-3'>Analytics data</td>
-                <td className='pr-3'>14 months (GA4 default)</td>
+                <td className='pr-3'>14 months (GA4 default)</td>
               </tr>
               <tr>
                 <td className='pr-3'>Cookies</td>
@@ -183,16 +183,16 @@ const English = () => {
         </div>
         
         <div>
-          <h4 className='text-xl font-bold'>8. Your Rights</h4>
+          <h4 className='text-xl font-bold'>8. Your Rights</h4>
           <p>Under the GDPR you may:</p>
           <ol>
-            <li><strong>Access</strong> your personal data (art. 15);</li>
-            <li><strong>Rectify</strong> inaccurate or incomplete data (art. 16);</li>
-            <li><strong>Erase</strong> data (&quot;right to be forgotten&quot;, art. 17);</li>
-            <li><strong>Restrict</strong> processing (art. 18);</li>
-            <li><strong>Port</strong> data to another controller (art. 20);</li>
-            <li><strong>Object</strong> to processing based on legitimate interest or direct marketing (art. 21);</li>
-            <li><strong>Withdraw consent</strong> at any time (art. 7 §3), without affecting legality of prior processing.</li>
+            <li><strong>Access</strong> your personal data (art. 15);</li>
+            <li><strong>Rectify</strong> inaccurate or incomplete data (art. 16);</li>
+            <li><strong>Erase</strong> data (&quot;right to be forgotten&quot;, art. 17);</li>
+            <li><strong>Restrict</strong> processing (art. 18);</li>
+            <li><strong>Port</strong> data to another controller (art. 20);</li>
+            <li><strong>Object</strong> to processing based on legitimate interest or direct marketing (art. 21);</li>
+            <li><strong>Withdraw consent</strong> at any time (art. 7 §3), without affecting legality of prior processing.</li>
           </ol>
           <p>To exercise any right, e‑mail <a href="mailto:privacy@advinci.it">privacy@advinci.it</a>. We may need to verify your identity. You also have the right to lodge a complaint with the Italian supervisory authority: <a href="http://www.garanteprivacy.it" target="_blank">Garante per la Protezione dei Dati Personali</a>.</p>
         </div>
@@ -209,26 +209,26 @@ const English = () => {
         </div>
         
         <div>
-          <h4 className='text-xl font-bold'>10. Automated decision‑making</h4>
+          <h4 className='text-xl font-bold'>10. Automated decision‑making</h4>
           <p>We do not use your data for automated decision‑making or profiling that produces legal or similarly significant effects.</p>
         </div>
         
         <div>
-          <h4 className='text-xl font-bold'>11. Third‑party links</h4>
+          <h4 className='text-xl font-bold'>11. Third‑party links</h4>
           <p>The Website may contain links to sites we do not operate. We are not responsible for their privacy practices. Please review their policies before submitting data.</p>
         </div>
         
         <div>
-          <h4 className='text-xl font-bold'>12. Changes to this Policy</h4>
+          <h4 className='text-xl font-bold'>12. Changes to this Policy</h4>
           <p>We may update this Privacy Policy from time to time. The &quot;Last updated&quot; date at the top will change accordingly. Significant changes will be communicated via the Website or by e‑mail if appropriate.</p>
         </div>
         
         <div>
-          <h4 className='text-xl font-bold'>13. Contact us</h4>
+          <h4 className='text-xl font-bold'>13. Contact us</h4>
           <blockquote>
-            <strong>DPO</strong>: Matthew Kirk<br />
+            <strong>DPO</strong>: Matthew Kirk<br />
             <strong>E‑mail</strong>: <a href="mailto:privacy@advinci.it">privacy@advinci.it</a><br />
-            <strong>Address</strong>: Via Roma 12, 62027 San Severino Marche (MC), Italy
+            <strong>Address</strong>: Via Roma 12, 62027 San Severino Marche (MC), Italy
           </blockquote>
         </div>
       </div>
@@ -252,16 +252,16 @@ const Italian = () => {
         <p>AdVinci (&quot;noi&quot;, &quot;ci&quot;, &quot;nostro&quot;) rispetta la tua privacy ed è impegnata a proteggere i dati personali che condividi con noi. La presente Informativa sulla Privacy spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando visiti <a href="https://advinci.it" target="_blank">https://advinci.it</a> (il &quot;Sito&quot;) o usufruisci dei nostri servizi di pubblicità digitale, design e consulenza (collettivamente, i &quot;Servizi&quot;). Descrive inoltre i tuoi diritti ai sensi del Regolamento Generale sulla Protezione dei Dati dell’UE (Regolamento (UE) 2016/679 – GDPR) e delle leggi italiane applicabili in materia di protezione dei dati.</p>
 
         <div>
-          <h4 className='text-xl font-bold'>1. Chi è il Titolare del trattamento?</h4>
-          <strong>Titolare</strong>: <span>AdVinci S.r.l.</span><br />
-          <strong>Indirizzo</strong>: <span>Via Roma 12, 62027 San Severino Marche (MC), Italia</span><br />
-          <strong>P. IVA</strong>: <span>02154870436</span><br />
+          <h4 className='text-xl font-bold'>1. Chi è il Titolare del trattamento?</h4>
+          <strong>Titolare</strong>: <span>AdVinci S.r.l.</span><br />
+          <strong>Indirizzo</strong>: <span>Via Roma 12, 62027 San Severino Marche (MC), Italia</span><br />
+          <strong>P. IVA</strong>: <span>02154870436</span><br />
           <strong>E‑mail</strong>: <a href="mailto:privacy@advinci.it">privacy@advinci.it</a><br />
           <strong>Telefono</strong>: <a href="tel:+393508008361">+393508008361</a>
         </div>
 
         <div>
-          <h4 className='text-xl font-bold'>2. Quali Dati Personali raccogliamo?</h4>
+          <h4 className='text-xl font-bold'>2. Quali Dati Personali raccogliamo?</h4>
           <table className='text-left'>
             <thead>
               <tr>
@@ -302,12 +302,12 @@ const Italian = () => {
         </div>
 
         <div>
-          <h4 className='text-xl font-bold'>3. Basi Giuridiche e Finalità del Trattamento</h4>
+          <h4 className='text-xl font-bold'>3. Basi Giuridiche e Finalità del Trattamento</h4>
           <table className='text-left'>
             <thead>
               <tr>
                 <th className='pr-3'>Finalità</th>
-                <th className='pr-3'>Base giuridica (art. 6 GDPR)</th>
+                <th className='pr-3'>Base giuridica (art. 6 GDPR)</th>
               </tr>
             </thead>
             <tbody>
@@ -337,7 +337,7 @@ const Italian = () => {
         </div>
 
         <div>
-          <h4 className='text-xl font-bold'>4. Cookie e Tecnologie Simili</h4>
+          <h4 className='text-xl font-bold'>4. Cookie e Tecnologie Simili</h4>
           <ul>
             <li><strong>Cookie strettamente necessari</strong> – essenziali per la navigazione e la sicurezza del sito.</li>
             <li><strong>Cookie di analisi</strong> (es. Vercel Analytics, Google Analytics 4) – ci aiutano a comprendere le prestazioni del sito. Attivati solo con il tuo consenso.</li>
@@ -347,22 +347,22 @@ const Italian = () => {
         </div>
 
         <div>
-          <h4 className='text-xl font-bold'>5. Chi riceverà i tuoi dati?</h4>
+          <h4 className='text-xl font-bold'>5. Chi riceverà i tuoi dati?</h4>
           <ul>
             <li><strong>Fornitori di servizi</strong>: hosting (Vercel Inc., data center UE), e‑mail e CRM (Google Workspace, HubSpot), processori di pagamento, fornitori di analisi, consulenti professionali.</li>
             <li><strong>Partner commerciali e subappaltatori</strong> strettamente per l’erogazione di servizi di design o campagne.</li>
             <li><strong>Autorità pubbliche</strong> se richiesto dalla legge o per difendere diritti legali.</li>
           </ul>
-          <p>Tutti i responsabili operano in base a contratti scritti conformi all’art. 28 GDPR. Non vendiamo mai i tuoi dati personali.</p>
+          <p>Tutti i responsabili operano in base a contratti scritti conformi all’art. 28 GDPR. Non vendiamo mai i tuoi dati personali.</p>
         </div>
 
         <div>
-          <h4 className='text-xl font-bold'>6. Trasferimenti Internazionali</h4>
+          <h4 className='text-xl font-bold'>6. Trasferimenti Internazionali</h4>
           <p>Alcuni fornitori (es. Vercel Inc. e Google LLC) si trovano al di fuori dello Spazio Economico Europeo. Quando ciò comporta un trasferimento di dati personali, esso è protetto da Clausole Contrattuali Standard UE o da decisioni di adeguatezza secondo gli artt. 44‑49 GDPR.</p>
         </div>
 
         <div>
-          <h4 className='text-xl font-bold'>7. Conservazione dei Dati</h4>
+          <h4 className='text-xl font-bold'>7. Conservazione dei Dati</h4>
           <table className='text-left'>
             <thead>
               <tr>
@@ -373,19 +373,19 @@ const Italian = () => {
             <tbody>
               <tr>
                 <td className='pr-3'>Richieste di contatto (senza contratto)</td>
-                <td className='pr-3'>12 mesi dall’ultimo contatto</td>
+                <td className='pr-3'>12 mesi dall’ultimo contatto</td>
               </tr>
               <tr>
                 <td className='pr-3'>Documentazione contrattuale dei clienti</td>
-                <td className='pr-3'>10 anni (Codice Civile e norme fiscali italiane)</td>
+                <td className='pr-3'>10 anni (Codice Civile e norme fiscali italiane)</td>
               </tr>
               <tr>
                 <td className='pr-3'>Fatture e contabilità</td>
-                <td className='pr-3'>10 anni</td>
+                <td className='pr-3'>10 anni</td>
               </tr>
               <tr>
                 <td className='pr-3'>Dati analitici</td>
-                <td className='pr-3'>14 mesi (impostazione predefinita GA4)</td>
+                <td className='pr-3'>14 mesi (impostazione predefinita GA4)</td>
               </tr>
               <tr>
                 <td className='pr-3'>Cookie</td>
@@ -397,7 +397,7 @@ const Italian = () => {
         </div>
 
         <div>
-          <h4 className='text-xl font-bold'>8. I tuoi Diritti</h4>
+          <h4 className='text-xl font-bold'>8. I tuoi Diritti</h4>
           <p>Ai sensi del GDPR puoi:</p>
           <ol>
             <li><strong>Accedere</strong> ai tuoi dati personali (art. 15);</li>
