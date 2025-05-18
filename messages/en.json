@@ -137,5 +137,111 @@
     },
     "privacy": {
 
+    },
+    "price": {
+        "text1": "How It Works — Build Your Campaign in 3 Easy Steps.",
+        "text2": "Your price adjusts based on your choices — just like building your own custom plan.",
+        "button": "Special Offers",
+        "plan1": {
+            "title": "Starter Flash",
+            "list": {
+                "item1": "10 second slot",
+                "item2": "1 week",
+                "item3": "Static ad creation",
+                "item4": "(for new customers)"
+            }
+        },
+        "plan2": {
+            "title": "Community Builder",
+            "list": {
+                "item1": "15 second slot",
+                "item2": "4 weeks",
+                "item3": "free refreshes"
+            }
+        },
+        "plan3": {
+            "title": "Expansion Plus",
+            "list": {
+                "item1": "30 second slot",
+                "item2": "12 weeks",
+                "item3": "free refreshes"
+            }
+        },
+        "priceBuilding1": {
+            "title": "Choose Your Ad Duration",
+            "list": {
+                "item1": {
+                    "title": "10 seconds",
+                    "text": "Lorem ipsum dolor sit amet aaaa aa"
+                },
+                "item2": {
+                    "title": "15 seconds",
+                    "text": "Lorem ipsum dolor sit amet"
+                },
+                "item3": {
+                    "title": "30 seconds",
+                    "text": "Lorem ipsum dolor sit amet"
+                }
+            }
+        },
+        "priceBuilding2": {
+            "title": "Define Your Campaign Reach & Duration",
+            "list": {
+                "item1": {
+                    "title": "1 week",
+                    "text": "Lorem ipsum dolor sit amet"
+                },
+                "item2": {
+                    "title": "4 weeks",
+                    "text": "Lorem ipsum dolor sit amet"
+                },
+                "item3": {
+                    "title": "12 weeks",
+                    "text": "Lorem ipsum dolor sit amet"
+                }
+            }
+        },
+        "priceBuilding3": {
+            "title": "Lets Design with us",
+            "list": {
+                "item1": {
+                    "title": "No Thanks!",
+                    "text": "I have my design ready"
+                },
+                "item2": {
+                    "title": "Static",
+                    "text": "Lorem ipsum dolor sit amet"
+                },
+                "item3": {
+                    "title": "Animated",
+                    "text": "Lorem ipsum dolor sit amet"
+                }
+            }
+        },
+        "extras": {
+            "title": "Add-ons & Extras",
+            "extra1": "24h rapid swap",
+            "extra1text": "upload before 14.00, live next day",
+            "extra2": "1hr strategy call",
+            "extra2text": "Zoom or in person",
+            "extra3": "Full advertising campaign plan",
+            "extra3text": "Fees credited back if you book Expansion Plus",
+            "extra4": "AI audience analytics",
+            "extra4text": "Who is viewing your add and when"
+        }
+    },
+    "offers": {
+        "bonus1": {
+            "title": "Founding Client\n25% Off",
+            "text1": "Be one of our first 10 clients and save 25% on any package.",
+            "text2": "To celebrate our launch in San Severino Marche, we’re offering a special discount to our first 10 advertisers.",
+            "text3": "Lock in your spot early, get seen across town, and be part of something new. Limited availability — this offer ends once 10 clients sign or after 60 days."
+        },
+        "bonus2": {
+            "title": "Referral Credit\nEarn €50",
+            "text1": "Know another local business that could benefit from digital advertising? Send them our way and when they book any package, you’ll both receive a €50 credit on your next invoice.",
+            "text2": "It's a win-win — and perfect for communities like ours.",
+            "text3": "Stack up credits up to €200. No strings attached — just help your neighbours grow too."
+        }
     }
 }

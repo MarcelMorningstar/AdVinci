@@ -1,13 +1,6 @@
 @import "tailwindcss";
 @plugin "flowbite/plugin";
 
-@font-face {
-  font-family: 'MyCustomFont';
-  src: url('../assets/BrilliantSignature-X32WK.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 :root {
   --background: #b8a8a0;
   --background2: #a793ad;
@@ -57,7 +50,7 @@ h2, h3 {
 }
 
 #signature {
-  font-family: 'MyCustomFont';
+  font-family: var(--babylonica);
 }
 
 .react-phone-input input:focus {

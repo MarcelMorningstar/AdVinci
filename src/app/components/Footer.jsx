@@ -16,9 +16,9 @@ export default function Footer({ color }) {
       <div className='flex flex-col gap-8 lg:gap-0'>
         <div className='flex flex-col sm:flex-row gap-8 justify-between px-8 md:px-28 lg:px-36 xl:px-44'>
           <div className='flex flex-col gap-2 items-center sm:items-start'>
-            <div className='relative flex flex-row gap-1 mb-1'>
+            <div className='relative flex flex-row items-end gap-1 mb-1'>
               <Image src={Logo} className='w-12 h-8 object-contain' alt='AdVinci' />
-              <h4 className='text-2xl text-white font-medium'>AdVinci</h4>
+              <h4 className='text-2xl leading-5 text-white font-medium'>AdVinci</h4>
             </div>
             <div className='flex flex-row gap-1.5 text-white hover:text-[var(--primary1)]'>
               <MdEmail className='w-6 h-6 text-inherit transition ease-in duration-100' />
@@ -61,7 +61,7 @@ export default function Footer({ color }) {
           </Link>
         </div>
       </div>
-      <span className='flex justify-center items-center text-base sm:text-lg'>© { new Date().getFullYear() } Advinci. { t("title") }</span>
+      <span className='flex justify-center items-center text-base sm:text-lg'>© { new Date().getFullYear() } AdVinci. { t("title") }</span>
     </div>
   )
 }

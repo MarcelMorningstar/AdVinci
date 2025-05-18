@@ -1,0 +1,29 @@
+.gridLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "title1"
+    "a"
+    "b"
+    "c"
+    "title2"
+    "d"
+    "e"
+    "f";
+    align-items: start;
+    row-gap: 24px;
+
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 2px 1fr;
+        grid-template-areas:
+        "title1 . title2"
+        "a line d"
+        "b line e"
+        "c line f";
+        align-items: start;
+        row-gap: 32px;
+        column-gap: 24px;
+    }
+}
+

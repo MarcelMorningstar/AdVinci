@@ -3,7 +3,7 @@ import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {routing} from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Navbar from '../components/Navbar'
-import { Nunito_Sans, Reenie_Beanie } from "next/font/google";
+import { Nunito_Sans, Reenie_Beanie, Babylonica } from "next/font/google";
 import "../styles/globals.css";
 
 
@@ -28,6 +28,13 @@ const reenie_beanie = Reenie_Beanie({
   variable: "--reenie_beanie",
 });
 
+const babylonica = Babylonica({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--babylonica",
+});
+
 export default async function RootLayout({
   children,
   params
@@ -43,7 +50,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${nunitoSans.variable} ${reenie_beanie.variable}`}>
+      <body className={`${nunitoSans.variable} ${reenie_beanie.variable} ${babylonica.variable}`}>
         <NextIntlClientProvider>
           <Navbar />
 

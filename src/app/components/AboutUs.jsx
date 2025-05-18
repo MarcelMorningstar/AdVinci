@@ -142,7 +142,7 @@ export default function AboutUs() {
                           <p>{ t("text1") }</p>
                           <p>{ t("text2") }</p>
                           <p>{ t("text3") }</p>
-                          <span id="signature" className="text-8xl">Arita Bluka</span>
+                          <span id="signature" className="text-6xl xs:text-7xl">Arita Bluka</span>
                         </div>
                     </div>
                   </div>
