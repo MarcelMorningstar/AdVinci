@@ -52,7 +52,7 @@ export default function Prices() {
     }
 
     return (
-        <div className='w-3/4 lg:w-2/3 xl:w-2/3 2xl:w-1/2 flex flex-col items-center gap-4 pt-24 pb-12'>
+        <div className='w-3/4 lg:w-2/3 xl:w-2/3 2xl:w-1/2 flex flex-col items-center gap-4 pt-24'>
             <div className='flex flex-col items-center gap-1'>
                 <h2 className='text-center text-4xl'>San Severino Marche</h2>
                 <div>
