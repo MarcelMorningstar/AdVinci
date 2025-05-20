@@ -147,8 +147,7 @@
             "list": {
                 "item1": "10 second slot",
                 "item2": "1 week",
-                "item3": "Static ad creation",
-                "item4": "(for new customers)"
+                "item3": "Static ad creation for new customers"
             }
         },
         "plan2": {
@@ -156,7 +155,7 @@
             "list": {
                 "item1": "15 second slot",
                 "item2": "4 weeks",
-                "item3": "free refreshes"
+                "item3": "Free content changes"
             }
         },
         "plan3": {
@@ -164,45 +163,71 @@
             "list": {
                 "item1": "30 second slot",
                 "item2": "12 weeks",
-                "item3": "free refreshes"
+                "item3": "Free content changes"
             }
         },
         "priceBuilding1": {
-            "title": "Choose Your Ad Duration",
+            "title": "Select your ad time",
             "list": {
                 "item1": {
                     "title": "10 seconds",
-                    "text": "Lorem ipsum dolor sit amet aaaa aa"
+                    "text": {
+                        "1": "Cost-effective",
+                        "2": "Delivers a clear, quick message",
+                        "3": "On a 2 min loop",
+                        "4": "€90 per week"
+                    }
                 },
                 "item2": {
                     "title": "15 seconds",
-                    "text": "Lorem ipsum dolor sit amet"
+                    "text": {
+                        "1": "Balanced timing",
+                        "2": "Enough space for key details",
+                        "3": "On a 2 min loop",
+                        "4": "€135 per week"
+                    }
                 },
                 "item3": {
                     "title": "30 seconds",
-                    "text": "Lorem ipsum dolor sit amet"
+                    "text": {
+                        "1": "Maximum impact",
+                        "2": "Ideal for stories or multiple offers",
+                        "3": "On a 2 min loop",
+                        "4": "€270 per week"
+                    }
                 }
             }
         },
         "priceBuilding2": {
-            "title": "Define Your Campaign Reach & Duration",
+            "title": "Choose campaign period",
             "list": {
                 "item1": {
                     "title": "1 week",
-                    "text": "Lorem ipsum dolor sit amet"
+                    "text": {
+                        "1": "Quick visibility boost",
+                        "2": "Great for flash sales"
+                    }
                 },
                 "item2": {
                     "title": "4 weeks",
-                    "text": "Lorem ipsum dolor sit amet"
+                    "text": {
+                        "1": "Consistent visibility",
+                        "2": "Boosts brand recall",
+                        "3": "10% discount"
+                    }
                 },
                 "item3": {
                     "title": "12 weeks",
-                    "text": "Lorem ipsum dolor sit amet"
+                    "text": {
+                        "1": "Long-term visibility",
+                        "2": "Builds strong brand recognition",
+                        "3": "20% discount"
+                    }
                 }
             }
         },
         "priceBuilding3": {
-            "title": "Lets Design with us",
+            "title": "Let's design with us",
             "list": {
                 "item1": {
                     "title": "No Thanks!",
@@ -210,11 +235,11 @@
                 },
                 "item2": {
                     "title": "Static",
-                    "text": "Lorem ipsum dolor sit amet"
+                    "text": "Single graphic or visual image €75"
                 },
                 "item3": {
                     "title": "Animated",
-                    "text": "Lorem ipsum dolor sit amet"
+                    "text": "Video-style Ad €150"
                 }
             }
         },
@@ -225,7 +250,7 @@
             "extra2": "1hr strategy call",
             "extra2text": "Zoom or in person",
             "extra3": "Full advertising campaign plan",
-            "extra3text": "Fees credited back if you book Expansion Plus",
+            "extra3text": "Advertising consultation, campaign plan and static advert creation",
             "extra4": "AI audience analytics",
             "extra4text": "Who is viewing your add and when"
         }

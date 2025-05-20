@@ -19,9 +19,9 @@ export default function Prices() {
     const [designWithUs, setDesignWithUs] = useState("noThanks");
 
     const priceMatrix = {
-        "10": { "1": 90, "4": 290, "12": 765 },
-        "15": { "1": 130, "4": 415, "12": 1105 },
-        "30": { "1": 220, "4": 705, "12": 1870 },
+        "10": { "1": 90, "4": 324, "12": 864 },
+        "15": { "1": 135, "4": 486, "12": 1296 },
+        "30": { "1": 270, "4": 972, "12": 2592 },
     };
 
     useEffect(() => {
@@ -79,7 +79,7 @@ export default function Prices() {
                                     <ul>
                                         <li>{ t("plan1.list.item1") }</li>
                                         <li>{ t("plan1.list.item2") }</li>
-                                        <li>{ t("plan1.list.item3") }<br/>{ t("plan1.list.item4") }</li>
+                                        <li>{ t("plan1.list.item3") }</li>
                                     </ul>
                                 </label>
                             </div>
@@ -89,7 +89,7 @@ export default function Prices() {
                                 <input type="radio" id="community" name="plan" value="community" className={styles.peer} checked={plan === "community"} onChange={() => communityPlan()} />
                                 <label htmlFor="community" className={styles.label2}>
                                     <h4>{ t("plan2.title") }</h4>
-                                    <h5>€490</h5>
+                                    <h5>€561</h5>
                                     <ul>
                                         <li>{ t("plan2.list.item1") }</li>
                                         <li>{ t("plan2.list.item2") }</li>
@@ -103,7 +103,7 @@ export default function Prices() {
                                 <input type="radio" id="expansion" name="plan" value="expansion" className={styles.peer} checked={plan === "expansion"} onChange={() => expansionPlan()} />
                                 <label htmlFor="expansion" className={styles.label3}>
                                     <h4>{ t("plan3.title") }</h4>
-                                    <h5>€2020</h5>
+                                    <h5>€2742</h5>
                                     <ul>
                                         <li>{ t("plan3.list.item1") }</li>
                                         <li>{ t("plan3.list.item2") }</li>
@@ -127,7 +127,12 @@ export default function Prices() {
                                     <label htmlFor="10" className={styles.label}>                           
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding1.list.item1.title") }</div>
-                                            <div className="w-full">{ t("priceBuilding1.list.item1.text") }</div>
+                                            <ul className='w-fit list-disc ml-5'>
+                                                <li>{ t("priceBuilding1.list.item1.text.1") }</li>
+                                                <li>{ t("priceBuilding1.list.item1.text.2") }</li>
+                                                <li>{ t("priceBuilding1.list.item1.text.3") }</li>
+                                                <li>{ t("priceBuilding1.list.item1.text.4") }</li>
+                                            </ul>
                                         </div>
                                     </label>
                                 </div>
@@ -138,7 +143,12 @@ export default function Prices() {
                                     <label htmlFor="15" className={styles.label}>
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding1.list.item2.title") }</div>
-                                            <div className="w-full">{ t("priceBuilding1.list.item2.text") }</div>
+                                            <ul className='w-fit list-disc ml-5'>
+                                                <li>{ t("priceBuilding1.list.item2.text.1") }</li>
+                                                <li>{ t("priceBuilding1.list.item2.text.2") }</li>
+                                                <li>{ t("priceBuilding1.list.item2.text.3") }</li>
+                                                <li>{ t("priceBuilding1.list.item2.text.4") }</li>
+                                            </ul>
                                         </div>
                                     </label>
                                 </div>
@@ -149,7 +159,12 @@ export default function Prices() {
                                     <label htmlFor="30" className={styles.label}>
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding1.list.item3.title") }</div>
-                                            <div className="w-full">{ t("priceBuilding1.list.item3.text") }</div>
+                                            <ul className='w-fit list-disc ml-5'>
+                                                <li>{ t("priceBuilding1.list.item3.text.1") }</li>
+                                                <li>{ t("priceBuilding1.list.item3.text.2") }</li>
+                                                <li>{ t("priceBuilding1.list.item3.text.3") }</li>
+                                                <li>{ t("priceBuilding1.list.item3.text.4") }</li>
+                                            </ul>
                                         </div>
                                     </label>
                                 </div>
@@ -166,7 +181,10 @@ export default function Prices() {
                                     <label htmlFor="1" className={styles.label}>                           
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding2.list.item1.title") }</div>
-                                            <div className="w-full">{ t("priceBuilding2.list.item1.text") }</div>
+                                            <ul className='w-fit list-disc ml-5'>
+                                                <li>{ t("priceBuilding2.list.item1.text.1") }</li>
+                                                <li>{ t("priceBuilding2.list.item1.text.2") }</li>
+                                            </ul>
                                         </div>
                                     </label>
                                 </div>
@@ -177,7 +195,11 @@ export default function Prices() {
                                     <label htmlFor="4" className={styles.label}>
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding2.list.item2.title") }</div>
-                                            <div className="w-full">{ t("priceBuilding2.list.item2.text") }</div>
+                                            <ul className='w-fit list-disc ml-5'>
+                                                <li>{ t("priceBuilding2.list.item2.text.1") }</li>
+                                                <li>{ t("priceBuilding2.list.item2.text.2") }</li>
+                                                <li>{ t("priceBuilding2.list.item2.text.3") }</li>
+                                            </ul>
                                         </div>
                                     </label>
                                 </div>
@@ -188,7 +210,11 @@ export default function Prices() {
                                     <label htmlFor="12" className={styles.label}>
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding2.list.item3.title") }</div>
-                                            <div className="w-full">{ t("priceBuilding2.list.item3.text") }</div>
+                                            <ul className='w-fit list-disc ml-5'>
+                                                <li>{ t("priceBuilding2.list.item3.text.1") }</li>
+                                                <li>{ t("priceBuilding2.list.item3.text.2") }</li>
+                                                <li>{ t("priceBuilding2.list.item3.text.3") }</li>
+                                            </ul>
                                         </div>
                                     </label>
                                 </div>
@@ -204,7 +230,7 @@ export default function Prices() {
                                     <input type="radio" id="noThanks" name="designWithUs" value="noThanks" className={styles.peer} checked={designWithUs === "noThanks"} onChange={() => setDesignWithUs("noThanks")} />
                                     <label htmlFor="noThanks" className={styles.label}>                       
                                         <div className="block">
-                                            <div className="w-full text-lg font-semibold">{ t("priceBuilding2.list.item1.title") }</div>
+                                            <div className="w-full text-lg font-semibold">{ t("priceBuilding3.list.item1.title") }</div>
                                             <div className="w-full">{ t("priceBuilding3.list.item1.text") }</div>
                                         </div>
                                     </label>
@@ -215,7 +241,7 @@ export default function Prices() {
                                     <input type="radio" id="static" name="designWithUs" value="static" className={styles.peer} checked={designWithUs === "static"} onChange={() => setDesignWithUs("static")} />
                                     <label htmlFor="static" className={styles.label}>                           
                                         <div className="block">
-                                            <div className="w-full text-lg font-semibold">{ t("priceBuilding2.list.item2.title") }</div>
+                                            <div className="w-full text-lg font-semibold">{ t("priceBuilding3.list.item2.title") }</div>
                                             <div className="w-full">{ t("priceBuilding3.list.item2.text") }</div>
                                         </div>
                                     </label>
@@ -238,7 +264,7 @@ export default function Prices() {
                 <div className='w-full flex flex-col items-center gap-1'>
                     <h4 className='text-2xl font-semibold'>{ t("extras.title") }</h4>
                     <div className='w-full grid grid-rows-4 grid-cols-1 lg:grid-rows-2 lg:grid-cols-2 gap-6'>
-                        <div className='w-full bg-white text-gray-600 rounded-lg p-5'>
+                        <div className='w-full bg-neutral-50 text-gray-600 rounded-lg p-5'>
                             <div className='flex flex-row justify-between gap-5'>
                                 <div className='flex flex-row gap-1.5'>
                                     <RiRefreshFill className='h-8 w-8 text-orange-500' />
@@ -253,7 +279,7 @@ export default function Prices() {
                                 <p>{ t("extras.extra1text") }</p>
                             </div>
                         </div>
-                        <div className='w-full bg-white text-gray-600 rounded-lg p-5'>
+                        <div className='w-full bg-neutral-50 text-gray-600 rounded-lg p-5'>
                             <div className='flex flex-row justify-between gap-5'>
                                 <div className='flex flex-row gap-1.5'>
                                     <PiVideoConferenceFill className='h-8 w-8 text-blue-500' />
@@ -268,7 +294,7 @@ export default function Prices() {
                                 <p>{ t("extras.extra2text") }</p>
                             </div>
                         </div>
-                        <div className='w-full bg-white text-gray-600 rounded-lg p-5'>
+                        <div className='w-full bg-neutral-50 text-gray-600 rounded-lg p-5'>
                             <div className='flex flex-row justify-between gap-5'>
                                 <div className='flex flex-row gap-1.5'>
                                     <TbPresentationAnalyticsFilled className='h-8 w-8 text-green-500' />
@@ -283,7 +309,7 @@ export default function Prices() {
                                 <p>{ t("extras.extra3text") }</p>
                             </div>
                         </div>
-                        <div className='w-full bg-white text-gray-600 rounded-lg p-5'>
+                        <div className='w-full bg-neutral-50 text-gray-600 rounded-lg p-5'>
                             <div className='flex flex-row justify-between gap-5'>
                                 <div className='flex flex-row gap-1.5'>
                                     <FaChartPie className='h-8 w-8 text-purple-500' />
