@@ -13,7 +13,7 @@ import styles from "../styles/Pricing.module.scss"
 export default function Prices() {
     const t = useTranslations('price');
     const [price, setPrice] = useState(0);
-    const [plan, setPlan] = useState("starter");
+    // const [plan, setPlan] = useState("starter");
     const [adDuration, setAdDuration] = useState("10");
     const [campaignDuration, setCampaignDuration] = useState("1");
     const [designWithUs, setDesignWithUs] = useState("noThanks");
@@ -32,26 +32,26 @@ export default function Prices() {
         setPrice(finalPrice);
     }, [adDuration, campaignDuration, designWithUs])
 
-    const starterPlan = () => {
-        setPlan("starter")
-        setAdDuration("10")
-        setCampaignDuration("1")
-        setDesignWithUs("noThanks")
-    }
+    // const starterPlan = () => {
+    //     setPlan("starter")
+    //     setAdDuration("10")
+    //     setCampaignDuration("1")
+    //     setDesignWithUs("noThanks")
+    // }
 
-    const communityPlan = () => {
-        setPlan("community")
-        setAdDuration("15")
-        setCampaignDuration("4")
-        setDesignWithUs("static")
-    }
+    // const communityPlan = () => {
+    //     setPlan("community")
+    //     setAdDuration("15")
+    //     setCampaignDuration("4")
+    //     setDesignWithUs("static")
+    // }
 
-    const expansionPlan = () => {
-        setPlan("expansion")
-        setAdDuration("30")
-        setCampaignDuration("12")
-        setDesignWithUs("animated")
-    }
+    // const expansionPlan = () => {
+    //     setPlan("expansion")
+    //     setAdDuration("30")
+    //     setCampaignDuration("12")
+    //     setDesignWithUs("animated")
+    // }
 
     return (
         <div className='w-3/4 lg:w-2/3 xl:w-2/3 2xl:w-1/2 flex flex-col items-center gap-4 pt-24'>
@@ -72,11 +72,11 @@ export default function Prices() {
                     <ul className="flex flex-col lg:flex-row w-full gap-6">
                         <li className={styles.plan}>
                             <div className={styles.itemContent}>
-                                <input type="radio" id="starter" name="plan" value="starter" className={styles.peer} checked={plan === "starter"} onChange={() => starterPlan()} />
+                                <input type="radio" id="starter" name="plan" value="starter" className={styles.peer} />
                                 <label htmlFor="starter" className={styles.label1}>                           
-                                    <h4>{ t("plan1.title") }</h4>
-                                    <h5>€90</h5>
-                                    <ul>
+                                    <h4 className='text-gray-800'>{ t("plan1.title") }</h4>
+                                    <h5 className='text-gray-800'>€90</h5>
+                                    <ul className='text-gray-500'>
                                         <li>{ t("plan1.list.item1") }</li>
                                         <li>{ t("plan1.list.item2") }</li>
                                         <li>{ t("plan1.list.item3") }</li>
@@ -86,11 +86,11 @@ export default function Prices() {
                         </li>
                         <li className={styles.plan}>
                             <div className={styles.itemContent}>
-                                <input type="radio" id="community" name="plan" value="community" className={styles.peer} checked={plan === "community"} onChange={() => communityPlan()} />
+                                <input type="radio" id="community" name="plan" value="community" className={styles.peer} />
                                 <label htmlFor="community" className={styles.label2}>
-                                    <h4>{ t("plan2.title") }</h4>
-                                    <h5>€561</h5>
-                                    <ul>
+                                    <h4 className='text-gray-800'>{ t("plan2.title") }</h4>
+                                    <h5 className='text-gray-800'>€486</h5>
+                                    <ul className='text-gray-500'>
                                         <li>{ t("plan2.list.item1") }</li>
                                         <li>{ t("plan2.list.item2") }</li>
                                         <li>{ t("plan2.list.item3") }</li>
@@ -100,11 +100,11 @@ export default function Prices() {
                         </li>
                         <li className={styles.plan}>
                             <div className={styles.itemContent}>
-                                <input type="radio" id="expansion" name="plan" value="expansion" className={styles.peer} checked={plan === "expansion"} onChange={() => expansionPlan()} />
+                                <input type="radio" id="expansion" name="plan" value="expansion" className={styles.peer} />
                                 <label htmlFor="expansion" className={styles.label3}>
-                                    <h4>{ t("plan3.title") }</h4>
-                                    <h5>€2742</h5>
-                                    <ul>
+                                    <h4 className='text-gray-800'>{ t("plan3.title") }</h4>
+                                    <h5 className='text-gray-800'>€2592</h5>
+                                    <ul className='text-gray-500'>
                                         <li>{ t("plan3.list.item1") }</li>
                                         <li>{ t("plan3.list.item2") }</li>
                                         <li>{ t("plan3.list.item3") }</li>
