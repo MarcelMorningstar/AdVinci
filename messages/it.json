@@ -135,5 +135,138 @@
         "subTitle6": "5. Protezione Legale e del Consumatore",
         "text6": "Le promozioni sono conformi agli articoli 20‑28 del Codice del Consumo relativi alle pratiche commerciali scorrette, alla trasparenza e alle offerte ingannevoli.\nL'operatore aderisce al D.Lgs. 70/2003 in materia di commercio elettronico e comunicazioni digitali.\nEventuali controversie o reclami non risolti possono essere inviati agli organismi ADR (Alternative Dispute Resolution) locali o gestiti tramite la piattaforma ODR (Online Dispute Resolution) ai sensi del Regolamento (UE) n. 524/2013.\nForo competente: Tribunale di Macerata, salvo diverso accordo scritto tra le parti."
     },
-    "privacy": {}
+    "privacy": {
+
+    },
+    "price": {
+        "text1": "Come funziona – crea la tua campagna in 3 semplici passaggi.",
+        "text2": " Il prezzo si adatta in base alle tue scelte  – proprio come creare un piano su misura.",
+        "button": "Offerte speciali",
+        "plan1": {
+            "title": "Avvio Lampo",
+            "list": {
+                "item1": "Slot da 10 secondi",
+                "item2": "1 settimana",
+                "item3": "Creazione gratuita di annunci statici per nuovi clienti."
+            }
+        },
+        "plan2": {
+            "title": "Crescita Comunitaria",
+            "list": {
+                "item1": "Slot da 15 secondi",
+                "item2": "4 settimane",
+                "item3": "Modifiche ai contenuti gratuite"
+            }
+        },
+        "plan3": {
+            "title": "Espansione Premium",
+            "list": {
+                "item1": "Slot da 30 secondi",
+                "item2": "12 settimane",
+                "item3": "Modifiche ai contenuti gratuite"
+            }
+        },
+        "priceBuilding1": {
+            "title": "Seleziona l'orario del tuo annuncio",
+            "list": {
+                "item1": {
+                    "title": "10 secondi",
+                    "text": {
+                        "1": "Conveniente",
+                        "2": "Trasmette un messaggio chiaro e rapido",
+                        "3": "In rotazione ogni 2 minuti",
+                        "4": "€90 a settimana"
+                    }
+                },
+                "item2": {
+                    "title": "15 secondi",
+                    "text": {
+                        "1": "Tempistica equilibrata",
+                        "2": "Spazio sufficiente per i dettagli principali",
+                        "3": "In rotazione ogni 2 minuti",
+                        "4": "€135 a settimana"
+                    }
+                },
+                "item3": {
+                    "title": "30 secondi",
+                    "text": {
+                        "1": "Impatto massimo",
+                        "2": "Ideale per storie o offerte multiple",
+                        "3": "In rotazione ogni 2 minuti",
+                        "4": "€270 a settimana"
+                    }
+                }
+            }
+        },
+        "priceBuilding2": {
+            "title": "Scegli il periodo della campagna",
+            "list": {
+                "item1": {
+                    "title": "1 settimana",
+                    "text": {
+                        "1": "Visibilità immediata",
+                        "2": "Ideale per promozioni lampo"
+                    }
+                },
+                "item2": {
+                    "title": "4 settimane",
+                    "text": {
+                        "1": "Visibilità costante",
+                        "2": "Aumenta il riconoscimento del marchio",
+                        "3": "Sconto del 10%"
+                    }
+                },
+                "item3": {
+                    "title": "12 settimane",
+                    "text": {
+                        "1": "Visibilità a lungo termine",
+                        "2": "Costruisce un forte riconoscimento del marchio",
+                        "3": "Sconto del 20%"
+                    }
+                }
+            }
+        },
+        "priceBuilding3": {
+            "title": "Let's design with us",
+            "list": {
+                "item1": {
+                    "title": "No grazie!",
+                    "text": "Ho già il mio design pronto."
+                },
+                "item2": {
+                    "title": "Annuncio statico",
+                    "text": "Singola immagine grafica o visiva €75"
+                },
+                "item3": {
+                    "title": "Annuncio animato",
+                    "text": "Stile video €150"
+                }
+            }
+        },
+        "extras": {
+            "title": "Add-ons & Extras",
+            "extra1": "Sostituzione rapida in 24 ore",
+            "extra1text": "Carica entro le 14:00 – Online il giorno successivo",
+            "extra2": "1h Chiamata strategica",
+            "extra2text": "zoom o di persona",
+            "extra3": "Piano completo per la campagna pubblicitaria",
+            "extra3text": "Consulenza pubblicitaria, piano della campagna e creazione di annuncio statico",
+            "extra4": "Analisi del pubblico",
+            "extra4text": "Chi sta guardando il tuo annuncio e quando"
+        }
+    },
+    "offers": {
+        "bonus1": {
+            "title": "Founding Client\n25% Off",
+            "text1": "Be one of our first 10 clients and save 25% on any package.",
+            "text2": "To celebrate our launch in San Severino Marche, we’re offering a special discount to our first 10 advertisers.",
+            "text3": "Lock in your spot early, get seen across town, and be part of something new. Limited availability — this offer ends once 10 clients sign or after 60 days."
+        },
+        "bonus2": {
+            "title": "Referral Credit\nEarn €50",
+            "text1": "Know another local business that could benefit from digital advertising? Send them our way and when they book any package, you’ll both receive a €50 credit on your next invoice.",
+            "text2": "It's a win-win — and perfect for communities like ours.",
+            "text3": "Stack up credits up to €200. No strings attached — just help your neighbours grow too."
+        }
+    }
 }

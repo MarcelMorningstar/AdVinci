@@ -263,12 +263,12 @@ export default function Prices() {
                 </div>
                 <div className='w-full flex flex-col items-center gap-1'>
                     <h4 className='text-2xl font-semibold'>{ t("extras.title") }</h4>
-                    <div className='w-full grid grid-rows-4 grid-cols-1 lg:grid-rows-2 lg:grid-cols-2 gap-6'>
+                    <div className='w-full flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-6'>
                         <div className='w-full bg-neutral-50 text-gray-600 rounded-lg p-5'>
                             <div className='flex flex-row justify-between gap-5'>
                                 <div className='flex flex-row gap-1.5'>
                                     <RiRefreshFill className='h-8 w-8 text-orange-500' />
-                                    <h5 className='text-2xl font-semibold'>{ t("extras.extra1") }</h5>
+                                    <h5 className='text-lg sm:text-xl font-semibold'>{ t("extras.extra1") }</h5>
                                 </div>
                                 <div className='flex flex-row items-start gap-0.5'>
                                     <span className='text-lg font-medium'>€</span>
@@ -283,7 +283,7 @@ export default function Prices() {
                             <div className='flex flex-row justify-between gap-5'>
                                 <div className='flex flex-row gap-1.5'>
                                     <PiVideoConferenceFill className='h-8 w-8 text-blue-500' />
-                                    <h5 className='text-2xl font-semibold'>{ t("extras.extra2") }</h5>
+                                    <h5 className='text-lg sm:text-xl font-semibold'>{ t("extras.extra2") }</h5>
                                 </div>
                                 <div className='flex flex-row items-start gap-0.5'>
                                     <span className='text-lg font-medium'>€</span>
@@ -298,7 +298,7 @@ export default function Prices() {
                             <div className='flex flex-row justify-between gap-5'>
                                 <div className='flex flex-row gap-1.5'>
                                     <TbPresentationAnalyticsFilled className='h-8 w-8 text-green-500' />
-                                    <h5 className='text-2xl font-semibold'>{ t("extras.extra3") }</h5>
+                                    <h5 className='text-lg sm:text-xl font-semibold'>{ t("extras.extra3") }</h5>
                                 </div>
                                 <div className='flex flex-row items-start gap-0.5'>
                                     <span className='text-lg font-medium'>€</span>
@@ -313,7 +313,7 @@ export default function Prices() {
                             <div className='flex flex-row justify-between gap-5'>
                                 <div className='flex flex-row gap-1.5'>
                                     <FaChartPie className='h-8 w-8 text-purple-500' />
-                                    <h5 className='text-2xl font-semibold'>{ t("extras.extra4") }</h5>
+                                    <h5 className='text-lg sm:text-xl font-semibold'>{ t("extras.extra4") }</h5>
                                 </div>
                                 <div className='flex flex-row items-start gap-0.5'>
                                     <span className='text-lg font-medium'>€</span>
