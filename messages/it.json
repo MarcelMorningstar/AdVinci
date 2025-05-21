@@ -244,7 +244,7 @@
             }
         },
         "extras": {
-            "title": "Add-ons & Extras",
+            "title": "Componenti aggiuntivi ed extra",
             "extra1": "Sostituzione rapida in 24 ore",
             "extra1text": "Carica entro le 14:00 – Online il giorno successivo",
             "extra2": "1h Chiamata strategica",
@@ -257,16 +257,16 @@
     },
     "offers": {
         "bonus1": {
-            "title": "Founding Client\n25% Off",
-            "text1": "Be one of our first 10 clients and save 25% on any package.",
-            "text2": "To celebrate our launch in San Severino Marche, we’re offering a special discount to our first 10 advertisers.",
-            "text3": "Lock in your spot early, get seen across town, and be part of something new. Limited availability — this offer ends once 10 clients sign or after 60 days."
+            "title": "Cliente fondatore\nsconto del 25%",
+            "text1": "Diventa uno dei nostri primi 10 clienti e risparmia il 25% su qualsiasi nostro pacchetto.",
+            "text2": "Per celebrare il nostro lancio a San Severino Marche, offriamo uno sconto speciale ai nostri primi 10 inserzionisti.",
+            "text3": "Blocca il tuo posto in anticipo, fatti vedere in tutta la città e partecipa a qualcosa di nuovo. Disponibilità limitata — l’offerta termina al raggiungimento di 10 clienti o dopo 60 giorni."
         },
         "bonus2": {
-            "title": "Referral Credit\nEarn €50",
-            "text1": "Know another local business that could benefit from digital advertising? Send them our way and when they book any package, you’ll both receive a €50 credit on your next invoice.",
-            "text2": "It's a win-win — and perfect for communities like ours.",
-            "text3": "Stack up credits up to €200. No strings attached — just help your neighbours grow too."
+            "title": "Credito di riferimento\nguadagna €50",
+            "text1": "Conosci un'altra attività locale che potrebbe trarre vantaggio dalla pubblicità digitale? Inviacelo e quando prenoteranno un pacchetto riceverete entrambi un credito di 50 EUR sulla vostra prossima fattura.",
+            "text2": "È una situazione vantaggiosa per tutti – perfetta per comunità come la nostra.",
+            "text3": "Accumula crediti fino a €200. No strings attached — just help your neighbors grow too. Nessun vincolo  — aiuta anche i tuoi vicini a crescere."
         }
     }
 }
