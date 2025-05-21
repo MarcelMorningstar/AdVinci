@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { useMotionValue, animate } from "framer-motion";
 import { RiRefreshFill } from "react-icons/ri";
@@ -77,9 +77,9 @@ export default function Prices() {
                                     <h4 className='text-gray-800'>{ t("plan1.title") }</h4>
                                     <h5 className='text-gray-800'>€90</h5>
                                     <ul className='text-gray-500'>
-                                        <li>{ t("plan1.list.item1") }</li>
-                                        <li>{ t("plan1.list.item2") }</li>
-                                        <li>{ t("plan1.list.item3") }</li>
+                                        <li className='leading-5 mb-0.5'>{ t("plan1.list.item1") }</li>
+                                        <li className='leading-5 mb-0.5'>{ t("plan1.list.item2") }</li>
+                                        <li className='leading-5'>{ t("plan1.list.item3") }</li>
                                     </ul>
                                 </label>
                             </div>
@@ -91,9 +91,9 @@ export default function Prices() {
                                     <h4 className='text-gray-800'>{ t("plan2.title") }</h4>
                                     <h5 className='text-gray-800'>€486</h5>
                                     <ul className='text-gray-500'>
-                                        <li>{ t("plan2.list.item1") }</li>
-                                        <li>{ t("plan2.list.item2") }</li>
-                                        <li>{ t("plan2.list.item3") }</li>
+                                        <li className='leading-5 mb-0.5'>{ t("plan2.list.item1") }</li>
+                                        <li className='leading-5 mb-0.5'>{ t("plan2.list.item2") }</li>
+                                        <li className='leading-5'>{ t("plan2.list.item3") }</li>
                                     </ul>
                                 </label>
                             </div>
@@ -105,9 +105,9 @@ export default function Prices() {
                                     <h4 className='text-gray-800'>{ t("plan3.title") }</h4>
                                     <h5 className='text-gray-800'>€2592</h5>
                                     <ul className='text-gray-500'>
-                                        <li>{ t("plan3.list.item1") }</li>
-                                        <li>{ t("plan3.list.item2") }</li>
-                                        <li>{ t("plan3.list.item3") }</li>
+                                        <li className='leading-5 mb-0.5'>{ t("plan3.list.item1") }</li>
+                                        <li className='leading-5 mb-0.5'>{ t("plan3.list.item2") }</li>
+                                        <li className='leading-5'>{ t("plan3.list.item3") }</li>
                                     </ul>
                                 </label>
                             </div>
@@ -128,10 +128,10 @@ export default function Prices() {
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding1.list.item1.title") }</div>
                                             <ul className='w-fit list-disc ml-5'>
-                                                <li>{ t("priceBuilding1.list.item1.text.1") }</li>
-                                                <li>{ t("priceBuilding1.list.item1.text.2") }</li>
-                                                <li>{ t("priceBuilding1.list.item1.text.3") }</li>
-                                                <li>{ t("priceBuilding1.list.item1.text.4") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding1.list.item1.text.1") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding1.list.item1.text.2") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding1.list.item1.text.3") }</li>
+                                                <li className='leading-5'>{ t("priceBuilding1.list.item1.text.4") }</li>
                                             </ul>
                                         </div>
                                     </label>
@@ -144,10 +144,10 @@ export default function Prices() {
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding1.list.item2.title") }</div>
                                             <ul className='w-fit list-disc ml-5'>
-                                                <li>{ t("priceBuilding1.list.item2.text.1") }</li>
-                                                <li>{ t("priceBuilding1.list.item2.text.2") }</li>
-                                                <li>{ t("priceBuilding1.list.item2.text.3") }</li>
-                                                <li>{ t("priceBuilding1.list.item2.text.4") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding1.list.item2.text.1") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding1.list.item2.text.2") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding1.list.item2.text.3") }</li>
+                                                <li className='leading-5'>{ t("priceBuilding1.list.item2.text.4") }</li>
                                             </ul>
                                         </div>
                                     </label>
@@ -160,10 +160,10 @@ export default function Prices() {
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding1.list.item3.title") }</div>
                                             <ul className='w-fit list-disc ml-5'>
-                                                <li>{ t("priceBuilding1.list.item3.text.1") }</li>
-                                                <li>{ t("priceBuilding1.list.item3.text.2") }</li>
-                                                <li>{ t("priceBuilding1.list.item3.text.3") }</li>
-                                                <li>{ t("priceBuilding1.list.item3.text.4") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding1.list.item3.text.1") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding1.list.item3.text.2") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding1.list.item3.text.3") }</li>
+                                                <li className='leading-5'>{ t("priceBuilding1.list.item3.text.4") }</li>
                                             </ul>
                                         </div>
                                     </label>
@@ -182,8 +182,8 @@ export default function Prices() {
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding2.list.item1.title") }</div>
                                             <ul className='w-fit list-disc ml-5'>
-                                                <li>{ t("priceBuilding2.list.item1.text.1") }</li>
-                                                <li>{ t("priceBuilding2.list.item1.text.2") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding2.list.item1.text.1") }</li>
+                                                <li className='leading-5'>{ t("priceBuilding2.list.item1.text.2") }</li>
                                             </ul>
                                         </div>
                                     </label>
@@ -196,9 +196,9 @@ export default function Prices() {
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding2.list.item2.title") }</div>
                                             <ul className='w-fit list-disc ml-5'>
-                                                <li>{ t("priceBuilding2.list.item2.text.1") }</li>
-                                                <li>{ t("priceBuilding2.list.item2.text.2") }</li>
-                                                <li>{ t("priceBuilding2.list.item2.text.3") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding2.list.item2.text.1") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding2.list.item2.text.2") }</li>
+                                                <li className='leading-5'>{ t("priceBuilding2.list.item2.text.3") }</li>
                                             </ul>
                                         </div>
                                     </label>
@@ -211,9 +211,9 @@ export default function Prices() {
                                         <div className="block">
                                             <div className="w-full text-lg font-semibold">{ t("priceBuilding2.list.item3.title") }</div>
                                             <ul className='w-fit list-disc ml-5'>
-                                                <li>{ t("priceBuilding2.list.item3.text.1") }</li>
-                                                <li>{ t("priceBuilding2.list.item3.text.2") }</li>
-                                                <li>{ t("priceBuilding2.list.item3.text.3") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding2.list.item3.text.1") }</li>
+                                                <li className='leading-5 mb-1'>{ t("priceBuilding2.list.item3.text.2") }</li>
+                                                <li className='leading-5'>{ t("priceBuilding2.list.item3.text.3") }</li>
                                             </ul>
                                         </div>
                                     </label>
@@ -302,7 +302,7 @@ export default function Prices() {
                                 </div>
                                 <div className='flex flex-row items-start gap-0.5'>
                                     <span className='text-lg font-medium'>€</span>
-                                    <span className=' text-3xl font-semibold'>250</span>
+                                    <span className='text-3xl font-semibold'>250</span>
                                 </div>
                             </div>
                             <div>
@@ -317,7 +317,7 @@ export default function Prices() {
                                 </div>
                                 <div className='flex flex-row items-start gap-0.5'>
                                     <span className='text-lg font-medium'>€</span>
-                                    <span className=' text-3xl font-semibold'>50</span>
+                                    <span className='text-3xl font-semibold'>50</span>
                                     <span className='text-lg font-medium whitespace-nowrap'>/month</span>
                                 </div>
                             </div>
