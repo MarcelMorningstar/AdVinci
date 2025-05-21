@@ -106,7 +106,7 @@
         "question4": "Potete aiutarci a creare i contenuti se non ne abbiamo pronti?",
         "answer4": "Assolutamente! I nostri esperti ti guideranno dal concept alla realizzazione, creando annunci accattivanti su misura per i punti di forza unici della tua attività.",
         "question5": "Quanto velocemente può AdVinci avviare la nostra campagna pubblicitaria?",
-        "answer5": "In genere lanciamo la tua campagna digitale personalizzata entro 7–10 giorni dalla nostra consulenza iniziale, consentendo visibilità e risultati rapidi.",
+        "answer5": "In genere lanciamo la tua campagna digitale personalizzata entro 7 - 10 giorni dalla nostra consulenza iniziale, consentendo visibilità e risultati rapidi.",
         "question6": "Quali risultati possiamo aspettarci dalla pubblicità digitale con AdVinci?",
         "answer6": "Di solito noterai una maggiore consapevolezza dei clienti, più visite alla tua attività e opportunità di vendita migliorate, il tutto facilmente misurabile tramite analitiche digitali.",
         "question7": "Quanto tempo occorre prima di vedere i risultati?",
@@ -133,14 +133,14 @@
         "subTitle5": "4. Termini Generali per Tutte le Promozioni",
         "text5": "Tutte le offerte sono valide solo in Italia, destinate specificamente alle aziende che operano o mirano a pubblici a San Severino Marche e aree circostanti.\nLe promozioni sono soggette alla disponibilità di spazi pubblicitari e alla fattibilità tecnica.\nAdVinci si riserva il diritto di modificare o terminare le promozioni in qualsiasi momento, con almeno 7 giorni di preavviso pubblicato sul proprio sito ufficiale.\nQualsiasi offerta commerciale costituisce un invito a offrire, non un'offerta vincolante, finché non viene confermata per iscritto da AdVinci.\nTutti i clienti devono accettare e firmare un contratto pubblicitario standard che definisce date della campagna, deliverable, termini di fatturazione e responsabilità creative.\nLe fatture includeranno il 22% di IVA e, se applicabile, l'imposta comunale sulla pubblicità (Imposta Comunale sulla Pubblicità) ai sensi degli artt. 62-71 del D.Lgs. 507/1993.",
         "subTitle6": "5. Protezione Legale e del Consumatore",
-        "text6": "Le promozioni sono conformi agli articoli 20‑28 del Codice del Consumo relativi alle pratiche commerciali scorrette, alla trasparenza e alle offerte ingannevoli.\nL'operatore aderisce al D.Lgs. 70/2003 in materia di commercio elettronico e comunicazioni digitali.\nEventuali controversie o reclami non risolti possono essere inviati agli organismi ADR (Alternative Dispute Resolution) locali o gestiti tramite la piattaforma ODR (Online Dispute Resolution) ai sensi del Regolamento (UE) n. 524/2013.\nForo competente: Tribunale di Macerata, salvo diverso accordo scritto tra le parti."
+        "text6": "Le promozioni sono conformi agli articoli 20 - 28 del Codice del Consumo relativi alle pratiche commerciali scorrette, alla trasparenza e alle offerte ingannevoli.\nL'operatore aderisce al D.Lgs. 70/2003 in materia di commercio elettronico e comunicazioni digitali.\nEventuali controversie o reclami non risolti possono essere inviati agli organismi ADR (Alternative Dispute Resolution) locali o gestiti tramite la piattaforma ODR (Online Dispute Resolution) ai sensi del Regolamento (UE) n. 524/2013.\nForo competente: Tribunale di Macerata, salvo diverso accordo scritto tra le parti."
     },
     "privacy": {
 
     },
     "price": {
-        "text1": "Come funziona – crea la tua campagna in 3 semplici passaggi.",
-        "text2": " Il prezzo si adatta in base alle tue scelte  – proprio come creare un piano su misura.",
+        "text1": "Come funziona - crea la tua campagna in 3 semplici passaggi.",
+        "text2": " Il prezzo si adatta in base alle tue scelte - proprio come creare un piano su misura.",
         "button": "Offerte speciali",
         "plan1": {
             "title": "Avvio Lampo",
@@ -246,7 +246,7 @@
         "extras": {
             "title": "Componenti aggiuntivi ed extra",
             "extra1": "Sostituzione rapida in 24 ore",
-            "extra1text": "Carica entro le 14:00 – Online il giorno successivo",
+            "extra1text": "Carica entro le 14:00 - Online il giorno successivo",
             "extra2": "1h Chiamata strategica",
             "extra2text": "zoom o di persona",
             "extra3": "Piano completo per la campagna pubblicitaria",
@@ -265,8 +265,8 @@
         "bonus2": {
             "title": "Credito di riferimento\nguadagna €50",
             "text1": "Conosci un'altra attività locale che potrebbe trarre vantaggio dalla pubblicità digitale? Inviacelo e quando prenoteranno un pacchetto riceverete entrambi un credito di €50 sulla vostra prossima fattura.",
-            "text2": "È una situazione vantaggiosa per tutti – perfetta per comunità come la nostra.",
-            "text3": "Accumula crediti fino a €200. Nessun vincolo  — aiuta anche i tuoi vicini a crescere."
+            "text2": "È una situazione vantaggiosa per tutti - perfetta per comunità come la nostra.",
+            "text3": "Accumula crediti fino a €200. Nessun vincolo - aiuta anche i tuoi vicini a crescere."
         }
     }
 }
